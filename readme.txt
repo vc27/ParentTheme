@@ -1,5 +1,6 @@
-ParentTheme
-====================
+# ParentTheme_VC
+
+http://wordpress.org/extend/plugins/about/validator/
 
 You are free to use what ever you find in here.
 

@@ -1,0 +1,335 @@
+/* 
+File Name default.css
+Version 1.9
+Updated 06.28.13
+Package ParentTheme_VC
+License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+#################################################################################################### */
+
+
+body { line-height:18px; font-family:Verdana; }
+
+a, a:visited { text-decoration:none; }
+a:hover {}
+
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 { font-weight:800; display:block; line-height:1.1em; }
+.h1, h1 { font-size:26px; }
+.h2, h2 { font-size:23px; }
+.h3, h3 { font-size:20px; }
+.h4, h4 { font-size:17px; }
+.h5, h5 { font-size:14px; }
+.h6, h6 { font-size:12px; }
+
+.border-radius { border-radius: 7px; -webkit-border-radius: 7px; }
+.box-shadow { box-shadow: 0 1px 3px rgba(0,0,0,0.5); -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5); -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5); -o-box-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+.blur { filter: blur(5px); -webkit-filter: blur(5px); -moz-filter: blur(5px); -o-filter: blur(5px); -ms-filter: blur(5px); }
+
+
+
+
+
+
+/* Icons
+#################################################################################################### */
+.ic-icon-name { display:block; width:10px; height:10px; background:url('../images/ic-icon-name.png') left top no-repeat; }
+
+
+
+
+
+
+/* Buttons
+#################################################################################################### */
+.btn { cursor:pointer; display:inline-block; padding:2px 6px; }
+
+
+
+/*Button Red*/
+.btn-red { color:#ffffff; text-shadow:0 -2px 0 #8c1300; 
+	border:solid 1px #a01e09; border-radius:6px; -webkit-border-radius:6px;
+	background-image: linear-gradient(bottom, rgb(144,10,3) 0%, rgb(187,47,25) 99%, rgb(201,87,69) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(144,10,3) 0%, rgb(187,47,25) 99%, rgb(201,87,69) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(144,10,3) 0%, rgb(187,47,25) 99%, rgb(201,87,69) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(144,10,3) 0%, rgb(187,47,25) 99%, rgb(201,87,69) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(144,10,3) 0%, rgb(187,47,25) 99%, rgb(201,87,69) 100%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(144,10,3)), color-stop(0.99, rgb(187,47,25)), color-stop(1, rgb(201,87,69)) );
+}
+.btn-red:hover { background:#d2351b; box-shadow: 0 4px 6px rgba(0,0,0,0.15); -webkit-box-shadow: 0 4px 6px rgba(0,0,0,0.15); }
+
+
+
+/*Button Gray*/
+.btn-gray { color:#8f9193; 
+	border:solid 1px #cacaca; border-radius:6px; -webkit-border-radius:6px; 
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1); -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	background-image: linear-gradient(bottom, rgb(235,235,235) 0%, rgb(247,247,247) 98%, rgb(255,255,255) 99%);
+	background-image: -o-linear-gradient(bottom, rgb(235,235,235) 0%, rgb(247,247,247) 98%, rgb(255,255,255) 99%);
+	background-image: -moz-linear-gradient(bottom, rgb(235,235,235) 0%, rgb(247,247,247) 98%, rgb(255,255,255) 99%);
+	background-image: -webkit-linear-gradient(bottom, rgb(235,235,235) 0%, rgb(247,247,247) 98%, rgb(255,255,255) 99%);
+	background-image: -ms-linear-gradient(bottom, rgb(235,235,235) 0%, rgb(247,247,247) 98%, rgb(255,255,255) 99%);
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(235,235,235)), color-stop(0.98, rgb(247,247,247)), color-stop(0.99, rgb(255,255,255)) );
+}
+.btn-gray:hover { background:#f7f7f7; box-shadow:none; -webkit-box-shadow:none; }
+
+
+
+
+
+
+/* Images
+Usage - class="img img-name-here" -- allows controlled image sizes for retina display
+#################################################################################################### */
+.img img { max-width:100%; height:auto; }
+
+.img-name-here { display:block; width:512px; height:512px; }
+
+
+
+
+
+
+
+/* Forms
+#################################################################################################### */
+input, textarea {}
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"]
+{ font-size:12px; font-family:Verdana; border:solid 1px #aaa; border-top-color:#666; padding:3px 7px; }
+textarea { width:98%; height:100px; }
+
+label.error { color:red; }
+
+
+
+
+
+
+/* Blocks
+#################################################################################################### */
+
+#page { font-size:12px; min-height:100%; }
+
+.outer-wrap { position:relative; }
+.inner-wrap { max-width:940px; position:relative; margin:0 auto; text-align:left; }
+
+
+
+
+
+
+/* General Links
+#################################################################################################### */
+
+
+.site-title {}
+
+
+/* Main Navigation Links */
+#primary-navigation {}
+#primary-navigation a { text-decoration:none; }
+#primary-navigation .current-menu-item a,
+#primary-navigation a:hover {}
+
+
+/* footer-navigation */
+#footer-navigation {}
+#footer-navigation a {}
+#footer-navigation li { display:inline; padding:0 6px 0 0; margin:0 4px 0 0; }
+
+
+/* Navigation */
+.navigation-post { display:block; clear:both; text-align:left; padding:3px 7px; }
+.prev-post { padding-left:7px; }
+.next-post { padding-right:7px; }
+
+.wp-pagenavi a,
+.wp-pagenavi span { padding:3px 4px; margin:3px; }
+
+#navigation-breadcrumb { font-weight:bold; padding-bottom:3px; display:block; clear:both; }
+.navigation-posts { font-weight:bold; padding-bottom:3px; display:block; clear:both; text-align:center; }
+
+
+
+
+
+
+/* Post, Page & General Loops
+#################################################################################################### */
+
+.hentry { position:relative; }
+#loop-default .hentry { padding:45px 0 15px 0; }
+#loop-default .p1 { padding:0 0 15px 0; }
+
+
+
+/* Meta Data */
+.post-meta_data {}
+
+.post-comments { padding:0 7px 0 0; }
+.post-date { padding:0 7px 0 0; }
+.read_more-dots { display:none; }
+
+
+
+/* Entry - Excerpt */
+#loop-default .entry { clear:both; }
+#loop-default .excerpt { clear:none; padding:0; }
+
+.entry a {}
+.entry a:hover {}
+
+a.read_more { text-decoration:underline; font-style:italic; color:; display:block; }
+a.read_more:hover {}
+
+.entry .aligncenter { display:block; margin:0 auto 15px; }
+.entry .alignnone { clear:both; float:none; }
+.entry .alignleft { margin-right:3px; margin-bottom:3px; }
+.entry .alignright { margin-left:3px; margin-bottom:3px; }
+.entry img { max-width:100% !important; height:auto !important; }
+.entry img.wp-smiley { border:none; margin:0; padding:0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
+
+.entry p { padding-bottom:20px; }
+.excerpt p { padding-bottom:10px; }
+
+.entry blockquote {}
+.entry blockquote p { padding:0; margin:10px 45px 20px 20px; }
+.entry ol, .entry ul { margin:5px 0 15px 20px; }
+.entry ul { list-style:disc; }
+.entry ol { list-style:decimal; }
+.entry li { padding-bottom:7px; }
+.entry strong {}
+.entry small { font-size:11px; }
+.entry table { line-height:18px; }
+.entry table td { padding-right:7px; vertical-align:top; }
+
+.entry .h1, .entry h1,
+.entry .h2, .entry h2, 
+.entry .h3, .entry h3, 
+.entry .h4, .entry h4, 
+.entry .h5, .entry h5, 
+.entry .h6, .entry h6 
+{}
+
+
+
+/* Gallery Shortcode */
+.gallery {}
+.gallery dl.gallery-item { display:block; float:left; }
+
+.gallery dl dt.gallery-icon {}
+.gallery img {}
+.gallery-caption {}
+
+.wp-caption { max-width:96%; display:block; text-align:center !important; padding:5px; background:#eee; }
+.wp-caption p { font-size:11px; line-height:14px; padding:5px 0 7px; }
+.wp-caption img { display:inline; }
+
+.wp-caption-text {}
+.sticky {}
+.bypostauthor {}
+
+
+
+/* All sitemap style layouts - search, 404, sitemap */
+.layout-sitemap .display-list { margin:0 2% 20px 0; width:48%; float:left; }
+
+.layout-sitemap .display-list ul { margin:10px 0 0 0; }
+.layout-sitemap .display-list ul ul { margin:0 0 7px 15px; list-style:disc; }
+.layout-sitemap .display-list ul ul.children { padding:0; margin-left:15px; list-style:disc; }
+
+.layout-sitemap .site-search { display:block; padding-bottom:10px; }
+
+
+
+
+
+
+/* Widget Areas
+#################################################################################################### */
+
+
+/* Menu indiv */
+.sidebar ul {}
+.sidebar li { margin-bottom:10px; }
+.sidebar li li { margin:0; }
+
+.widget-title {}
+.widget-title a {}
+.widget-title-wrap {}
+
+.widget-box {}
+
+
+
+
+
+
+/* General Footer
+#################################################################################################### */
+
+
+/* Footer */
+#footer {}
+#footer a {}
+#footer a:hover {}
+#footer ul {}
+#footer ul li {}
+
+#copyright {}
+
+
+
+
+
+
+/* Comments
+#################################################################################################### */
+
+#comments { margin-top:45px; }
+#comments .comments-title { margin:0 0 7px; }
+
+
+#comments .navigation { display:block; clear:both; text-align:left; padding:3px 7px; }
+#comments .prev-page { padding-left:7px; }
+#comments .next-page { padding-right:7px; }
+
+
+#respond {}
+#respond #reply-title { margin:0 0 7px; }
+#respond #respond-login {}
+
+#respond form {}
+
+#respond form .comments-cancel_reply {}
+#respond form .comments-logged_in {}
+
+#respond form .form-block { padding-bottom:7px; }
+#respond label { display:inline-block; width:20%; }
+#respond .required { width:0%; display:none; }
+#respond form intput[type="text"] { display:inline-block; margin:7px 0; width:40% !important; }
+#respond form textarea {}
+
+#respond form .comment-notes,
+#respond form .comment-form-author,
+#respond form .comment-form-email,
+#respond form .comment-form-url,
+#respond form .comment-form-comment { padding-bottom:7px; }
+
+#respond form .comment-form-url label { display:inline-block; width:21%; }
+
+#respond form .button-submit { margin-top:7px; }
+#respond form .button-submit #button-submit_comments {}
+
+.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
+.commentlist li { padding-bottom:22px; margin-bottom:10px; }
+.commentlist li .vcard {  font-style:normal; padding:0 0 3px; font-weight:200; font-size:16px; letter-spacing:1px; }
+.commentlist li .avatar { float:right; margin:0 0 1em 1em; }
+.commentlist li .comment-meta { padding-bottom:2px; }
+.commentlist li .comment-meta a { color:; font-size:12px; }
+.commentlist li ul { list-style:square; margin:0 0 1em 2em; }
+.commentlist li .reply { text-align:right; }
+.commentlist li .reply a { text-decoration:underline; font-style:italic; padding-left:10px; }
+.commentlist li ul.children { list-style:none; margin:10px 0 0 0; text-indent:0; }
+.commentlist li ul.children li { padding-bottom:0; }

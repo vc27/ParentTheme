@@ -1,0 +1,996 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ParentTheme\n"
+"POT-Creation-Date: 2013-07-16 16:27-0600\n"
+"PO-Revision-Date: 2013-07-17 10:43-0600\n"
+"Last-Translator: Randy Hicks <randy@metacake.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../\n"
+
+#: ../404.php:24
+msgid "404 Not Founds"
+msgstr ""
+
+#: ../404.php:68 ../content-sitemap.php:24 ../loop-no-search.php:65
+msgid "Categories"
+msgstr ""
+
+#: ../404.php:84 ../loop-no-search.php:81
+msgid "Recent Posts"
+msgstr ""
+
+#: ../comments.php:31
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: ../comments.php:45
+msgid "No Responses"
+msgstr ""
+
+#: ../comments.php:46
+msgid "One Response"
+msgstr ""
+
+#: ../comments.php:47
+msgid "% Responses"
+msgstr ""
+
+#: ../comments.php:49
+#, php-format
+msgid "to &#8220; %1$s &#8221"
+msgstr ""
+
+#: ../comments.php:58 ../comments.php:76
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:59 ../comments.php:77
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:60 ../comments.php:78
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:96 ../includes/classes/ParentThemeOptionsVCWP.php:1004
+msgid "Submit"
+msgstr ""
+
+#: ../comments.php:97
+msgid "Your email address will not be published."
+msgstr ""
+
+#: ../content-sitemap.php:17 ../loop-no-search.php:48
+msgid "Pages"
+msgstr ""
+
+#: ../content-sitemap.php:31
+msgid "Posts per category"
+msgstr ""
+
+#: ../functions.php:296
+msgid "This is the primary widgetized area."
+msgstr ""
+
+#: ../functions.php:302
+msgid "Primary Navigation"
+msgstr ""
+
+#: ../functions.php:303
+msgid "Footer Navigation"
+msgstr ""
+
+#: ../functions.php:911
+msgid "Start Theme Header"
+msgstr ""
+
+#: ../functions.php:911
+msgid "End Theme Header"
+msgstr ""
+
+#: ../functions.php:931
+msgid "Start Theme Footer"
+msgstr ""
+
+#: ../functions.php:931
+msgid "End Theme Footer"
+msgstr ""
+
+#: ../header-head.php:29
+msgid "Start"
+msgstr ""
+
+#: ../header-head.php:31
+msgid "End"
+msgstr ""
+
+#: ../loop-no-search.php:21
+#, php-format
+msgid "Search: %1$s"
+msgstr ""
+
+#: ../loop-page-default.php:34
+msgid "Pages:"
+msgstr ""
+
+#: ../loop-single-default.php:43 ../loop-w-latest-post.php:61
+#: ../includes/lib/loop.php:701
+msgid "Written By: "
+msgstr ""
+
+#: ../loop-single-default.php:47
+msgid "Category: "
+msgstr ""
+
+#: ../loop-single-default.php:51 ../loop-w-latest-post.php:56
+msgid "Posted Under: "
+msgstr ""
+
+#: ../includes/classes/FormFieldsVCWP.php:1220
+#, php-format
+msgid "No menus have been created yet. <a href=\"%s\">Create some</a>."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:224
+#: ../includes/classes/ParentThemeOptionsVCWP.php:225
+msgid "Theme Options"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:236
+msgid "Contact Settings"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:239
+msgid ""
+"General contact info to be used through out the site. Please be aware if you "
+"enter contact info into a text-editor it will be managed separately from "
+"this section."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:240
+#: ../includes/classes/ParentThemeOptionsVCWP.php:331
+#: ../includes/classes/ParentThemeOptionsVCWP.php:427
+#: ../includes/classes/ParentThemeOptionsVCWP.php:482
+#: ../includes/classes/ParentThemeOptionsVCWP.php:516
+#: ../includes/classes/ParentThemeOptionsVCWP.php:550
+#: ../includes/classes/ParentThemeOptionsVCWP.php:633
+#: ../includes/classes/ParentThemeOptionsVCWP.php:716
+#: ../includes/classes/ParentThemeOptionsVCWP.php:792
+#: ../includes/classes/ParentThemeOptionsVCWP.php:861
+#: ../includes/classes/ParentThemeOptionsVCWP.php:930
+#: ../includes/classes/ParentThemeOptionsVCWP.php:985
+msgid "Save all Settings"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:246
+msgid "Copyright"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:248
+msgid "%year% will be swapped out with the current year."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:253
+msgid "Street address"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:260
+msgid "City"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:267
+msgid "State"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:274
+msgid "Zip"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:281
+msgid "Office Phone"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:288
+msgid "Cell"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:295
+msgid "Fax"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:302
+msgid "Name"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:309
+msgid "Email"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:316
+msgid "Contact Text"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:318
+msgid "Text to be added to the contact section."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:327
+msgid "General Post Display"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:330
+msgid "General post display for various pages through out your site."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:337
+msgid "Include category content"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:339
+msgid ""
+"Category content refers to \"posts\" that are being displayed on a category "
+"term page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:344
+msgid "Include tag content"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:346
+msgid ""
+"Tag content refers to \"posts\" that are being displayed on a tag term page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:351
+msgid "Include numeric archive content"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:353
+msgid ""
+"Numeric archive content refers to \"posts\" that are being displayed on a "
+"page by date."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:358
+msgid "Include author content"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:360
+msgid ""
+"Author archive content refers to \"posts\" that are being displayed on an "
+"author archive page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:365
+msgid "Include search content"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:367
+msgid ""
+"Search content refers to \"posts\" that are being displayed as results to a "
+"standard WordPress search."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:372
+msgid "Include home page posts content"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:374
+msgid ""
+"Home page post content refers to \"posts\" that are being displayed on the "
+"home page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:379
+msgid "Word Count"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:381
+msgid "Search content refers to the amount of word displayed in the excerpt."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:386
+msgid "\"Read More\" text"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:387
+#: ../includes/lib/loop.php:110
+msgid "Read More"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:388
+msgid ""
+"\"Read More\" refers to the link found at the bottom of a standard excerpt."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:393
+msgid "Strip html tags"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:395
+msgid ""
+"Striping html tags from an excerpt will remove items such as \"Bold\", "
+"\"Underline\", \"Italics\" and the like. This is recommended due to "
+"possibility of tags being cut in half and bleeding through out the page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:400
+msgid "Display featured image"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:402
+msgid ""
+"Will display featured image with excerpt where settings have been applied."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:407
+msgid "Featured image size"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:413
+msgid "Child page breadcrumb "
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:415
+msgid ""
+"Will activate a breadcrumb navigation above the page title of any page that "
+"has a parent."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:423
+msgid "Social Networks"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:426
+msgid "Add urls for available networks."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:433
+msgid "Pinterest"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:435
+#: ../includes/classes/ParentThemeOptionsVCWP.php:442
+#: ../includes/classes/ParentThemeOptionsVCWP.php:449
+#: ../includes/classes/ParentThemeOptionsVCWP.php:463
+msgid "Please enter the full url."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:440
+msgid "Youtube"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:447
+msgid "Twitter"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:454
+msgid "Twitter Username"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:461
+msgid "Facebook"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:468
+msgid "Facebook Like"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:470
+msgid ""
+"Please see the following url for creating your Facebook \"Like\" button."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:478
+msgid "Comments Settings"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:488
+msgid "Remove Comments Completely"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:490
+msgid ""
+"This option will attempt to over write all default setting and remove "
+"comments from the site completely."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:495
+msgid "Text to display when there are no comments"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:496
+msgid "There are no comments yet."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:502
+msgid "Text to display when comments are closed"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:503
+msgid "Comments are closed"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:512
+msgid "HTML head footer"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:515
+msgid ""
+"These sections are dedicated to adding various scripts to the WordPress tags "
+"for wp_head &amp; wp_footer. It is not recommended that you add strait html "
+"to these locations. Please see your webmaster for further questions."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:522
+msgid "Favicon Image"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:524
+msgid "Favicon image is the small image next to the address in the browser."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:529
+msgid "HTML head section"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:536
+msgid "HTML footer section"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:546
+msgid "Author Page Title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:549
+msgid "Display options for an author archive page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:556
+#: ../includes/classes/ParentThemeOptionsVCWP.php:563
+msgid "Display author title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:558
+#: ../includes/classes/ParentThemeOptionsVCWP.php:641
+#: ../includes/classes/ParentThemeOptionsVCWP.php:724
+#: ../includes/classes/ParentThemeOptionsVCWP.php:800
+msgid "Will display the following settings above the archive list of posts."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:564
+msgid "Author: %author_name%"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:565
+msgid "%author_name% will be swapped out with current authors \"Display Name\""
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:570
+msgid "Display author bio"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:577
+msgid "Display author avatar"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:579
+msgid ""
+"Will retrieve and display an authors avatar from Gravatar.com using the "
+"default WordPress avatar system."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:584
+msgid "Display optional text above author title."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:591
+msgid "Optional text above author title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:598
+#: ../includes/classes/ParentThemeOptionsVCWP.php:619
+#: ../includes/classes/ParentThemeOptionsVCWP.php:681
+#: ../includes/classes/ParentThemeOptionsVCWP.php:702
+#: ../includes/classes/ParentThemeOptionsVCWP.php:757
+#: ../includes/classes/ParentThemeOptionsVCWP.php:778
+#: ../includes/classes/ParentThemeOptionsVCWP.php:826
+#: ../includes/classes/ParentThemeOptionsVCWP.php:847
+msgid "Automatically add paragraph line breaks."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:605
+msgid "Display optional text below author title."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:612
+msgid "Optional text after author title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:629
+msgid "Category Page Title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:632
+msgid "Display options for a category archive page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:639
+#: ../includes/classes/ParentThemeOptionsVCWP.php:646
+msgid "Display category title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:647
+msgid "Category: %cat_name%"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:648
+msgid "%cat_name% will be swapped out with current category \"Term Name\""
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:653
+msgid "Display category rss link"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:660
+msgid "Display category description"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:667
+msgid "Display optional text above category title."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:674
+msgid "Optional text above category title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:688
+msgid "Display optional text below category title."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:695
+msgid "Optional text after category title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:712
+msgid "Tag Page Title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:715
+msgid "Display options for a tag archive page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:722
+#: ../includes/classes/ParentThemeOptionsVCWP.php:729
+msgid "Display tag title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:730
+msgid "Tag: %tag_name%"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:731
+msgid "%tag_name% will be swapped out with current tag \"Term Name\""
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:736
+msgid "Display tag description"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:743
+msgid "Display optional text above tag title."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:750
+msgid "Optional text above tag title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:764
+msgid "Display optional text below tag title."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:771
+msgid "Optional text after tag title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:788
+msgid "Date Archive Page Title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:791
+msgid "Display options for a date archive archive page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:798
+#: ../includes/classes/ParentThemeOptionsVCWP.php:805
+msgid "Display date archive title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:806
+msgid "Date Archive: %date_archive_name%"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:807
+msgid ""
+"%date_archive_name% will be swapped out with current date_archive \"Term Name"
+"\""
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:812
+msgid "Display optional text above date archive title."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:819
+msgid "Optional text above date archive title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:833
+msgid "Display optional text below date archive title."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:840
+msgid "Optional text after date archive title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:857
+msgid "Search Title &amp; Page Settings"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:867
+msgid "Search results title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:868
+msgid "Showing results for: %search_term%"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:869
+#: ../includes/classes/ParentThemeOptionsVCWP.php:883
+msgid "%search_term% will be swapped out with current search \"Term Name\""
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:874
+msgid "Search results explanation"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:876
+msgid "Give a brief text explanation about general search results"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:881
+msgid "No results title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:882
+msgid "No results found for: %search_term%"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:888
+msgid "No results explanation"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:890
+msgid "Give a brief text explanation about no search results"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:895
+#: ../includes/classes/ParentThemeOptionsVCWP.php:950
+msgid "Display search form"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:902
+#: ../includes/classes/ParentThemeOptionsVCWP.php:957
+msgid "Display a list of pages"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:904
+msgid ""
+"Will display a list of site pages, when there are no results to display."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:909
+#: ../includes/classes/ParentThemeOptionsVCWP.php:964
+msgid "Display a list of categories"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:911
+msgid ""
+"Will display a list of site categories, when there are no results to display."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:916
+#: ../includes/classes/ParentThemeOptionsVCWP.php:971
+msgid "Display a list of posts by category"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:918
+msgid ""
+"Will display a list of posts by category, when there are no results to "
+"display."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:926
+msgid "404 Page Title &amp; Page Settings"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:936
+msgid "Page title"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:937
+msgid "404 Not Found"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:943
+msgid "404 page explanation"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:945
+msgid "Give a brief text explanation about general 404 results"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:959
+msgid "Will display a list of site pages on the 404 page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:966
+msgid "Will display a list of site categories on the 404 page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:973
+msgid "Will display a list of posts by category on the 404 page."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:981
+msgid "Password Protected"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:984
+msgid "These settings apply to all content that has been password protected."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:991
+msgid "Welcome Text for the password from."
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:992
+msgid ""
+"This post is password protected. To view it please enter your password below:"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:997
+msgid "Password field label text"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:998
+msgid "Enter the Password Here:"
+msgstr ""
+
+#: ../includes/classes/ParentThemeOptionsVCWP.php:1003
+msgid "Submit button text"
+msgstr ""
+
+#: ../includes/lib/comments-callback.php:42
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../includes/lib/loop.php:404
+msgid "Comment"
+msgstr ""
+
+#: ../includes/lib/loop.php:405
+msgid "1&nbsp;Comment"
+msgstr ""
+
+#: ../includes/lib/loop.php:406
+msgid "%&nbsp;Comments"
+msgstr ""
+
+#: ../includes/lib/loop.php:528
+msgid "@"
+msgstr ""
+
+#: ../includes/lib/loop.php:638
+msgid "Tags: "
+msgstr ""
+
+#: ../includes/lib/page-titles.php:89
+msgid "RSS"
+msgstr ""
+
+#: ../includes/lib/theme-support.php:44
+msgid "Select an Image Size"
+msgstr ""
+
+#: ../includes/lib/theme-support.php:72
+msgid "There are no featured image sizes available."
+msgstr ""
+
+#: ../includes/lib/theme-support.php:72
+msgid "Manage Featured Images"
+msgstr ""
+
+#: ../includes/lib/theme-support.php:660
+msgid "Media Gallery &amp; Image Upload"
+msgstr ""
+
+#: ../includes/lib/theme-support.php:670
+msgid "Image Upload"
+msgstr ""
+
+#: ../includes/options/taxonomy-options.php:112
+msgid "This is the Featured Image for this Category."
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:38
+#: ../includes/widgets/LatestPostWidgetVCWP.php:525
+#: ../includes/widgets/PageWidgetVCWP.php:39
+#: ../includes/widgets/PageWidgetVCWP.php:518
+msgid "Text"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:39
+#: ../includes/widgets/LatestPostWidgetVCWP.php:146
+#: ../includes/widgets/PageWidgetVCWP.php:40
+#: ../includes/widgets/PageWidgetVCWP.php:143
+msgid "Image"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:40
+#: ../includes/widgets/LatestPostWidgetVCWP.php:150
+#: ../includes/widgets/PageWidgetVCWP.php:41
+#: ../includes/widgets/PageWidgetVCWP.php:147
+msgid "Off"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:45
+msgid "Latest Posts"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:56
+msgid "Most Recent Posts Based on a given Category."
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:154
+#: ../includes/widgets/PageWidgetVCWP.php:38
+#: ../includes/widgets/PageWidgetVCWP.php:151
+msgid "Post Title"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:536
+msgid "read more"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:555
+#: ../includes/widgets/PageWidgetVCWP.php:544
+msgid "Title Display:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:577
+#: ../includes/widgets/PageWidgetVCWP.php:566
+msgid "Text Title:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:584
+#: ../includes/widgets/PageWidgetVCWP.php:573
+msgid "Image Title:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:597
+#: ../includes/widgets/PageWidgetVCWP.php:586
+msgid "Link:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:597
+#: ../includes/widgets/PageWidgetVCWP.php:586
+msgid "Disable Link completely."
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:604
+msgid "Category:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:608
+msgid "All Categories"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:627
+msgid "Show Full Post:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:632
+#: ../includes/widgets/PageWidgetVCWP.php:620
+msgid ""
+"Showing full post will nullify Word Count, Read More, Strip Tags, Show "
+"Thumbnail, Show Video."
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:639
+msgid "Post Count:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:659
+msgid "Post Offset:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:680
+msgid "Hide Post Text Completely"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:681
+msgid "This would allow for only titles &amp; meta data to show."
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:686
+msgid "\"Hide Entry\" will nullify Word Count, Read More and Strip Tags."
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:693
+#: ../includes/widgets/PageWidgetVCWP.php:628
+msgid "Word Count:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:700
+#: ../includes/widgets/PageWidgetVCWP.php:635
+msgid "Read More:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:700
+#: ../includes/widgets/PageWidgetVCWP.php:635
+msgid "Hide \"read more\" completely"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:707
+#: ../includes/widgets/PageWidgetVCWP.php:642
+msgid "Strip Tags:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:722
+#: ../includes/widgets/PageWidgetVCWP.php:658
+msgid "Show Featured Image:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:727
+#: ../includes/widgets/PageWidgetVCWP.php:663
+msgid "Featured Image Size:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:743
+#: ../includes/widgets/PageWidgetVCWP.php:679
+msgid "CSS Class:"
+msgstr ""
+
+#: ../includes/widgets/LatestPostWidgetVCWP.php:745
+#: ../includes/widgets/PageWidgetVCWP.php:681
+msgid "Use comma separated classes"
+msgstr ""
+
+#: ../includes/widgets/PageWidgetVCWP.php:44
+msgid "Page Widget"
+msgstr ""
+
+#: ../includes/widgets/PageWidgetVCWP.php:55
+msgid "Use a Widget to display Page Content."
+msgstr ""
+
+#: ../includes/widgets/PageWidgetVCWP.php:525
+msgid "Read more"
+msgstr ""
+
+#: ../includes/widgets/PageWidgetVCWP.php:593
+msgid "Page:"
+msgstr ""
+
+#: ../includes/widgets/PageWidgetVCWP.php:595
+msgid "Select a Page"
+msgstr ""
+
+#: ../includes/widgets/PageWidgetVCWP.php:615
+msgid "Show Full Page:"
+msgstr ""
