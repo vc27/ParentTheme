@@ -1,9 +1,19 @@
-== ToDo ==
+ToDo
+====================
 - Create theme compatibility class to account for version control and backwards compatibility.
 - review /includes/lib to determine what can be done to abstract function names
 - review /includes/lib to determine what files can be converted to classes
-
 - find a backwards compatible way to update the core templates to utilize bootstrap columns
+
+ChangeLog
+====================
+
+### 02.05.14 - 6.4.2
+- remove wp_print_styles in favor of wp_enqueue_scripts
+- remove "ck" version of "compiled-scripts"
+
+Pre Markedown
+====================
 
 == 6.4.0 - 6.4.1 ==
 01.20.14

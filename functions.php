@@ -318,7 +318,7 @@ class ParentTheme_VC {
 		if ( ! is_child_theme() ) {
 			
 			// CSS // wp_print_styles
-			add_action( 'wp_print_styles', array( &$this, 'wp_print_styles' ), 1 );
+			add_action( 'wp_enqueue_scripts', array( &$this, 'wp_print_styles' ), 1 );
 			
 			// register_sidebars
 			$this->register_sidebars( array(
@@ -661,7 +661,7 @@ class ParentTheme_VC {
 		 **/
 		
 		// Modernizr, Mobile boilerplate helper functions, Respond
-		wp_register_script( 'helper', "$this->template_directory_uri/js/compiled-scripts-ck.js", array( 'jquery' ) );
+		wp_register_script( 'helper', "$this->template_directory_uri/js/compiled-scripts.js", array( 'jquery' ) );
 		
 	} // end function register_style_and_scripts 
 	
