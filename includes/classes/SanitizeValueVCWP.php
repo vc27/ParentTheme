@@ -11,6 +11,17 @@
 
 
 
+/*
+wp_filter_kses
+wp_strip_all_tags
+
+Esc items -- see Related from this url
+http://codex.wordpress.org/Function_Reference/esc_url_raw#Related
+
+*/
+
+
+
 
 if ( class_exists( 'SanitizeValueVCWP' ) ) return;
 
@@ -235,7 +246,7 @@ class SanitizeValueVCWP {
 				case "text_multi" :
 					$this->sanitize__text_multi();
 					break;
-				case "text" :
+				case "text" : // sanitize_text_field()
 				case "textarea" :
 					$this->set( 'output', esc_html( stripslashes( $this->value ) ) );
 					break;
@@ -260,7 +271,7 @@ class SanitizeValueVCWP {
 				case "image_multi" :
 					$this->sanitize__image_multi();
 					break;
-				case "email" :
+				case "email" : // sanitize_email()
 					$this->sanitize__email();
 					break;
 				default :
@@ -492,7 +503,7 @@ class SanitizeValueVCWP {
 	
 	
 	/**
-	 * sanitize__email
+	 * 	sanitize__email
 	 * 
 	 * @version 1.0
 	 * @updated 05.08.13

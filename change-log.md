@@ -8,6 +8,17 @@ ToDo
 ChangeLog
 ====================
 
+### 03.13.14 - 6.4.4
+- added inline notes for update
+- updated require paths in wrapper functions for localization
+- update header-head.php to remove IE conditionals
+- added fade in out to reset.css
+- update comments callback function
+
+### 02.05.14 - 6.4.3
+- add filters to tags: html and head for angular usage.
+- add fade, in, out to reset css based on bootstrap usage
+
 ### 02.05.14 - 6.4.2
 - remove wp_print_styles in favor of wp_enqueue_scripts
 - remove "ck" version of "compiled-scripts"

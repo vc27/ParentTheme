@@ -474,7 +474,9 @@ class PostMetaVCWP {
 			} // end switch ( $metabox['args']['context'] )
 			
 		}
-
+		
+		
+		// wp_nonce_field( $action, $name, $referer, $echo )
 		echo "<input type=\"hidden\" name=\"$post->post_type-nonce-vcwp\" value=\"" . wp_create_nonce( "$post->post_type-nonce-vcwp" ) . "\" />";
 		
 	} // end function meta_box
@@ -525,7 +527,7 @@ class PostMetaVCWP {
 	 **/
 	function save_post_meta( $post_id, $post ) {
 		
-		// Varify nonce
+		// Varify nonce -- check_admin_referer( $action, $query_arg )
 		if ( ! isset( $_POST["$post->post_type-nonce-vcwp"] ) OR ! wp_verify_nonce( $_POST["$post->post_type-nonce-vcwp"], "$post->post_type-nonce-vcwp" ) ) {
 			return $post_id;
 		}

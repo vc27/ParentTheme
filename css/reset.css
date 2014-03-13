@@ -65,4 +65,7 @@ ul.sf-menu li li li.sfHover ul{left:10em;/* match ul width */
 top:0;}
 .hentry { position:relative; }
 .typekit-badge {display:none!important;}
-* :focus {outline:0;}
+* :focus{outline:0;}
+.fade{opacity:0;-webkit-transition: opacity 0.15s linear;transition: opacity 0.15s linear;}
+.fade.in{display:block;opacity:1;}
+.fade.out{display:none;}

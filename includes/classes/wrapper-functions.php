@@ -25,7 +25,7 @@ function append__post_data( $options ) {
 	$output = false;
 	
 	if ( ! class_exists( 'AppendPostData' ) ) {
-		require_once( get_template_directory() . '/includes/classes/AppendPostData.php' );
+		require_once( 'AppendPostData.php' );
 		
 		if ( class_exists( 'AppendPostData' ) ) {
 			
@@ -56,7 +56,7 @@ function register__post_type( $options ) {
 	
 	$output = false;
 	if ( ! class_exists( 'PostTypeVCWP' ) ) {		
-		require_once( get_template_directory() . '/includes/classes/PostTypeVCWP.php' );			
+		require_once( 'PostTypeVCWP.php' );			
 	}
 	
 	if ( class_exists( 'PostTypeVCWP' ) ) {		
@@ -87,7 +87,7 @@ function register__postmeta( $post_types, $options ) {
 	
 	$output = false;
 	if ( ! class_exists( 'PostMetaVCWP' ) ) {		
-		require_once( get_template_directory() . '/includes/classes/PostMetaVCWP.php' );
+		require_once( 'PostMetaVCWP.php' );
 	}
 	
 	if ( class_exists( 'PostMetaVCWP' ) ) {
@@ -116,7 +116,7 @@ function sanitize__value( $type, $value, $filter = false, $args = false ) {
 	
 	$output = false;
 	if ( ! class_exists( 'SanitizeValueVCWP' ) ) {		
-		require_once( get_template_directory() . '/includes/classes/SanitizeValueVCWP.php' );
+		require_once( 'SanitizeValueVCWP.php' );
 	}
 	
 	if ( class_exists( 'SanitizeValueVCWP' ) ) {
@@ -145,7 +145,7 @@ function form__field( $type, $name, $val, $id = false, $class = false, $desc = f
 	
 	$output = false;
 	if ( ! class_exists( 'FormFieldsVCWP' ) ) {
-		require_once( get_template_directory() . '/includes/classes/FormFieldsVCWP.php' );
+		require_once( 'FormFieldsVCWP.php' );
 	}
 	
 	if ( class_exists( 'FormFieldsVCWP' ) ) {
@@ -174,7 +174,7 @@ function featured__image( $post, $args = array() ) {
 	
 	$output = false;
 	if ( ! class_exists( 'FeaturedImageVCWP' ) ) {
-		require_once( get_template_directory() . '/includes/classes/FeaturedImageVCWP.php' );
+		require_once( 'FeaturedImageVCWP.php' );
 	}
 	
 	if ( class_exists( 'FeaturedImageVCWP' ) ) {
@@ -211,7 +211,7 @@ function create__options_page( $option_page ) {
 	
 	$output = false;
 	if ( ! class_exists( 'OptionPageVCWP' ) ) {
-		require_once( get_template_directory() . '/includes/classes/OptionPageVCWP.php' );
+		require_once( 'OptionPageVCWP.php' );
 	}
 	
 	if ( class_exists( 'OptionPageVCWP' ) ) {
@@ -240,7 +240,7 @@ function create__posts( $posts, $overwrite_posts = false ) {
 	
 	$output = false;
 	if ( ! class_exists( 'CreatePostsVCWP' ) ) {
-		require_once( get_template_directory() . '/includes/classes/CreatePosts/CreatePostsVCWP.php' );
+		require_once( 'CreatePosts/CreatePostsVCWP.php' );
 	}
 	
 	if ( class_exists( 'CreatePostsVCWP' ) ) {
@@ -271,7 +271,7 @@ function fetch__data( $type, $url, $args = array(), $transient_name = false, $re
 	
 	$output = false;
 	if ( ! class_exists( 'GetRemoteDataVCWP' ) ) {
-		require_once( get_template_directory() . '/includes/classes/GetRemoteDataVCWP.php' );
+		require_once( 'GetRemoteDataVCWP.php' );
 	}
 	
 	if ( class_exists( 'GetRemoteDataVCWP' ) ) {
@@ -301,7 +301,7 @@ function add__featured_image( $array = array() ) {
 	
 	$output = false;
 	if ( ! class_exists( 'MultiPostThumbnailsVCWP' ) ) {
-		require_once( get_template_directory() . '/includes/classes/MultiPostThumbnailsVCWP.php' );
+		require_once( 'MultiPostThumbnailsVCWP.php' );
 	}
 	
 	if ( class_exists( 'MultiPostThumbnailsVCWP' ) ) {
@@ -331,7 +331,7 @@ function upload__image( $image, $post_id = '' ) {
 	
 	$output = false;
 	if ( ! class_exists( 'UploadImageVCWP' ) ) {
-		require_once( get_template_directory() . '/includes/classes/UploadImageVCWP.php' );
+		require_once( 'UploadImageVCWP.php' );
 	}
 	
 	if ( class_exists( 'UploadImageVCWP' ) ) {
@@ -361,7 +361,7 @@ function get__meta_tags( $post_id = false ) {
 	
 	$output = false;
 	if ( ! class_exists( 'GeoMetaTagsVCWP' ) ) {
-		require_once( get_template_directory() . '/includes/classes/GeoMetaTagsVCWP.php' );
+		require_once( 'GeoMetaTagsVCWP.php' );
 	}
 	
 	if ( class_exists( 'GeoMetaTagsVCWP' ) ) {
@@ -390,7 +390,7 @@ function get__option( $option, $setting ) {
 	
 	$output = false;
 	if ( ! class_exists( 'ThemeOptions' ) ) {
-		require_once( get_template_directory() . '/includes/classes/ThemeOptions.php' );
+		require_once( 'ThemeOptions.php' );
 	}
 	
 	if ( class_exists( 'ThemeOptions' ) ) {

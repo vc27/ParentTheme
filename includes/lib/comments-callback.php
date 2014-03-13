@@ -31,8 +31,8 @@ function comments__callback( $comment, $args, $depth ) {
 
 			echo "<div class=\"comment-details-block\">";
 
-				echo "<div class=\"h5 h5-b comment-author\">" . get_comment_author_link() . "</div>";
-				echo "<div class=\"h5 h5-c comment-date\">" . get_comment_date() . "</div>";
+				echo "<div class=\"comment-author\">" . get_comment_author_link() . "</div>";
+				echo "<div class=\"comment-date\">" . get_comment_date() . "</div>";
 
 			echo "</div>"; // end span3
 
@@ -40,7 +40,7 @@ function comments__callback( $comment, $args, $depth ) {
 				echo "<div class=\"comment-text-block\">";
 
 					if ( $comment->comment_approved == '0' ) {
-						echo "<em>" . _e('Your comment is awaiting moderation.') . "</em>";
+						echo "<em>"; _e('Your comment is awaiting moderation.'); echo "</em>";
 					}
 
 					comment_text();

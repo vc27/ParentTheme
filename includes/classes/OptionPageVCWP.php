@@ -4,8 +4,8 @@
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 1.0
- * @updated 00.00.13
+ * @version 1.1
+ * @updated 02.24.14
  **/
 ####################################################################################################
 
@@ -20,6 +20,16 @@
  * @updated 00.00.13
  **/
 class OptionPageVCWP {
+	
+	
+	
+	/**
+	 * admin_menu_action_priority
+	 * 
+	 * @access public
+	 * @var int
+	 **/
+	var $admin_menu_action_priority = 10;
 	
 	
 	
@@ -144,7 +154,7 @@ class OptionPageVCWP {
 		'page_title' => 'Options Page',
 		'menu_title' => 'Options Page',
 		'capability' => 'administrator',
-		);
+	);
 	
 	
 	
@@ -155,6 +165,36 @@ class OptionPageVCWP {
 	 * @var bool
 	 **/
 	var $have_add_submenu_page = 0;
+	
+	
+	
+	/**
+	 * have_add_menu_page
+	 * 
+	 * @access public
+	 * @var bool
+	 **/
+	var $have_add_menu_page = 0;
+	
+	
+	
+	/**
+	 * icon_url
+	 * 
+	 * @access public
+	 * @var string
+	 **/
+	var $icon_url = false;
+	
+	
+	
+	/**
+	 * position
+	 * 
+	 * @access public
+	 * @var int
+	 **/
+	var $position = 100;
 	
 	
 	
@@ -569,6 +609,10 @@ class OptionPageVCWP {
 			$this->set( 'add_submenu_page', $this->option_page['add_submenu_page'] );
 		}
 		
+		if ( isset( $this->option_page['is_add_menu_page'] ) AND ! empty( $this->option_page['is_add_menu_page'] ) ) {
+			$this->set( 'have_add_menu_page', 1 );
+		}
+		
 		// option_name
 		if ( isset( $this->option_page['option_name'] ) AND ! empty( $this->option_page['option_name'] ) ) {
 			$this->set( 'option_name', $this->option_page['option_name'] );
@@ -739,8 +783,12 @@ class OptionPageVCWP {
 						$this->set__options_page_title();
 						$this->set__options_page_desc();
 						$this->set( 'is_page_created', 1 );
-
-						add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
+						
+						if ( $this->have_add_menu_page ) {
+							$this->set( 'admin_menu_action_priority', 9 );
+						}
+						
+						add_action( 'admin_menu', array( &$this, 'admin_menu' ), $this->admin_menu_action_priority );
 
 					} // end if ( $this->confirm__set__options() )
 
@@ -1302,8 +1350,8 @@ class OptionPageVCWP {
 	/**
 	 * Admin Menu
 	 *
-	 * @version 1.0
-	 * @updated 00.00.13
+	 * @version 1.1
+	 * @updated 02.24.14
 	 * 
 	 * ToDo:
 	 * This should be compatible with a top-level menu page as well.
@@ -1314,7 +1362,11 @@ class OptionPageVCWP {
 		$this->set__page_title();
 		$this->set__menu_title();
 		
-		$this->pagehook = add_submenu_page( $this->parent_slug, $this->page_title, $this->menu_title, $this->capability, "$this->option_group-admin-page", array( &$this, 'on_show_page' ) );
+		if ( $this->have_add_menu_page ) {
+			$this->pagehook = add_menu_page( $this->page_title, $this->menu_title, $this->capability, "$this->option_group-admin-page", array( &$this, 'on_show_page' ), $this->icon_url, $this->position );
+		} else {
+			$this->pagehook = add_submenu_page( $this->parent_slug, $this->page_title, $this->menu_title, $this->capability, "$this->option_group-admin-page", array( &$this, 'on_show_page' ) );
+		}
 		
 		// Load Page Hook
 		add_action( "load-$this->pagehook", array( &$this, 'on_load_page' ) );

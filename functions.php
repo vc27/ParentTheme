@@ -71,7 +71,7 @@ class ParentTheme_VC {
 	
 	
 	/**
-	 * filter_name__register_sidebars
+	 * filter_name__parenttheme_localize_script
 	 * 
 	 * @access public
 	 * @var string
