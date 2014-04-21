@@ -8,6 +8,10 @@ ToDo
 ChangeLog
 ====================
 
+### 04.21.14 - 6.5.0
+- update to create posts
+- remove old post meta attr
+
 ### 03.13.14 - 6.4.4
 - added inline notes for update
 - updated require paths in wrapper functions for localization
