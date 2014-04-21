@@ -34,7 +34,7 @@ if ( is_admin() ) {
 	require_once( "ParentThemeOptionsVCWP.php" );
 
 	// Page Attributes
-	require_once( "PageAttrPostMetaVCWP.php" );
+	// require_once( "PageAttrPostMetaVCWP.php" );
 	
 	// OEmbed MetaBox
 	require_once( "OEmbedPostMetaVCWP.php" );

@@ -20,6 +20,7 @@
  * @version 1.0
  * @updated	03.16.13
  **/
+if ( ! function_exists( 'append__post_data' ) ) {
 function append__post_data( $options ) {
 	
 	$output = false;
@@ -40,6 +41,7 @@ function append__post_data( $options ) {
 	return $output;
 	
 } // end function append__post_data
+}
 
 
 
@@ -52,6 +54,7 @@ function append__post_data( $options ) {
  * @version 1.1
  * @updated	05.02.13
  **/
+if ( ! function_exists( 'register__post_type' ) ) {
 function register__post_type( $options ) {
 	
 	$output = false;
@@ -67,6 +70,7 @@ function register__post_type( $options ) {
 	return $output;
 	
 } // end function register__post_type
+}
 
 
 
@@ -79,6 +83,7 @@ function register__post_type( $options ) {
  * @version 1.2
  * @updated	05.07.13
  **/
+if ( ! function_exists( 'register__postmeta' ) ) {
 function register__postmeta( $post_types, $options ) {
 	
 	if ( ! is_admin() ) {
@@ -100,6 +105,7 @@ function register__postmeta( $post_types, $options ) {
 	return $output;
 	
 } // end function register__postmeta 
+}
 
 
 
@@ -112,6 +118,7 @@ function register__postmeta( $post_types, $options ) {
  * @version 1.0
  * @updated	05.08.13
  **/
+if ( ! function_exists( 'sanitize__value' ) ) {
 function sanitize__value( $type, $value, $filter = false, $args = false ) {
 	
 	$output = false;
@@ -129,6 +136,7 @@ function sanitize__value( $type, $value, $filter = false, $args = false ) {
 	return $output;
 	
 } // end function sanitize__value 
+}
 
 
 
@@ -141,6 +149,7 @@ function sanitize__value( $type, $value, $filter = false, $args = false ) {
  * @version 1.0
  * @updated	05.15.13
  **/
+if ( ! function_exists( 'form__field' ) ) {
 function form__field( $type, $name, $val, $id = false, $class = false, $desc = false, $options = false, $action = false, $args = false ) {
 	
 	$output = false;
@@ -158,6 +167,7 @@ function form__field( $type, $name, $val, $id = false, $class = false, $desc = f
 	return $output;
 	
 } // end function form__field 
+}
 
 
 
@@ -170,6 +180,7 @@ function form__field( $type, $name, $val, $id = false, $class = false, $desc = f
  * @version 1.0
  * @updated	05.16.13
  **/
+if ( ! function_exists( 'featured__image' ) ) {
 function featured__image( $post, $args = array() ) {
 	
 	$output = false;
@@ -187,6 +198,7 @@ function featured__image( $post, $args = array() ) {
 	return $output;
 	
 } // end function featured__image 
+}
 
 
 
@@ -203,6 +215,7 @@ function featured__image( $post, $args = array() ) {
  * This function MUST be ran before admin_menu
  * is only ran if is_admin()
  **/
+if ( ! function_exists( 'create__options_page' ) ) {
 function create__options_page( $option_page ) {
 	
 	if ( ! is_admin() ) {
@@ -224,6 +237,7 @@ function create__options_page( $option_page ) {
 	return $output;
 	
 } // end function create__options_page
+}
 
 
 
@@ -233,28 +247,28 @@ function create__options_page( $option_page ) {
 /**
  * create__posts --> Wrapper Function
  *
- * @version 1.0
- * @updated	05.30.13
+ * @version 2.0
+ * @updated	04.21.14
  **/
-function create__posts( $posts, $overwrite_posts = false ) {
-	
-	$output = false;
+if ( ! function_exists( 'create__posts' ) ) {
+function create__posts( $posts, $args ) {
+
+	$create_posts = false;
 	if ( ! class_exists( 'CreatePostsVCWP' ) ) {
-		require_once( 'CreatePosts/CreatePostsVCWP.php' );
+		require_once( "CreatePosts/CreatePostsVCWP.php" );
 	}
-	
+
 	if ( class_exists( 'CreatePostsVCWP' ) ) {
-		
+
 		$create_posts = new CreatePostsVCWP();
-		$create_posts->set( 'overwrite_posts', $overwrite_posts );
-		$create_posts->add_posts( $posts );
-		$output = $create_posts;
-		
+		$create_posts->add_posts( $posts, $args );
+
 	}
-	
-	return $output;
-	
-} // end function create__posts 
+
+	return $create_posts;
+
+} // end function create__posts
+}
 
 
 
@@ -267,6 +281,7 @@ function create__posts( $posts, $overwrite_posts = false ) {
  * @version 1.0
  * @updated	05.31.13
  **/
+if ( ! function_exists( 'fetch__data' ) ) {
 function fetch__data( $type, $url, $args = array(), $transient_name = false, $reset_transient = false ) {
 	
 	$output = false;
@@ -285,6 +300,7 @@ function fetch__data( $type, $url, $args = array(), $transient_name = false, $re
 	return $output;
 	
 } // end function fetch__data 
+}
 
 
 
@@ -297,6 +313,7 @@ function fetch__data( $type, $url, $args = array(), $transient_name = false, $re
  * @version 1.0
  * @updated	05.05.13
  **/
+if ( ! function_exists( 'add__featured_image' ) ) {
 function add__featured_image( $array = array() ) {
 	
 	$output = false;
@@ -315,6 +332,7 @@ function add__featured_image( $array = array() ) {
 	return $output;
 	
 } // end function add__featured_image 
+}
 
 
 
@@ -327,6 +345,7 @@ function add__featured_image( $array = array() ) {
  * @version 1.0
  * @updated	07.02.13
  **/
+if ( ! function_exists( 'upload__image' ) ) {
 function upload__image( $image, $post_id = '' ) {
 	
 	$output = false;
@@ -345,6 +364,7 @@ function upload__image( $image, $post_id = '' ) {
 	return $output;
 	
 } // end function upload__image 
+}
 
 
 
@@ -357,6 +377,7 @@ function upload__image( $image, $post_id = '' ) {
  * @version 1.0
  * @updated	08.03.13
  **/
+if ( ! function_exists( 'get__meta_tags' ) ) {
 function get__meta_tags( $post_id = false ) {
 	
 	$output = false;
@@ -374,6 +395,7 @@ function get__meta_tags( $post_id = false ) {
 	return $output;
 	
 } // end function get__meta_tags
+}
 
 
 
@@ -386,6 +408,7 @@ function get__meta_tags( $post_id = false ) {
  * @version 1.0
  * @updated	01.20.14
  **/
+if ( ! function_exists( 'get__option' ) ) {
 function get__option( $option, $setting ) {
 	
 	$output = false;
@@ -403,3 +426,4 @@ function get__option( $option, $setting ) {
 	return $output;
 	
 } // end function get__option
+}
