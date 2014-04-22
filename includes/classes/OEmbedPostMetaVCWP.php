@@ -323,13 +323,13 @@ class OEmbedPostMetaVCWP {
 	/**
 	 * Update post_meta on save_post
 	 *
-	 * @version 1.1
-	 * @updated 08.13.13
+	 * @version 2.0
+	 * @updated 04.22.14
 	 **/
 	function save_post_meta( $post_id, $post ) {
 		
 		// Varify nonce
-		if ( isset( $_POST["$post->post_type-nonce-vcwp"] ) AND ! empty( $_POST["$post->post_type-nonce-vcwp"] ) AND ! wp_verify_nonce( $_POST["$post->post_type-nonce-vcwp"], "$post->post_type-nonce-vcwp" ) ) {
+		if ( ! isset( $_POST["$post->post_type-nonce-vcwp"] ) OR ! wp_verify_nonce( $_POST["$post->post_type-nonce-vcwp"], "$post->post_type-nonce-vcwp" ) ) {
 			return $post_id;
 		}
 		

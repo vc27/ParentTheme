@@ -8,6 +8,9 @@ ToDo
 ChangeLog
 ====================
 
+### 04.22.14 - 6.6.0
+- update to OEmbedPostMetaVCWP for quick edit on save post action. 
+
 ### 04.21.14 - 6.5.0
 - update to create posts
 - remove old post meta attr
