@@ -681,7 +681,11 @@ class OptionPageVCWP {
 	 **/
 	function set__options() {
 		
-		if ( $this->have_raw_options() ) { 
+		if ( isset( $this->option_page['default_options'] ) AND is_array( $this->option_page['default_options'] ) AND ! empty( $this->option_page['default_options'] ) ) {
+			
+			$this->set( 'options', $this->option_page['default_options'] );
+			
+		} else if ( $this->have_raw_options() ) { 
 			
 			foreach ( $this->raw_options as $option_block_id => $option_block ) {
 				
@@ -816,10 +820,11 @@ class OptionPageVCWP {
 	function init__options() {
 		
 		$this->set__existing_version();
+		
 		if ( ! $this->have_existing_version() ) {
 			$this->set__options();
 			update_option( "$this->option_name-version", $this->version );
-			update_option( $this->option_name, $this->options );
+			update_option( $this->option_name, apply_filters( "init-options-$this->option_name", $this->options ) );
 		}
 		
 	} // end function init__options
@@ -917,7 +922,7 @@ class OptionPageVCWP {
 	 **/
 	function have_existing_version() {
 		
-		if ( isset( $this->existing_version ) AND is_numeric( $this->existing_version ) AND $this->existing_version > 0 ) {
+		if ( isset( $this->existing_version ) AND ! empty( $this->existing_version ) AND $this->existing_version > 0 ) {
 			$this->set( 'have_existing_version', 1 );
 		} else {
 			$this->set( 'have_existing_version', 0 );
@@ -1387,6 +1392,7 @@ class OptionPageVCWP {
 	function on_load_page() {
 		
 		wp_enqueue_script('common');
+		wp_enqueue_script('editor');
 		wp_enqueue_script('wp-lists');
 		wp_enqueue_script('postbox');
 		wp_enqueue_style('thickbox');

@@ -8,6 +8,14 @@ ToDo
 ChangeLog
 ====================
 
+### 05.08.14 - 6.8.0
+- update post object
+- update wide template
+- remove comment for sitemap
+
+### 04.30.14 - 6.7.0
+- update to OptionPageVCWP to allow for filtering and better conditional checking
+
 ### 04.22.14 - 6.6.0
 - update to OEmbedPostMetaVCWP for quick edit on save post action. 
 

@@ -24,22 +24,22 @@ if ( have_posts() ) {
 			echo "<article "; post_class(); echo ">";
 				
 				if ( vc_show_featured_image() ) { 
-					featured__image( $wp_query->post, array( 
+					featured__image( $post, array( 
 						'post_thumbnail_size' => get__option( 'post_display', 'featured_image_size' ) 
 					) );
 				}
 
-				vc_title( $wp_query->post, array( 
+				vc_title( $post, array( 
 					'permalink' => true 
 				) );
 				
 				echo "<div class=\"meta-data\">";
 					vc_date();
-					vc_comments( $wp_query->post );
+					vc_comments( $post );
 				echo "</div>";
 
 				if ( vc_is_excerpt() ) {
-					vc_excerpt( $wp_query->post, array( 
+					vc_excerpt( $post, array( 
 						'count' => get__option( 'post_display', 'word_count' ),
 						'read_more' => get__option( 'post_display', 'read_more' ),
 						'strip_tags' => get__option( 'post_display', 'strip_tags' ), 
@@ -53,7 +53,7 @@ if ( have_posts() ) {
 			echo "</article>";
 			
 			// Insert Comments if turned on
-			if ( ! get__option( 'comments', 'remove_comments' ) AND 'open' == $wp_query->post->comment_status ) {
+			if ( ! get__option( 'comments', 'remove_comments' ) AND 'open' == $post->comment_status ) {
 				comments_template( '', true );
 			}
 			

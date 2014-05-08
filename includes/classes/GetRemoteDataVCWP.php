@@ -622,6 +622,7 @@ class GetRemoteDataVCWP {
 				
 				switch ( $this->content_type ) {
 
+					case "x-JavaScript" : 
 					case "json" :
 						$this->set__response( 'content_type', 'json' );
 						$this->_parse_json();

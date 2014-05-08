@@ -1,6 +1,4 @@
 <?php
-/* Template Name: Site Map */
-
 /**
  * File Name tpl-site-map.php
  * @package WordPress

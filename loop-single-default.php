@@ -23,14 +23,15 @@ if ( have_posts() ) {
 
 			echo "<article "; post_class(); echo ">";
 				
-				vc_title( $wp_query->post, array(
+				vc_title( $post, array(
 					'element' => 'h1',
 					'class' => 'h1',
+					'permalink' => false,
 				) );
 				
 				echo "<div class=\"meta-data\">";
 					vc_date();
-					vc_comments( $wp_query->post );
+					vc_comments( $post );
 				echo "</div>";
 
 				vc_content();
@@ -39,7 +40,7 @@ if ( have_posts() ) {
 			echo "</article>";
 			
 			// Insert Comments if turned on
-			if( ! get__option( 'comments', 'remove_comments' ) AND 'open' == $wp_query->post->comment_status ) {
+			if( ! get__option( 'comments', 'remove_comments' ) AND 'open' == $post->comment_status ) {
 				comments_template( '', true );
 			}
 			

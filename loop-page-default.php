@@ -24,18 +24,18 @@ if ( have_posts() ) {
 
 			echo "<article "; post_class(); echo ">";
 
-				vc_title( $wp_query->post, array( 
+				vc_title( $post, array( 
 					'permalink' => false,
 					'class' => 'h1',
 				) );
-				vc_comments( $wp_query->post );
+				vc_comments( $post );
 				vc_content();
 
 				echo "<div class=\"clear\"> </div>";
 			echo "</article>";
 
 			// Insert Comments if turned on
-			if( ! get__option( 'comments', 'remove_comments' ) AND 'open' == $wp_query->post->comment_status ) {
+			if( ! get__option( 'comments', 'remove_comments' ) AND 'open' == $post->comment_status ) {
 				comments_template( '', true );
 			}
 
@@ -45,7 +45,7 @@ if ( have_posts() ) {
 	echo "</div>";
 	
 	// list_child_pages
-	if ( get_post_meta( $wp_query->post->ID, 'list_child_pages', true ) ) {
+	if ( get_post_meta( $post->ID, 'list_child_pages', true ) ) {
 		get_template_part( 'loop', 'page-list-children' );
 	}
 
