@@ -774,6 +774,24 @@ class FeaturedImageVCWP {
 	
 	
 	/**
+	 * image_src
+	 *
+	 * @version 1.0
+	 * @updated 06.28.14
+	 **/
+	static function image_src( $post, $args ) {
+		
+ 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $args['post_thumbnail_size'] );
+		return $image[0];
+		
+	} // end function image_src
+	
+	
+	
+	
+	
+	
+	/**
 	 * html_image
 	 *
 	 * @version 1.0

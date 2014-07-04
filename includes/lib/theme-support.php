@@ -136,14 +136,14 @@ function is_ipad() {
 /**
  * Is User
  *
- * @version 0.1
- * @updated 08.01.12
+ * @version 2.0
+ * @updated 06.09.14
  *
  **/
 function is__user( $user_login = false ) {
-	global $userdata;
+	$userdata = wp_get_current_user();
 	
-	if ( $user_login AND $userdata->user_login == $user_login )
+	if ( $user_login AND $userdata->data->user_login == $user_login )
 		return true;
 	else
 		return false;

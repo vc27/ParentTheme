@@ -177,8 +177,8 @@ function form__field( $type, $name, $val, $id = false, $class = false, $desc = f
 /**
  * featured__image --> Wrapper Function
  *
- * @version 1.0
- * @updated	05.16.13
+ * @version 1.2
+ * @updated	06.28.14
  **/
 if ( ! function_exists( 'featured__image' ) ) {
 function featured__image( $post, $args = array() ) {
@@ -191,7 +191,11 @@ function featured__image( $post, $args = array() ) {
 	if ( class_exists( 'FeaturedImageVCWP' ) ) {
 		
 		$FeaturedImageVCWP = new FeaturedImageVCWP();
-		$output = $FeaturedImageVCWP->image( $post, $args );
+		if ( isset( $args['get_src'] ) ) {
+			$output = $FeaturedImageVCWP->image_src( $post, $args );
+		} else {
+			$output = $FeaturedImageVCWP->image( $post, $args );
+		}
 		
 	}
 	
