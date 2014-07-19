@@ -19,6 +19,7 @@
  * the required class as it is needed.
  **/
 require_once( "wrapper-functions.php" );
+require_once( "HavePostsVCWP/wrapper-functions.php" );
 
 
 /**

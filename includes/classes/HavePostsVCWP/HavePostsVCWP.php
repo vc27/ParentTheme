@@ -175,7 +175,7 @@ class HavePostsVCWP {
 			return $output;
 		}
 
-	} // end function get_avatar
+	} // end static function get_avatar
 	
 	
 	
@@ -185,7 +185,7 @@ class HavePostsVCWP {
 	/**
 	 * the_excerpt
 	 **/
-	function the_excerpt( $post, $args = array() ) { 
+	static function the_excerpt( $post, $args = array() ) { 
 
 		// Set Defaults
 		$defaults = array(
@@ -193,7 +193,6 @@ class HavePostsVCWP {
 			'remove_shortcodes' => true,
 			'strip_tags' => '<p>',
 			'read_more' => __( 'Read More', 'parenttheme' ),
-			'push_read_more' => false,
 			'kill_read_more' => false,
 			'read_more_class' => 'read-more',
 			'read_more_dots' => '...',
@@ -208,7 +207,7 @@ class HavePostsVCWP {
 			'echo' => 1,
 			
 			// depricated
-			'text' => ''
+			'text' => '',
 			'shortcodes' => '',
 		);
 
@@ -238,15 +237,6 @@ class HavePostsVCWP {
 			$post_content = strip_shortcodes( $post_content );
 			$post_content = str_replace( '[/caption]', '', $post_content );
 		}
-		
-		
-		
-		// Set Read More Link
-		if ( isset( $kill_read_more ) AND ! empty( $kill_read_more ) ) {
-			$read_more = false;
-		} else {
-			$read_more = " <span class=\"read-more-dots\">$read_more_dots</span> <a class=\"$read_more_class\" rel=\"nofollow\" href=\"$permalink\">$read_more</a>";
-		}
 
 
 		// If there is a Post Excerpt? use it, and do not cut it.
@@ -255,6 +245,14 @@ class HavePostsVCWP {
 		} else {
 			$post_content = wp_trim_words( $post_content, $count, apply_filters( 'excerpt_more', ' ' . '[&hellip;]' ) );
 		}
+		
+		
+		// Read more
+		$read_more = " <span class=\"read-more-dots\">$read_more_dots</span> <a class=\"$read_more_class\" rel=\"nofollow\" href=\"$permalink\">$read_more</a>";
+		if ( isset( $kill_read_more ) AND ! empty( $kill_read_more ) ) {
+			$read_more = false;
+		}
+		$post_content .= $read_more;
 
 
 		// Do Standard filters for excerpt text
@@ -287,7 +285,7 @@ class HavePostsVCWP {
 
 
 
-	} // end function the_excerpt
+	} // end static function the_excerpt
 	
 	
 	
@@ -297,7 +295,7 @@ class HavePostsVCWP {
 	/**
 	 * the_content
 	 **/
-	function the_content( $args = array() ) {
+	static function the_content( $args = array() ) {
 
 		// Set Defaults
 		$defaults = array(
@@ -347,7 +345,7 @@ class HavePostsVCWP {
 		}
 		
 
-	} // end function the_content
+	} // end static function the_content
 	
 	
 	
@@ -357,7 +355,7 @@ class HavePostsVCWP {
 	/**
 	 * the_title
 	 **/
-	function the_title( $post, $args = array() ) {
+	static function the_title( $post, $args = array() ) {
 
 		// Set Defaults
 		$defaults = array(
@@ -419,7 +417,7 @@ class HavePostsVCWP {
 			return $output;
 		}   
 
-	} // end function the_title
+	} // end static function the_title
 	
 	
 	
@@ -427,68 +425,61 @@ class HavePostsVCWP {
 	
 	
 	/** 
-	 * the__comments
+	 * the_comments
 	 **/
-	function the__comments( $post, $args = '' ) {
+	static function the_comments( $post, $args = array() ) {
 		
-		// return false if comments are off or if this is an attachment post
+		// if comments are off or if this is an attachment post
 		if ( 
 			get_vc_option( 'comments', 'remove_comments' ) 
 			OR ( $post->post_type == 'attachment' AND $post->post_mime_type == 'application/pdf' ) 
+			OR $post->comment_status != 'open'
 		) {
 			return false;
 		}
-		
-		/**
-		Stopped here...
-		**/
 
 		// Set Defaults
 		$defaults = array(
 			'number' => get_comments_number( $post->ID ),
-			'link' => get_comments_link( $post->ID ),
+			'permalink' => get_comments_link( $post->ID ),
 			'no_comments' => __( 'Comment', 'parenttheme' ),
 			'one_comment' => __( '1&nbsp;Comment', 'parenttheme' ),
 			'comments' => __( '%&nbsp;Comments', 'parenttheme' ),
 			'before' => '',
 			'after' => '',
+			'before_inside_a' => '',
+			'after_inside_a' => '',
 			'element' => 'span',
-			'class' => '',
-			'zero' => false,
-			'one' => false,
-			'more' => false,
+			'class' => 'post-comments',
 			'echo' => 1,
+			
+			'link' => '',
 		);
 
 		$r = wp_parse_args( $args, $defaults );
 		extract( $r, EXTR_SKIP );
-
-
-		// Set Comment Link
-		$no_comments = "<a href=\"$link\">$no_comments</a>";
-		$one_comment = "<a href=\"$link\">$one_comment</a>";
-		$comments = "<a href=\"$link\">$comments</a>";
+		
+		
+		// Backwards compatible
+		if ( isset( $link ) AND ! empty( $link ) ) {
+			$permalink = $link;
+		}
 
 
 		// Set comment Number or text
 		if ( $number > 1 ) {
-			$comments_number = str_replace( '%', number_format_i18n( $number ), ( false === $more ) ? $comments : $more );
+			$comments_number = str_replace( '%', number_format_i18n( $number ), $comments );
 		} else if ( $number == 0 ) {
-			$comments_number = ( false === $zero ) ? $no_comments : $zero;		
+			$comments_number = $no_comments;
 		} else {
-			$comments_number = ( false === $one ) ? $one_comment : $one;
+			$comments_number = $one_comment;
 		}
 
 		// apply comment_number filter
 		$comments_number = apply_filters('comments_number', $comments_number, $number);
 
 
-		// if comments are open
-		if ( 'open' == $post->comment_status ) {
-			$output = "<$element class=\"post-comments $class\">" . $before . $comments_number . $after . "</$element>";
-		} else {
-			$output = false;
-		}
+		$output = "<$element class=\"$class\">" . $before . "<a href=\"$permalink\">" . $before_inside_a . $comments_number . $after_inside_a . "</a>" . $after . "</$element>";
 
 
 		if ( $echo ) {
@@ -499,7 +490,226 @@ class HavePostsVCWP {
 
 
 
-	} // end function the__comments
+	} // end static function the_comments
+	
+	
+	
+	
+	
+	
+	/**
+	 * the_category
+	 **/
+	static function the_category( $post, $args = array() ) {
+
+		// Set Defaults
+		$defaults = array(
+			'before' => '',
+			'after' => '',
+			'element' => 'div',
+			'class' => 'post-category',
+			'separator' => ', ',
+			'echo' => 1,
+		);
+
+		$r = wp_parse_args( $args, $defaults );
+		extract( $r, EXTR_SKIP );
+
+
+		// Build Output
+		$output = "<$element class=\"$class\">" . $before . get_the_category_list( $separator, '', $post->ID ) . $after . "</$element>";
+
+
+		if ( $echo ) {
+			echo $output;
+		} else {
+			return $output;
+		}   
+
+	} // end static function the_category
+	
+	
+	
+	
+	
+	
+	/** 
+	 * the_time
+	 **/
+	static function the_time( $post, $args = array() ) {
+
+		// Set Defaults
+		$defaults = array(
+			'before' => __( '@', 'parenttheme' ),
+			'after' => '',
+			'element' => 'span',
+			'class' => 'post-time',
+			'time' => get_option('time_format'),
+			'echo' => 1
+		);
+
+		$r = wp_parse_args( $args, $defaults );
+		extract( $r, EXTR_SKIP );
+
+
+		// Build Output
+		$output = "<$element class=\"$class\">" . $before . get_the_time( $time, $post->ID ) . $after . "</$element>";
+		
+
+		if ( $echo ) {
+			echo $output;
+		} else {
+			return $output;
+		}
+
+	} // end static function the_time
+	
+	
+	
+	
+	
+	
+	/**
+	 * the_date
+	 **/
+	static function the_date( $post, $args = array() ) {
+
+		// Set Defaults
+		$defaults = array(
+			'before' => '',
+			'after' => '',
+			'before_inside_a' => '',
+			'after_inside_a' => '',
+			'element' => 'span',
+			'class' => 'post-date',
+			'date' => get_option('date_format'),
+			'permalink' => false,
+			'echo' => 1,
+			
+			'a_' => '',
+			'_a' => '',
+			
+			'link' => false,
+		);
+
+		$r = wp_parse_args( $args, $defaults );
+		extract( $r, EXTR_SKIP );
+		
+		// Backwards compatible
+		if ( isset( $link ) AND ! empty( $link ) ) {
+			$permalink = $link;
+		}
+		
+		
+		if ( $permalink ) {
+			$a_ = "<a href=\"" . get_permalink() . "\" title=\"" . get_the_title() . "\">";
+			$_a = "</a>";
+		}
+
+		$output = "<$element class=\"$class\">" . $before . $a_ . $before_inside_a . get_the_time( $date, $post->ID ) . $after_inside_a . $_a . $after . "</$element>";
+
+		if ( $echo ) {
+			echo $output;
+		} else {
+			return $output;
+		}
+
+	} // end static function the_date
+	
+	
+	
+	
+	
+	
+	/** 
+	 * the_tags
+	 **/
+	static function the_tags( $post, $args = array() ) {
+
+		// Set Defaults
+		$defaults = array(
+			'before' => '',
+			'after' => '',
+			'element' => 'span',
+			'class' => 'post-tags',
+			'seperate' => ', ',
+			'taxonomy' => 'post_tag',
+			'echo' => 1,
+		);
+
+		$r = wp_parse_args( $args, $defaults );
+		extract( $r, EXTR_SKIP );
+
+
+		// Build output
+		$output = get_the_term_list( 
+			$post->ID, 
+			$taxonomy, 
+			"<$element class=\"$class\">$before<dfn>", 
+			"</dfn>$seperate<dfn>", 
+			"</dfn>$after</$element>" 
+		);
+
+		
+		if ( is_wp_error( $output ) ) {
+			return false;
+		}
+
+		if ( $echo ) {
+			echo $output;
+		} else {
+			return $output;
+		}
+
+	} // end static function the_tags
+	
+	
+	
+	
+	
+	
+	/** 
+	 * the_author
+	 **/
+	static function the_author( $args = array() ) {
+		global $authordata;
+
+		// Set Defaults
+		$defaults = array(
+			'before' => '',
+			'after' => '',
+			'before_inside_a' => '',
+			'after_inside_a' => '',
+			'element' => 'div',
+			'class' => 'post-author',
+			'permalink' => get_author_posts_url( $authordata->ID ),
+			'posted_by' => $authordata->display_name,
+			'echo' => 1,
+			
+			'link' => '',
+		);
+
+		$r = wp_parse_args( $args, $defaults );
+		extract( $r, EXTR_SKIP );
+		
+		
+		// Backwards compatible
+		if ( isset( $link ) AND ! empty( $link ) ) {
+			$permalink = $link;
+		}
+
+
+		// build output
+		$output = "<$element class=\"$class\">$before<a href=\"$permalink\" title=\"" . esc_attr__( strip_tags( "See All Posts by $posted_by" ), 'parenttheme' ) . "\">" . $before_inside_a . $posted_by . $after_inside_a . "</a>$after</$element>";
+
+
+		if ( $echo ) {
+			echo $output;
+		} else {
+			return $output;
+		}
+
+	} // end static function the_author
 	
 	
 	
