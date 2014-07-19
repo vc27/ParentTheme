@@ -143,7 +143,7 @@ function is_ipad() {
 function is__user( $user_login = false ) {
 	$userdata = wp_get_current_user();
 	
-	if ( $user_login AND $userdata->data->user_login == $user_login )
+	if ( $user_login AND isset( $userdata->data->user_login ) AND $userdata->data->user_login == $user_login )
 		return true;
 	else
 		return false;

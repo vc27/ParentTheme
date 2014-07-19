@@ -128,8 +128,8 @@ class OEmbedPostMetaVCWP {
 	 *
 	 * @uses add_meta_box( $id, $title, $callback, $page, $context, $priority, $callback_args );
 	 *
-	 * @version 1.0
-	 * @updated 00.00.13
+	 * @version 2.0
+	 * @updated 00.00.14
 	 **/
 	function add_custom_meta_boxes( $post ) {
 		
@@ -137,7 +137,12 @@ class OEmbedPostMetaVCWP {
 		$this->included_post_types = apply_filters( $this->filter_name, $this->included_post_types );
 		
 		foreach ( $this->included_post_types as $post_type ) {
-			add_meta_box( 'oembed_meta_box', 'Video Embed', array( &$this, 'oembed_meta_box' ), $post_type, 'normal', 'core' );
+			if ( $post_type == 'video' ) {
+				$priority = 'normal';
+			} else {
+				$priority = 'high';
+			}
+			add_meta_box( 'oembed_meta_box', 'Video Embed', array( &$this, 'oembed_meta_box' ), $post_type, $priority, 'core' );
 		}
 		
 		
@@ -194,7 +199,7 @@ class OEmbedPostMetaVCWP {
 						<input id="oembed_video_url" name="oembed_video_url" type="text" disabled="disabled" value='[embed]<?php echo $oembed_video_url; ?>[/embed]' />
 						<p><input style="width:100px;cursor:pointer" type="button" name="send-to-editor" value="Send to editor" /></p>
 						<p class="description">You may add a specific width and height to the embed code after it has been sent to the editor.<br />e.g. [embed width="123" height="456"]<?php echo $oembed_video_url; ?>[/embed]</p>
-						<?php /*<script type="text/javascript">
+						<script type="text/javascript">
 							jQuery(document).ready(function($) {
 
 								$('input[name="send-to-editor"]').click(function() {
@@ -202,7 +207,7 @@ class OEmbedPostMetaVCWP {
 								});
 
 							});
-						</script>*/?>
+						</script>
 					</td>
 				</tr>
 				
