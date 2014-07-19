@@ -596,7 +596,7 @@ class ParentTheme_VC {
 	 **/
 	function admin_register_scripts_and_css() {
 		
-		wp_register_script( 'parenttheme-admin-custom', "$this->template_directory_uri/includes/js/admin-custom.js", array( 'jquery', 'media-upload', 'thickbox', 'jquery-ui-sortable' ), '', true );
+		wp_register_script( 'parenttheme-admin-custom', "$this->template_directory_uri/includes/js/min/adminCustom-min.js", array( 'jquery', 'media-upload', 'thickbox', 'jquery-ui-sortable' ), '', true );
 		
 	} // end function admin_register_scripts_and_css
 	

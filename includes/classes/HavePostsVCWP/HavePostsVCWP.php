@@ -358,11 +358,6 @@ class HavePostsVCWP {
 	 * the_title
 	 **/
 	function the_title( $post, $args = array() ) {
-		
-		/**
-		Needed
-		**/
-		// Add more default args one for inside the a tag and outside the a tag
 
 		// Set Defaults
 		$defaults = array(
@@ -373,15 +368,15 @@ class HavePostsVCWP {
 			'element' => 'div',
 			'add_permalink' => false,
 			'the_permalink' => get_permalink($post->ID),
-			'alt_permalink' => '',
 			'before' => '',
 			'after' => '',
 			'before_inside_a' => '',
 			'after_inside_a' => '',
-			'a_' => false,
-			'_a' => false,
 			'target' => '_parent',
 			'echo' => 1,
+			
+			'a_' => false,
+			'_a' => false,
 			
 			'permalink' => '',
 			'alt_link' => '',
@@ -394,7 +389,7 @@ class HavePostsVCWP {
 		
 		// Backwards compatible
 		if ( isset( $alt_link ) AND ! empty( $alt_link ) ) {
-			$alt_permalink = $alt_link;
+			$the_permalink = $alt_link;
 		}
 		if ( isset( $permalink ) AND ! empty( $permalink ) ) {
 			$add_permalink = $permalink;
@@ -410,18 +405,12 @@ class HavePostsVCWP {
 		// Check to see if we should link the_title
 		if ( $add_permalink ) {
 			
-			if ( $alt_permalink ) {
-				$the_permalink = $alt_permalink;
-			}
-			/**
-			stopped
-			**/
-			$a_ = "<a href=\"$the_permalink\" title=\"" . esc_attr( strip_tags( $post_title ) ) . "\" rel=\"bookmark\" target=\"$target\">"; // the_title_attribute
+			$a_ = "<a href=\"$the_permalink\" title=\"" . esc_attr( strip_tags( $post_title ) ) . "\" rel=\"bookmark\" target=\"$target\">";
 			$_a = "</a>";
 
 		}
 
-		$output = "<$element class=\"$class\">" . $before . $a_ . apply_filters( 'the_title', $title ) . $_a . $after . "</$element>";
+		$output = "<$element class=\"$class\">" . $before . $a_ . $before_inside_a . apply_filters( 'the_title', $post_title ) . $after_inside_a . $_a . $after . "</$element>";
 
 
 		if ( $echo ) {
@@ -430,7 +419,87 @@ class HavePostsVCWP {
 			return $output;
 		}   
 
-	} // end function vc_title
+	} // end function the_title
+	
+	
+	
+	
+	
+	
+	/** 
+	 * the__comments
+	 **/
+	function the__comments( $post, $args = '' ) {
+		
+		// return false if comments are off or if this is an attachment post
+		if ( 
+			get_vc_option( 'comments', 'remove_comments' ) 
+			OR ( $post->post_type == 'attachment' AND $post->post_mime_type == 'application/pdf' ) 
+		) {
+			return false;
+		}
+		
+		/**
+		Stopped here...
+		**/
+
+		// Set Defaults
+		$defaults = array(
+			'number' => get_comments_number( $post->ID ),
+			'link' => get_comments_link( $post->ID ),
+			'no_comments' => __( 'Comment', 'parenttheme' ),
+			'one_comment' => __( '1&nbsp;Comment', 'parenttheme' ),
+			'comments' => __( '%&nbsp;Comments', 'parenttheme' ),
+			'before' => '',
+			'after' => '',
+			'element' => 'span',
+			'class' => '',
+			'zero' => false,
+			'one' => false,
+			'more' => false,
+			'echo' => 1,
+		);
+
+		$r = wp_parse_args( $args, $defaults );
+		extract( $r, EXTR_SKIP );
+
+
+		// Set Comment Link
+		$no_comments = "<a href=\"$link\">$no_comments</a>";
+		$one_comment = "<a href=\"$link\">$one_comment</a>";
+		$comments = "<a href=\"$link\">$comments</a>";
+
+
+		// Set comment Number or text
+		if ( $number > 1 ) {
+			$comments_number = str_replace( '%', number_format_i18n( $number ), ( false === $more ) ? $comments : $more );
+		} else if ( $number == 0 ) {
+			$comments_number = ( false === $zero ) ? $no_comments : $zero;		
+		} else {
+			$comments_number = ( false === $one ) ? $one_comment : $one;
+		}
+
+		// apply comment_number filter
+		$comments_number = apply_filters('comments_number', $comments_number, $number);
+
+
+		// if comments are open
+		if ( 'open' == $post->comment_status ) {
+			$output = "<$element class=\"post-comments $class\">" . $before . $comments_number . $after . "</$element>";
+		} else {
+			$output = false;
+		}
+
+
+		if ( $echo ) {
+			echo $output;
+		} else {
+			return $output;
+		}
+
+
+
+	} // end function the__comments
 	
 	
 	

@@ -73,4 +73,27 @@ if ( ! function_exists( 'the__content' ) ) {
 		return $output;
 
 	}
-} // end function the__content
+} // end function the__content 
+
+
+
+
+
+
+/**
+ * the__title
+ **/
+if ( ! function_exists( 'the__title' ) ) {
+	function the__title( $post, $args ) {
+
+		$output = false;
+		if ( ! class_exists( 'HavePostsVCWP' ) ) {
+			require_once( 'HavePostsVCWP.php' );
+			if ( class_exists( 'HavePostsVCWP' ) ) {
+				$output = HavePostsVCWP::the_title($post,$args);
+			}
+		}
+		return $output;
+
+	}
+} // end function the__title
