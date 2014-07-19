@@ -3,10 +3,12 @@ ToDo
 - Create theme compatibility class to account for version control and backwards compatibility.
 - review /includes/lib to determine what can be done to abstract function names
 - review /includes/lib to determine what files can be converted to classes
-- find a backwards compatible way to update the core templates to utilize bootstrap columns
 
 ChangeLog
 ====================
+
+### 07.19.14 - 6.9.0
+- 
 
 ### 07.19.14 - 6.8.1
 - update oembed script

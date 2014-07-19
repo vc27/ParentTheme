@@ -1,23 +1,20 @@
 <?php
 /**
- * File Name initiate-lib.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 1.2
- * @updated 05.31.13
- *
- * Description:
- * Include core functionality, activation and theme functions.
  **/
 #################################################################################################### */
 
 
 if ( ! defined('THEME_LIB_INIT') ) {
 	
-	// Depreciated -- in favor of Classes -- Core functionality and foundation of the framework.
+	// Depreciated
 	if ( is_child_theme() AND ( ! isset( $ThemeCompatibility ) OR $ThemeCompatibility < 4.9 ) ) {
 		require_once( "options/includes.php" );
+	}
+	if ( is_child_theme() AND ( ! isset( $ThemeCompatibility ) OR $ThemeCompatibility < 6.9 ) ) {
+		// require_once( "options/includes.php" );
 	}
 	
 	// Load Classes

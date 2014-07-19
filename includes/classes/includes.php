@@ -43,7 +43,7 @@ if ( is_admin() ) {
 	require_once( "AdminCustomColumnsVCWP.php" );
 	
 	// Admin Ajax
-	require_once( "AdminAjaxVCWP.php" );
+	// require_once( "AdminAjaxVCWP.php" );
 
 } // end if ( is_admin() )
 

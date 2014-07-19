@@ -80,60 +80,6 @@ function featured_image__form_select( $args = array() ) {
 
 
 /**
- * Is MS IE
- *
- * @version 0.1
- * @updated	08.16.12
- **/
-function is_msie() {
-	global $is_msie;
-	
-	return $is_msie;
-	
-} // end function is_msie
-
-
-
-
-
-
-/**
- * Is Mobile
- *
- * @version 0.1
- * @updated	08.16.12
- **/
-function is_mobile() {
-	global $is_mobile;
-	
-	return $is_mobile;
-	
-} // end function is_mobile
-
-
-
-
-
-
-/**
- * Is Mobile
- *
- * @version 0.1
- * @updated	08.16.12
- **/
-function is_ipad() {
-	global $is_ipad;
-	
-	return $is_ipad;
-	
-} // end function is_ipad
-
-
-
-
-
-
-/**
  * Is User
  *
  * @version 2.0

@@ -407,13 +407,13 @@ class ParentThemeOptionsVCWP {
 							'title' 		=> __( 'Featured image size', 'childtheme' ),
 							'val' 			=> '', 
 							),
-						'childpage_breadcrumb' => array(
+						/*'childpage_breadcrumb' => array(
 							'type'			=> 'checkbox',
 							'validation'	=> 'checkbox',
 							'title' 		=> __( 'Child page breadcrumb ', 'childtheme' ),
 							'val' 			=> false,
 							'desc'			=> __( 'Will activate a breadcrumb navigation above the page title of any page that has a parent.', 'childtheme' ),
-							),
+							),*/
 						), // end "settings"
 					), // end post_display
 				
@@ -976,7 +976,7 @@ class ParentThemeOptionsVCWP {
 					), // end 404
 				
 				// Password Settings
-				'password_protected' => array(
+				/*'password_protected' => array(
 					'meta_box' 	=> array(
 						'title'		=> __( 'Password Protected', 'childtheme' ),
 						'context'	=> 'normal',
@@ -1005,6 +1005,7 @@ class ParentThemeOptionsVCWP {
 							),
 						),
 					), // end password_protected
+					*/
 					
 				), // end options
 
