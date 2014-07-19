@@ -7,8 +7,10 @@ ToDo
 ChangeLog
 ====================
 
-### 07.19.14 - 6.9.0
-- 
+### 07.19.14 - 3.9.1.2
+- functions.php cleanup
+- loop depreciate
+- additional class HavePostsVCWP to handle new loop functions 
 
 ### 07.19.14 - 6.8.1
 - update oembed script
