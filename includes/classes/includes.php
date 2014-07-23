@@ -51,7 +51,6 @@ if ( is_admin() ) {
 
 // Featured Image Size Post Type
 require_once( "FeaturedImagePostType.php" );
-// require_once( "ThemeOptions.php" );
 
 
 

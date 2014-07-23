@@ -1,11 +1,8 @@
 <?php
 /**
- * File Name header.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 2.3
- * @updated 01.20.14
  **/
 #################################################################################################### */
 
@@ -13,7 +10,7 @@ get_template_part( 'header-head' );
 
 ?>
 <!-- Start Body -->
-<body <?php body_class(); ?>>
+<body <?php body_class(); echo apply_filters( 'tag_body_attr', '' ); ?>>
 	<?php do_action('after_body_tag'); ?>
 	<div id="page">
 			
@@ -36,5 +33,5 @@ get_template_part( 'header-head' );
 		</div>
 		
 		<!-- Start Main Content -->
-		<div id="content-wrap" class="outer-wrap">
+		<div id="content" class="outer-wrap">
 			<div class="inner-wrap">

@@ -54,7 +54,7 @@ class Breadcrumb_Navigation_VC {
 	function breadcrumb_navigation( $args = array() ) {
 		global $wp_query;
 		
-		if ( ! get_vc_option( 'post_display', 'childpage_breadcrumb' ) ) return;
+		if ( ! get__option( 'post_display', 'childpage_breadcrumb' ) ) return;
 		
 		$defaults = array(
 			'home_text' => 'Home',

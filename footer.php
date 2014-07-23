@@ -1,18 +1,15 @@
 <?php
 /**
- * File Name footer.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 1.4
- * @updated 01.20.14
  **/
 #################################################################################################### */
 
 ?>
 			<div class="clear"></div>
-		</div><!-- End content-wrap-inner -->
-	</div><!-- End content-wrap -->
+		</div>
+	</div><!-- End content -->
 	
 	<!-- Start Footer -->
 	<div id="footer" class="outer-wrap">

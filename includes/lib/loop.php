@@ -391,7 +391,7 @@ function vc_title( $object, $args = '' ) {
  **/
 function vc_comments( $object, $args = '' ) {
 	
-	if ( get_vc_option( 'comments', 'remove_comments' ) OR ( $object->post_type == 'attachment' AND $object->post_mime_type == 'application/pdf' ) ) {
+	if ( get__option( 'comments', 'remove_comments' ) OR ( $object->post_type == 'attachment' AND $object->post_mime_type == 'application/pdf' ) ) {
 		return false;
 	}
 	

@@ -1,11 +1,8 @@
 <?php
 /**
- * File Name 404.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 2.3
- * @updated 01.20.14
  **/
 #################################################################################################### */
 
@@ -14,7 +11,7 @@ get_template_part( 'header' );
 <div class="row-fluid">
 	<div class="span8">
 		<div id="loop-default" class="loop">
-			<div class="hentry p1">
+			<div class="hentry">
 				<?php
 
 				if ( get__option( '_404', '_404title' ) ) {
@@ -23,9 +20,9 @@ get_template_part( 'header' );
 					$title = __( '404 Not Founds', 'parenttheme' );
 				}
 
-				echo "<h1 class=\"title _404_title\">$title</h1>";
+				echo "<h1 class=\"h1\">$title</h1>";
 
-				echo "<div class=\"entry 404_entry\">" . wpautop( get__option( '_404', '_404explain' ) ) . "</div>";
+				echo "<div class=\"entry\">" . wpautop( get__option( '_404', '_404explain' ) ) . "</div>";
 
 				?>
 			</div>

@@ -194,51 +194,12 @@ function vc_sub_navigation( $args = '' ) {
  * Most options for parent-theme are stored in an array.
  * This means that they will not see the default wp-sanitization.
  *
- * @version 1.3
- * @updated 02.09.13
+ * @version 1.4
+ * @updated 07.23.14
  **/
 function get_vc_option( $id, $setting ) {
-	global $wp_query, $vc_general_options;
 	
-	if ( !$vc_general_options ) {
-		$vc_general_options = get_option( '_vc_general_options' );
-	}
-	
-	if ( ! isset( $vc_general_options[$id][$setting] ) ) {
-		return false;
-	}
-	
-	switch ( $id ) {
-		
-		case "author_title" :
-			return str_replace( '%author_name%', $wp_query->queried_object->display_name, vc_sanitize_option( $vc_general_options[$id][$setting] ) );
-			break;
-		case "category_title" :
-			return str_replace( '%cat_name%', $wp_query->queried_object->name, vc_sanitize_option( $vc_general_options[$id][$setting] ) );
-			break;
-		case "tag_title" :
-			return str_replace( '%tag_name%', $wp_query->queried_object->name, vc_sanitize_option( $vc_general_options[$id][$setting] ) );
-		case "date_archive_title" :
-			if ( is_day() )
-				$archive_type = get_the_date();
-			elseif ( is_month() )
-				$archive_type = get_the_date('F Y');
-			elseif ( is_year() )
-				$archive_type = get_the_date('Y');
-				
-			return str_replace( '%date_archive_name%', $archive_type, vc_sanitize_option( $vc_general_options[$id][$setting] ) );
-			break;
-		case "contact" :
-			return str_replace( '%year%', date('Y'), vc_sanitize_option( $vc_general_options[$id][$setting] ) );
-		case "search" :
-			global $s;
-			return str_replace( '%search_term%', $s, vc_sanitize_option( $vc_general_options[$id][$setting] ) );
-			break;
-		default :
-			return vc_sanitize_option( $vc_general_options[$id][$setting] );
-			break;
-			
-	} // end switch ( $id )
+	return get__option( $id, $setting );
 	
 } // end function vc_sanitize_option
 
@@ -497,28 +458,28 @@ function vc_is_excerpt() {
 		$show_on_front = get_option('show_on_front');
 	}
 	
-	if ( ( is_year() OR is_month() OR is_day() ) AND get_vc_option( 'post_display', 'numeric_archive_content' ) ) {
+	if ( ( is_year() OR is_month() OR is_day() ) AND get__option( 'post_display', 'numeric_archive_content' ) ) {
 		return true;
 		
-	} else if ( is_category() AND get_vc_option( 'post_display', 'category_content' ) ) {
+	} else if ( is_category() AND get__option( 'post_display', 'category_content' ) ) {
 		return true;
 	
-	} else if ( is_page_for_posts__vc() AND get_vc_option( 'post_display', 'home_page_posts' ) ) {
+	} else if ( is_page_for_posts__vc() AND get__option( 'post_display', 'home_page_posts' ) ) {
 		return true;
 		
-	} else if ( $wp_query->is_posts_page AND get_vc_option( 'post_display', 'home_page_posts' ) ) {
+	} else if ( $wp_query->is_posts_page AND get__option( 'post_display', 'home_page_posts' ) ) {
 		return true;
 	
-	} else if ( $wp_query->is_home AND $show_on_front == 'posts' AND get_vc_option( 'post_display', 'home_page_posts' ) ) {
+	} else if ( $wp_query->is_home AND $show_on_front == 'posts' AND get__option( 'post_display', 'home_page_posts' ) ) {
 		return true;
 	
-	} else if ( is_tag() AND get_vc_option( 'post_display', 'tag_content' ) ) {
+	} else if ( is_tag() AND get__option( 'post_display', 'tag_content' ) ) {
 		return true;
 	
-	} else if ( is_author() AND get_vc_option( 'post_display', 'author_content' ) ) {
+	} else if ( is_author() AND get__option( 'post_display', 'author_content' ) ) {
 		return true;
 	
-	} else if ( is_search() AND get_vc_option( 'post_display', 'search_content' ) ) {
+	} else if ( is_search() AND get__option( 'post_display', 'search_content' ) ) {
 		return true;
 	
 	} else {
@@ -540,7 +501,7 @@ function vc_is_excerpt() {
  **/
 function vc_show_featured_image() {
 	
-	if ( vc_is_excerpt() AND get_vc_option( 'post_display', 'show_featured_image' ) ) {
+	if ( vc_is_excerpt() AND get__option( 'post_display', 'show_featured_image' ) ) {
 		return true;
 	} else {
 		return false;

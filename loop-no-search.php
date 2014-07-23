@@ -1,18 +1,15 @@
 <?php
 /**
- * File Name loop-no-search.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 2.1
- * @updated 01.20.14
  **/
 #################################################################################################### */
 global $s;
 
 ?>
 <div id="loop-default" class="loop loop-page">
-	<div class="hentry p1">
+	<div class="hentry">
 		<?php
 		
 		if ( get__option( 'search', 'noresults_title' ) ) {

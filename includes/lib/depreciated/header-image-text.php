@@ -1,7 +1,9 @@
 <?php
 /**
- * File Name -- Depreciated -- 
-header-image-text.php
+-- Depreciated --
+**/
+/**
+ * File Name -- Depreciated -- header-image-text.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -34,9 +36,9 @@ function header_image_or_text( $args = '' ) {
 	
 	// Set Defaults
 	$defaults = array(
-		'img_or_text'		=> get_vc_option( 'website_title', 'img_or_text' ),
-		'header_image'		=> get_vc_option( 'website_title', 'header_image' ),
-		'header_alt_link'	=> get_vc_option( 'website_title', 'header_alt_link' ),
+		'img_or_text'		=> get__option( 'website_title', 'img_or_text' ),
+		'header_image'		=> get__option( 'website_title', 'header_image' ),
+		'header_alt_link'	=> get__option( 'website_title', 'header_alt_link' ),
 		'echo'				=> 1,
 		);
 

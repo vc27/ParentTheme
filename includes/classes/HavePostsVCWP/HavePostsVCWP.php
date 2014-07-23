@@ -431,7 +431,7 @@ class HavePostsVCWP {
 		
 		// if comments are off or if this is an attachment post
 		if ( 
-			get_vc_option( 'comments', 'remove_comments' ) 
+			get__option( 'comments', 'remove_comments' ) 
 			OR ( $post->post_type == 'attachment' AND $post->post_mime_type == 'application/pdf' ) 
 			OR $post->comment_status != 'open'
 		) {

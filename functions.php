@@ -325,7 +325,7 @@ class ParentTheme_VC {
 	 **/ 
 	function remove_comments() {
 		
-		if ( get_vc_option( 'comments', 'remove_comments' ) ) {
+		if ( get__option( 'comments', 'remove_comments' ) ) {
 			$get_post_types = get_post_types( array( 'public' => true ) );
 			foreach ( $get_post_types as $post_type ) {
 				remove_post_type_support( $post_type, 'comments' );
@@ -437,12 +437,12 @@ class ParentTheme_VC {
 	function wp_head() {
 
 		// Favicon
-		if ( $image = get_vc_option( 'header_footer', 'favicon' ) ) {
+		if ( $image = get__option( 'header_footer', 'favicon' ) ) {
 			echo "\n<link rel=\"icon\" href=\"$image\" />\n";
 		}
 
 		// General Options Header textarea
-		if ( $wp_head = get_vc_option( 'header_footer', 'wp_head' ) ) {
+		if ( $wp_head = get__option( 'header_footer', 'wp_head' ) ) {
 			echo "\n<!-- " . __( 'Start Theme Header', 'parenttheme' ) . " -->\n" . html_entity_decode( str_replace( '&#039;', "'", $wp_head ) ) . "\n<!-- " . __( 'End Theme Header', 'parenttheme' ) . " -->\n";
 		}
 
@@ -458,7 +458,7 @@ class ParentTheme_VC {
 	 **/
 	function wp_footer() {
 		
-		if ( $wp_footer = get_vc_option( 'header_footer', 'wp_footer' ) ) {
+		if ( $wp_footer = get__option( 'header_footer', 'wp_footer' ) ) {
 			echo "\n<!-- " . __( 'Start Theme Footer', 'parenttheme' ) . " -->\n" . html_entity_decode( str_replace( '&#039;', "'", $wp_footer ) ) . "\n<!-- " . __( 'End Theme Footer', 'parenttheme' ) . " -->\n";
 		}
 		
@@ -562,7 +562,7 @@ class ParentTheme_VC {
 	 **/
 	function breadcrumb_navigation() {
 		
-		if ( ! get_vc_option( 'post_display', 'childpage_breadcrumb' ) ) {
+		if ( ! get__option( 'post_display', 'childpage_breadcrumb' ) ) {
 			return;
 		} else {
 			

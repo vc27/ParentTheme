@@ -23,13 +23,13 @@
  **/
 function vc_page_title( $args = '' ) {
 	
-	if ( is_category() AND get_vc_option( 'category_title', 'cat_show' ) ) {
+	if ( is_category() AND get__option( 'category_title', 'cat_show' ) ) {
 		vc_page_title_category();
-	} else if ( is_tag() AND get_vc_option( 'tag_title', 'tag_show' ) ) {
+	} else if ( is_tag() AND get__option( 'tag_title', 'tag_show' ) ) {
 		vc_page_title_tag();
-	} else if ( is_author() AND get_vc_option( 'author_title', 'author_show' ) ) {
+	} else if ( is_author() AND get__option( 'author_title', 'author_show' ) ) {
 		vc_page_title_author();
-	} else if ( ( is_day() OR is_month() OR is_year() ) AND get_vc_option( 'date_archive_title', 'date_archive_show' ) ) {
+	} else if ( ( is_day() OR is_month() OR is_year() ) AND get__option( 'date_archive_title', 'date_archive_show' ) ) {
 		vc_page_title_date();
 	} else {
 		return false;
@@ -67,13 +67,13 @@ function vc_page_title_category( $args = '' ) {
 	$output = "<div class=\"page-title-wrapper page-title-wrapper-category " . apply_filters( 'page_title_class', $class ) . "\">";
 		
 		// Before Category Text
-		if ( get_vc_option( 'category_title', 'before_cat_show' ) ) {
+		if ( get__option( 'category_title', 'before_cat_show' ) ) {
 
 			// check for wpautop
-			if ( get_vc_option( 'category_title', 'wpautop_before_cat' ) ) {
-				$before_cat_text = wpautop( get_vc_option( 'category_title', 'before_cat_text' ) );
+			if ( get__option( 'category_title', 'wpautop_before_cat' ) ) {
+				$before_cat_text = wpautop( get__option( 'category_title', 'before_cat_text' ) );
 			} else {
-				$before_cat_text = get_vc_option( 'category_title', 'before_cat_text' );
+				$before_cat_text = get__option( 'category_title', 'before_cat_text' );
 			}
 			
 			
@@ -81,17 +81,17 @@ function vc_page_title_category( $args = '' ) {
 			
 		}
 		
-		$output .= "<h1 class=\"title\">" . apply_filters( 'vc_page_title_category', get_vc_option( 'category_title', 'cat_title' ) ) . "</h1>";
+		$output .= "<h1 class=\"title\">" . apply_filters( 'vc_page_title_category', get__option( 'category_title', 'cat_title' ) ) . "</h1>";
 		
 		
 		// Add RSS link
-		if ( get_vc_option( 'category_title', 'cat_rss' ) ) {
+		if ( get__option( 'category_title', 'cat_rss' ) ) {
 			$output .= "<a class=\"rss-link-category\" href=\"" . get_category_link( $wp_query->queried_object->cat_ID ) . "feed\" title=\"" . esc_html( strip_tags( $wp_query->queried_object->name ) ) . "\">" . __( 'RSS', 'parenttheme' ) . "</a>";
 		}
 		
 		
 		// Add Description
-		if ( get_vc_option( 'category_title', 'cat_desc' ) AND category_description( $wp_query->queried_object->cat_ID ) ) {
+		if ( get__option( 'category_title', 'cat_desc' ) AND category_description( $wp_query->queried_object->cat_ID ) ) {
 			
 			$output .= "<div class=\"entry entry-category\">";
 				$output .= wpautop( category_description( $wp_query->queried_object->cat_ID ) );
@@ -101,13 +101,13 @@ function vc_page_title_category( $args = '' ) {
 		
 		
 		// After Category Text
-		if ( get_vc_option( 'category_title', 'after_cat_show' ) ) {
+		if ( get__option( 'category_title', 'after_cat_show' ) ) {
 			
 			// check for wpautop
-			if ( get_vc_option( 'category_title', 'wpautop_after_cat' ) ) {
-				$after_cat_text = wpautop( get_vc_option( 'category_title', 'after_cat_text' ) );
+			if ( get__option( 'category_title', 'wpautop_after_cat' ) ) {
+				$after_cat_text = wpautop( get__option( 'category_title', 'after_cat_text' ) );
 			} else {
-				$after_cat_text = get_vc_option( 'category_title', 'after_cat_text' );
+				$after_cat_text = get__option( 'category_title', 'after_cat_text' );
 			}
 
 			
@@ -161,13 +161,13 @@ function vc_page_title_tag( $args = array() ) {
 	$output = "<div class=\"page-title-wrapper page-title-wrapper-tag " . apply_filters( 'page_title_class', $class ) . "\">";
 		
 		// Before Tag Text
-		if ( get_vc_option( 'tag_title', 'before_tag_show' ) ) {
+		if ( get__option( 'tag_title', 'before_tag_show' ) ) {
 			
 			// check of wpautop
-			if ( get_vc_option( 'tag_title', 'wpautop_before_tag' ) ) {
-				$before_tag_text = wpautop( get_vc_option( 'tag_title', 'before_tag_text' ) );
+			if ( get__option( 'tag_title', 'wpautop_before_tag' ) ) {
+				$before_tag_text = wpautop( get__option( 'tag_title', 'before_tag_text' ) );
 			} else {
-				$before_tag_text = get_vc_option( 'tag_title', 'before_tag_text' );
+				$before_tag_text = get__option( 'tag_title', 'before_tag_text' );
 			}
 			
 			
@@ -177,11 +177,11 @@ function vc_page_title_tag( $args = array() ) {
 		
 		
 		// Title
-		$output .=  "<h1 class=\"title\">" . get_vc_option( 'tag_title', 'tag_title' ) . "</h1>";
+		$output .=  "<h1 class=\"title\">" . get__option( 'tag_title', 'tag_title' ) . "</h1>";
 		
 		
 		// Description
-		if ( get_vc_option( 'tag_title', 'tag_desc' ) AND tag_description() ) {
+		if ( get__option( 'tag_title', 'tag_desc' ) AND tag_description() ) {
 			$output .= "<div class=\"entry entry-tag\">";
 				$output .= wpautop( $wp_query->queried_object->description );
 			$output .= '</div>';
@@ -189,13 +189,13 @@ function vc_page_title_tag( $args = array() ) {
 		
 		
 		// After Tag Text
-		if ( get_vc_option( 'tag_title', 'after_tag_text' ) ) {
+		if ( get__option( 'tag_title', 'after_tag_text' ) ) {
 			
 			// check of wpautop
-			if ( get_vc_option( 'tag_title', 'wpautop_after_tag' ) ) {
-				$after_tag_text = wpautop( get_vc_option( 'tag_title', 'after_tag_text' ) );
+			if ( get__option( 'tag_title', 'wpautop_after_tag' ) ) {
+				$after_tag_text = wpautop( get__option( 'tag_title', 'after_tag_text' ) );
 			} else {
-				$after_tag_text = get_vc_option( 'tag_title', 'after_tag_text' );
+				$after_tag_text = get__option( 'tag_title', 'after_tag_text' );
 			}
 			
 			$output .= "<div class=\"after-tag-text\">$after_tag_text</div>";
@@ -241,13 +241,13 @@ function vc_page_title_author( $args = array() ) {
 	$output = "<div class=\"page-title-wrapper page-title-wrapper-author " . apply_filters( 'page_title_class', $class ) . "\">";
 		
 		// Before Author Text
-		if ( get_vc_option( 'author_title', 'before_author_show' ) ) {
+		if ( get__option( 'author_title', 'before_author_show' ) ) {
 			
 			// check of wpautop
-			if ( get_vc_option( 'author_title', 'wpautop_before_author' ) ) {
-				$before_author_text = wpautop( get_vc_option( 'author_title', 'before_author_text' ) );
+			if ( get__option( 'author_title', 'wpautop_before_author' ) ) {
+				$before_author_text = wpautop( get__option( 'author_title', 'before_author_text' ) );
 			} else {
-				$before_author_text = get_vc_option( 'author_title', 'before_author_text' );
+				$before_author_text = get__option( 'author_title', 'before_author_text' );
 			}
 			
 			$output .= "<div class=\"before-author-text\">$before_author_text</div>";
@@ -256,17 +256,17 @@ function vc_page_title_author( $args = array() ) {
 		
 		
 		// Title
-		$output .= '<h1 class="title">' . get_vc_option( 'author_title', 'author_title' ) . '</h1>';
+		$output .= '<h1 class="title">' . get__option( 'author_title', 'author_title' ) . '</h1>';
 		
 			
 		// Show Avatar
-		if ( get_vc_option( 'author_title', 'author_avatar' ) ) {
+		if ( get__option( 'author_title', 'author_avatar' ) ) {
 			$output .= vc_avatar( array( 'echo' => 0 ) );
 		}
 		
 		
 		// Show the Author Bio
-		if ( $wp_query->queried_object->description AND get_vc_option( 'author_title', 'author_bio' ) ) { 
+		if ( $wp_query->queried_object->description AND get__option( 'author_title', 'author_bio' ) ) { 
 			$output .= "<div class=\"entry entry-author\">";
 				$output .= wpautop( $wp_query->queried_object->description );
 			$output .= '</div>';
@@ -274,13 +274,13 @@ function vc_page_title_author( $args = array() ) {
 		
 		
 		// After Author Text
-		if ( get_vc_option( 'author_title', 'after_author_show' ) ) {
+		if ( get__option( 'author_title', 'after_author_show' ) ) {
 			
 			// check of wpautop
-			if ( get_vc_option( 'author_title', 'wpautop_after_author' ) ) {
-				$after_author_text = wpautop( get_vc_option( 'author_title', 'after_author_text' ) );
+			if ( get__option( 'author_title', 'wpautop_after_author' ) ) {
+				$after_author_text = wpautop( get__option( 'author_title', 'after_author_text' ) );
 			} else {
-				$after_author_text = get_vc_option( 'author_title', 'after_author_text' );
+				$after_author_text = get__option( 'author_title', 'after_author_text' );
 			}
 			
 			
@@ -329,13 +329,13 @@ function vc_page_title_date( $args = array() ) {
 		$output = "<div class=\"page-title-wrapper page-title-wrapper-archive " . apply_filters( 'page_title_class', $class ) . "\">";
 			
 			// Before Archive Text
-			if ( get_vc_option( 'date_archive_title', 'before_archive_show' ) ) {
+			if ( get__option( 'date_archive_title', 'before_archive_show' ) ) {
 
 				// check of wpautop
-				if ( get_vc_option( 'date_archive_title', 'wpautop_before_archive' ) ) {
-					$before_archive_text = wpautop( get_vc_option( 'date_archive_title', 'before_archive_text' ) );
+				if ( get__option( 'date_archive_title', 'wpautop_before_archive' ) ) {
+					$before_archive_text = wpautop( get__option( 'date_archive_title', 'before_archive_text' ) );
 				} else {
-					$before_archive_text = get_vc_option( 'date_archive_title', 'before_archive_text' );
+					$before_archive_text = get__option( 'date_archive_title', 'before_archive_text' );
 				}
 
 				$output .= "<div class=\"before-archive-text\">$before_archive_text</div>";
@@ -344,17 +344,17 @@ function vc_page_title_date( $args = array() ) {
 			
 			
 			// Title
-			$output .= "<h1 class=\"title\">" . get_vc_option( 'date_archive_title', 'date_archive_title' ) . "</h1>";
+			$output .= "<h1 class=\"title\">" . get__option( 'date_archive_title', 'date_archive_title' ) . "</h1>";
 			
 			
 			// After Archive Text
-			if ( get_vc_option( 'date_archive_title', 'after_archive_show' ) ) {
+			if ( get__option( 'date_archive_title', 'after_archive_show' ) ) {
 				
 				// check of wpautop
-				if ( get_vc_option( 'date_archive_title', 'wpautop_after_archive' ) ) {
-					$after_archive_text = wpautop( get_vc_option( 'date_archive_title', 'after_archive_text' ) );
+				if ( get__option( 'date_archive_title', 'wpautop_after_archive' ) ) {
+					$after_archive_text = wpautop( get__option( 'date_archive_title', 'after_archive_text' ) );
 				} else {
-					$after_archive_text = get_vc_option( 'date_archive_title', 'after_archive_text' );
+					$after_archive_text = get__option( 'date_archive_title', 'after_archive_text' );
 				}
 
 				$output .= "<div class=\"after-archive-text\">$after_archive_text</div>";
