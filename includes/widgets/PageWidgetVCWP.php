@@ -140,11 +140,7 @@ class PageWidgetVCWP extends WP_Widget {
 			// Set Title
 			$this->set( 'text_title', $this->instance['text_title'] );
 			
-			if ( __( 'Image', 'parenttheme' ) == $this->instance['title_display'] AND isset( $this->instance['image_title'] ) AND ! empty( $this->instance['image_title'] ) ) {
-				
-				$this->set( 'title', "<img src=\"" . $this->instance['image_title'] . "\" title=\"$this->text_title\" alt=\"" . esc_attr( strip_tags( $this->text_title ) ) . "\" />" );
-			
-			} else if ( __( 'Off', 'parenttheme' ) == $this->instance['title_display'] ) {
+			if ( __( 'Off', 'parenttheme' ) == $this->instance['title_display'] ) {
 				
 				$this->set( 'title', false );
 				
@@ -480,7 +476,6 @@ class PageWidgetVCWP extends WP_Widget {
 		
 		$instance['title_display'] = $new_instance['title_display'];
 		$instance['text_title'] = $new_instance['text_title'];
-		$instance['image_title'] = $new_instance['image_title'];
 		$instance['link'] = $new_instance['link'];
 		$instance['_page_id'] = $new_instance['_page_id'];
 		$instance['full_post'] = $new_instance['full_post'];
@@ -517,7 +512,6 @@ class PageWidgetVCWP extends WP_Widget {
 		$defaults = array(
 			'title_display' => __( 'Text', 'parenttheme' ),
 			'text_title' => '',
-			'image_title' => '',
 			'link' => '',
 			'_page_id' => false,
 			'full_post' => '',
@@ -565,19 +559,6 @@ class PageWidgetVCWP extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Text Title:', 'parenttheme' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('text_title'); ?>" type="text" value="<?php echo $text_title; ?>" />
-		</p>
-		
-		
-		<!-- Image Title -->
-		<p>
-			<label for="<?php echo $this->get_field_id('image_title'); ?>"><?php _e( 'Image Title:', 'parenttheme' ); ?></label> <?php if ( function_exists( 'vc_media_link' ) ) vc_media_link(); ?>
-			<input class="widefat" id="<?php echo $this->get_field_id('image_title'); ?>" name="<?php echo $this->get_field_name('image_title'); ?>" type="text" value="<?php echo $image_title; ?>" />
-			<?php 
-			
-			if ( !empty( $image_title ) )
-				echo "<br /><img src=\"$image_title\" alt=\"\" style=\"max-width:250px;\" />";
-			
-			?>
 		</p>
 		
 		

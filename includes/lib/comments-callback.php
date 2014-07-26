@@ -1,5 +1,8 @@
 <?php
 /**
+To be converted to class CommentsVCWP
+**/
+/**
  * File Name comments-callback.php
  * @package WordPress
  * @subpackage ParentTheme

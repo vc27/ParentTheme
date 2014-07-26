@@ -1,5 +1,8 @@
 <?php
 /**
+To be converted to class NavigationVCWP
+**/
+/**
  * File Name navigation.php
  * @package WordPress
  * @subpackage ParentTheme

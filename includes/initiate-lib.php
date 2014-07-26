@@ -9,22 +9,14 @@
 
 if ( ! defined('THEME_LIB_INIT') ) {
 	
-	// Depreciated
-	if ( is_child_theme() AND ( ! isset( $ThemeCompatibility ) OR $ThemeCompatibility < 4.9 ) ) {
-		require_once( "options/includes.php" );
-	}
-	if ( is_child_theme() AND ( ! isset( $ThemeCompatibility ) OR $ThemeCompatibility < 6.9 ) ) {
-		// require_once( "options/includes.php" );
-	}
+	// Theme Support
+	require_once('theme-support.php');
 	
 	// Load Classes
 	require_once( "classes/includes.php" );
 	
-	// Various Theme supporting functional functions
+	// Slated for depriciation -- Various Theme supporting functional functions
 	require_once( "lib/includes.php" );
-	
-	// Theme Support
-	require_once('theme-support.php');
 	
 	// Widget Classes
 	require_once( "widgets/includes.php" );

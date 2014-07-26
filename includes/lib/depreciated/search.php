@@ -1,5 +1,8 @@
 <?php
 /**
+-- Depreciated --
+**/
+/**
  * File Name search.php
  * @package WordPress
  * @subpackage ParentTheme

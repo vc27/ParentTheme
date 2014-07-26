@@ -1,5 +1,8 @@
 <?php
 /**
+To be converted to class PageTitlesVCWP
+**/
+/**
  * File Name page-titles.php
  * @package WordPress
  * @subpackage ParentTheme

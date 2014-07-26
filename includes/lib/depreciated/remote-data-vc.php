@@ -1,5 +1,8 @@
 <?php
 /**
+-- Depreciated --
+**/
+/**
  * File Name remote-data-vc.php
  * @package WordPress
  * @subpackage ParentTheme
