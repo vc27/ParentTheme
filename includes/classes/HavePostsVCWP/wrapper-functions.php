@@ -234,4 +234,50 @@ if ( ! function_exists( 'the__author' ) ) {
 		return $output;
 
 	}
-} // end function the__author
+} // end function the__author 
+
+
+
+
+
+
+/**
+ * show__loop_excerpt
+ **/
+if ( ! function_exists( 'show__loop_excerpt' ) ) {
+	function show__loop_excerpt() {
+
+		$output = false;
+		if ( ! class_exists( 'HavePostsVCWP' ) ) {
+			require_once( 'HavePostsVCWP.php' );
+		}
+		if ( class_exists( 'HavePostsVCWP' ) ) {
+			$output = HavePostsVCWP::show_loop_excerpt();
+		}
+		return $output;
+
+	}
+} // end function show__loop_excerpt 
+
+
+
+
+
+
+/**
+ * show__loop_featured_image
+ **/
+if ( ! function_exists( 'show__loop_featured_image' ) ) {
+	function show__loop_featured_image() {
+
+		$output = false;
+		if ( ! class_exists( 'HavePostsVCWP' ) ) {
+			require_once( 'HavePostsVCWP.php' );
+		}
+		if ( class_exists( 'HavePostsVCWP' ) ) {
+			$output = HavePostsVCWP::show_loop_featured_image();
+		}
+		return $output;
+
+	}
+} // end function show__loop_featured_image

@@ -14,7 +14,7 @@ if ( have_posts() ) {
 		while ( have_posts() ) { 
 			the_post(); 
 			echo "<article "; post_class(); echo ">";
-				if ( vc_show_featured_image() ) { 
+				if ( show__loop_featured_image() ) { 
 					featured__image( $post, array( 
 						'post_thumbnail_size' => get__option( 'post_display', 'featured_image_size' ) 
 					) );
@@ -28,7 +28,7 @@ if ( have_posts() ) {
 					the__date( $post );
 					the__comments( $post );
 				echo "</div>";
-				if ( vc_is_excerpt() ) {
+				if ( show__loop_excerpt() ) {
 					the__excerpt( $post, array( 
 						'count' => get__option( 'post_display', 'word_count' )
 						,'read_more' => get__option( 'post_display', 'read_more' )
