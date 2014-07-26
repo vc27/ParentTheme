@@ -1,5 +1,8 @@
 <?php
 /**
+-- Depreciated --
+**/
+/**
  * File Name functions.php
  * @package WordPress
  * @subpackage ParentTheme

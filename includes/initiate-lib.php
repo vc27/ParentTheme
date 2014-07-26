@@ -23,6 +23,9 @@ if ( ! defined('THEME_LIB_INIT') ) {
 	// Various Theme supporting functional functions
 	require_once( "lib/includes.php" );
 	
+	// Theme Support
+	require_once('theme-support.php');
+	
 	// Widget Classes
 	require_once( "widgets/includes.php" );
 	

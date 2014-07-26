@@ -1,5 +1,8 @@
 <?php
 /**
+-- Depreciated --
+**/
+/**
  * File Name theme-support-depreciated.php
  * @package WordPress
  * @subpackage ParentTheme

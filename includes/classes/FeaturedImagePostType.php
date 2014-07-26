@@ -487,6 +487,79 @@ class FeaturedImagePostType {
 	
 	####################################################################################################
 	/**
+	 * Static
+	 **/
+	####################################################################################################
+	
+	
+	
+	
+	
+	
+	/**
+	 * featured_image__form_select
+	 **/
+	function featured_image__form_select( $args = array() ) {
+
+		$defaults = array(
+			'val' => '',
+			'id' => '',
+			'name' => '',
+			'attr' => false,
+			);
+
+		$r = wp_parse_args( $args, $defaults );
+		extract( $r, EXTR_SKIP );
+
+		$featured_images = new WP_Query();
+		$featured_images->query( array(
+			'posts_per_page' => -1,
+			'post_type' => 'featured-image',
+			) );
+
+		if ( $featured_images->have_posts() ) {
+
+			echo "<select id=\"$id\" name=\"$name\" $attr>";
+				echo "<option value=\"\">" . __( 'Select an Image Size', 'parenttheme' ) . "</option>";
+				while ( $featured_images->have_posts() ) {
+					$featured_images->the_post();
+
+					if ( $val == $featured_images->post->post_name )
+						$sel = 'selected="selected"';
+					else
+						$sel = '';
+
+					$width_height = false;
+					$width = get_post_meta( $featured_images->post->ID, '_featured_image_width', true );
+					$height = get_post_meta( $featured_images->post->ID, '_featured_image_height', true );
+
+					if ( $width AND $height ) {
+						$width_height = " $width x $height";
+					} else if ( $width AND ! $height ) {
+						$width_height = " Width $width";
+					} else if ( ! $width AND $height ) {
+						$width_height = " Height $height";
+					}
+
+					echo "<option $sel value=\"" . $featured_images->post->post_name . "\">" . $featured_images->post->post_title . $width_height . "</option>";
+				}
+
+			echo "</select>";
+
+			wp_reset_postdata();
+		} else {
+			echo __( "There are no featured image sizes available.", 'parenttheme' ) . " <a href=\"" . home_url() . "/wp-admin/edit.php?post_type=featured-image\">" . __( 'Manage Featured Images', 'parenttheme' ) . "</a>";
+		}
+
+	} // end function featured_image__form_select
+	
+	
+	
+	
+	
+	
+	####################################################################################################
+	/**
 	 * Admin Management
 	 **/
 	####################################################################################################

@@ -1,5 +1,8 @@
 <?php
 /**
+-- Depreciated --
+**/
+/**
  * File Name -- Depreciated -- embed-swf.php
  * @package WordPress
  * @subpackage ParentTheme

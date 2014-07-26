@@ -17,8 +17,11 @@ if ( is_child_theme() AND ( ! isset( $ThemeCompatibility ) OR $ThemeCompatibilit
 	require_once('depreciated/theme-support-depreciated.php');
 }
 
-require_once('theme-support.php');
-require_once('loop.php');
+if ( is_child_theme() AND ( ! isset( $ThemeCompatibility ) OR $ThemeCompatibility < 6.9 ) ) {
+	require_once('depreciated/loop.php');
+	require_once('theme-support.php');
+}
+
 require_once('page-titles.php');
 require_once('navigation.php');
 require_once('comments-callback.php');

@@ -431,3 +431,25 @@ function get__option( $option, $setting ) {
 	
 } // end function get__option
 }
+
+
+
+
+
+
+/**
+ * featured_image__form_select --> Wrapper Function
+ **/
+if ( ! function_exists( 'featured_image__form_select' ) ) {
+function featured_image__form_select( $args = array() ) {
+	global $FeaturedImagePostType;
+	
+	$output = false;
+	if ( $FeaturedImagePostType ) {
+		$output = $FeaturedImagePostType->featured_image__form_select( $args );
+	}
+	
+	return $output;
+	
+} // end function featured_image__form_select
+}
