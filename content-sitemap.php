@@ -9,7 +9,7 @@
 
 ?>
 
-<div id="content-sitemap" class="loop layout-sitemap">
+<div id="section-sitemap" class="loop layout-sitemap">
 	<div class="display-list display-list-pages">
 		<div class="h3"><?php echo __( 'Pages', 'parenttheme' ); ?></div>
 		<ul>
@@ -24,12 +24,12 @@
 		</ul>
 	</div>
 
-	<div class="display-list display-list-post_per_cat">
+	<div class="display-list display-list-post-per-cat">
 		<div class="h3"><?php echo __( 'Posts per category', 'parenttheme' ); ?></div>
 
 		<?php
 
-		echo "<ul id=\"404-category-list_posts\" class=\"category-list_posts\">";
+		echo "<ul id=\"404-category-list-posts\" class=\"category-list-posts\">";
 
 			$terms = get_terms( 'category' );
 
@@ -47,11 +47,11 @@
 
 				if ( $wp_query->have_posts() ) {
 
-					echo "<li class=\"list_posts-$term->slug\">";
+					echo "<li class=\"list-posts-$term->slug\">";
 
 						echo "<div class=\"h4\"><a href=\"" . get_term_link( $term->slug, 'category' ) . "\">$term->name</a></div>";
 
-						echo "<ul class=\"category-list_posts\">";
+						echo "<ul class=\"category-list-posts\">";
 
 							while ( $wp_query->have_posts() ) { 
 								$wp_query->the_post(); 

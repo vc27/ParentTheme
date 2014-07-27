@@ -200,23 +200,6 @@ class LatestPostWidgetVCWP extends WP_Widget {
 			$this->set( 'before_widget', '' );
 		}
 		
-		// Add CSS
-		if ( ! empty( $this->before_widget ) AND isset( $this->instance['css_class'] ) AND ! empty( $this->instance['css_class'] ) ) {
-			$this->set( 'css_class', $this->instance['css_class'] );
-			$this->set( 'css_array', explode( ',', $this->css_class ) );
-			
-			if ( is_array( $this->css_array ) AND ! empty( $this->css_array ) ) {
-				foreach( $this->css_array as $class ) {
-					$classes[] = sanitize_title_with_dashes( $class );
-				}
-				
-				$this->set( 'css_array', $classes );
-				$this->set( 'css_class', implode( ' ', $classes ) );
-				$this->set( 'before_widget', str_replace( 'sub_class', $this->css_class, $this->args['before_widget'] ) );
-				
-			}
-		}
-		
 	} // end function set__before_widget
 	
 	
@@ -493,7 +476,6 @@ class LatestPostWidgetVCWP extends WP_Widget {
 		$instance['kill_read_more'] = $new_instance['kill_read_more'];
 		$instance['show_thumbnail'] = $new_instance['show_thumbnail'];
 		$instance['featured_image_size'] = $new_instance['featured_image_size'];
-		$instance['css_class'] = $new_instance['css_class'];
 		$instance['no_link'] = $new_instance['no_link'];
 		
 		return $instance;
@@ -531,7 +513,6 @@ class LatestPostWidgetVCWP extends WP_Widget {
 			'strip_tags' => '<p>',
 			'show_thumbnail' => '',
 			'featured_image_size' => '',
-			'css_class' => '',
 			);
 		
 		$r = wp_parse_args( $instance, $defaults );
@@ -717,13 +698,6 @@ class LatestPostWidgetVCWP extends WP_Widget {
 		</p>
 				
 		<?php } // End Featured_Image_VC ?>
-		
-		<!-- CSS Class -->
-		<p>
-			<label for="<?php echo $this->get_field_id('css_class'); ?>"><?php _e( 'CSS Class:', 'parenttheme' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id('css_class'); ?>" name="<?php echo $this->get_field_name('css_class'); ?>" type="text" value="<?php echo $css_class; ?>" />
-			<small><em><?php echo __( 'Use comma separated classes', 'parenttheme' ); ?></em></small>
-		</p>
 		
 		<?php 
 		

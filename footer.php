@@ -9,11 +9,11 @@
 ?>
 			<div class="clear"></div>
 		</div>
-	</div><!-- End content -->
+	</div><!-- End section-main -->
 	
 	<!-- Start Footer -->
 	<div id="footer" class="outer-wrap">
-		<footer class="inner-wrap">
+		<div class="clearfix inner-wrap">
 			<?php 
 			
 			wp_nav_menu( array( 
@@ -25,8 +25,7 @@
 			) );
 			
 			?>
-			<div class="clear"></div>
-		</footer>
+		</div>
 	</div><!-- End Footer -->
 
 </div><!-- End Page -->

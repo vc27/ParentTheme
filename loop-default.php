@@ -8,12 +8,12 @@
 
 
 
-do_action( 'vc_above_loop' );
+do_action( 'before_loop' );
 if ( have_posts() ) {
-	echo "<div id=\"loop-default\" class=\"loop\">";
+	echo "<div id=\"section-loop-default\" class=\"loop\">";
 		while ( have_posts() ) { 
 			the_post(); 
-			echo "<article "; post_class(); echo ">";
+			echo "<article "; post_class('clearfix'); echo ">";
 				if ( show__loop_featured_image() ) { 
 					featured__image( $post, array( 
 						'post_thumbnail_size' => get__option( 'post_display', 'featured_image_size' ) 
@@ -37,14 +37,12 @@ if ( have_posts() ) {
 				} else {
 					the__content( $post );
 				}
-				echo "<div class=\"clear\"></div>";
 			echo "</article>";
 			// Insert Comments if turned on
 			if ( ! get__option( 'comments', 'remove_comments' ) AND 'open' == $post->comment_status ) {
 				comments_template( '', true );
 			}
 		} // End while(have_post())
-		echo "<div class=\"clear\"></div>";
 	echo "</div>";
 } // End if(have_post()) 
-do_action( 'vc_below_loop' ); 
+do_action( 'after_loop' ); 

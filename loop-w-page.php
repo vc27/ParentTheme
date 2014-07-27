@@ -19,7 +19,7 @@ if ( have_posts() ) {
 		}
 		echo $PageWidgetVCWP->before_widget . $PageWidgetVCWP->title;
 		echo "<ul class=\"loop widget-loop-page\">";
-			echo "<li "; post_class(); echo ">";
+			echo "<li "; post_class('clearfix'); echo ">";
 				// Featured Image
 				if ( $PageWidgetVCWP->show__featured_image() ) {
 					featured__image( $post, array( 
@@ -38,7 +38,6 @@ if ( have_posts() ) {
 						'kill_read_more' => $PageWidgetVCWP->kill_read_more,
 					) );
 				}
-				echo "<div class=\"clear\"></div>";
 			echo "</li>";
 		echo "</ul>";
 		echo $PageWidgetVCWP->after_widget;

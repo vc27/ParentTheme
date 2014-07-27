@@ -16,7 +16,7 @@ get_template_part( 'header' );
 		?>
 	</div>
 	<div class="span4">
-		<?php vc_sidebars( 'Primary Sidebar' ); ?>
+		<?php get__widget_area( 'Primary Sidebar' ); ?>
 	</div>
 </div>
 <?php

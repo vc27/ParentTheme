@@ -1,12 +1,7 @@
 /* 
-File Name default.css
-Version 3.0
-Updated 03.14.14
 Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #################################################################################################### */
-
-/*Font: https://www.google.com/fonts#UsePlace:use/Collection:Lora|Allura|Open+Sans:400italic,700italic,400,700*/
 
 /* Padding */
 $p: 10px;
@@ -63,7 +58,7 @@ $transition: all 0.1s ease-in;
 
 html { height:100%; }
 body { line-height:$font-paragraph-line-height; font-family:$font-paragraph; }
-#page { position:relative; font-size:$font-paragraph-size; height:100%; }
+#page { position:relative; font-size:$font-paragraph-size; }
 .outer-wrap { position:relative; }
 .inner-wrap { max-width:$max-width-a; padding-left:$p; padding-right:$p; position:relative; margin:0 auto; text-align:left; }
 
@@ -148,13 +143,10 @@ input[type="submit"]:hover,input[type="button"]:hover, button:hover {
 	.prev-post { padding-left:($p/2); }
 	.next-post { padding-right:($p/2); }
 }
-
 .wp-pagenavi {
 	a, span { padding:3px 4px; margin:3px; }
 }
-
-#navigation-breadcrumb { font-weight:bold; padding-bottom:3px; display:block; clear:both; }
-.navigation-posts { font-weight:bold; padding-bottom:3px; display:block; clear:both; text-align:center; }
+.navigation-posts { padding:($p/4) ($p/2); display:block; text-align:left; }
 
 
 
@@ -165,10 +157,6 @@ input[type="submit"]:hover,input[type="button"]:hover, button:hover {
 #################################################################################################### */
 
 .hentry { position:relative; }
-#loop-default {
-	.hentry { padding:($p*3) 0 ($p*2) 0; }
-	.hentry:first-child { padding:0 0 ($p*2) 0; }
-}
 
 
 
@@ -181,17 +169,7 @@ input[type="submit"]:hover,input[type="button"]:hover, button:hover {
 	}
 }
 .read-more-dots {}
-
-
-
-/* Entry - Excerpt */
-#loop-default {
-	.entry { clear:both; }
-	.excerpt { clear:none; padding:0; }
-}
-
 a.read_more {}
-
 .entry {
 	.aligncenter { display:block; margin:0 auto $p; }
 	.alignnone { clear:both; float:none; }
@@ -213,8 +191,7 @@ a.read_more {}
 		line-height:18px;
 		td { padding-right:7px; vertical-align:top; }
 	}
-} /*end .entry */
-
+}
 .excerpt p { padding-bottom:($p*2); }
 
 
@@ -250,16 +227,22 @@ a.read_more {}
 
 
 
+#section-loop-default {
+	.hentry { padding:($p*3) 0 ($p*2) 0; }
+	.hentry:first-child { padding:0 0 ($p*2) 0; }
+	.entry { clear:both; }
+	.excerpt { clear:none; padding:0; }
+}
+
+
+
 
 
 
 /* Widget Areas
 #################################################################################################### */
 .sidebar {
-	ul {}
-	li { margin-bottom:10px; }
-	li li { margin:0; }
-	.widget-box {}
+	.widget-box { margin-bottom:10px; }
 }
 
 
@@ -292,5 +275,3 @@ a.read_more {}
 
 /* Comments */
 @import 'comments';
-/*Responsive*/
-@import 'responsive';

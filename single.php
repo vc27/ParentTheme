@@ -13,7 +13,7 @@ get_template_part( 'header' );
 		<?php get_template_part( 'loop-single-default' ); ?>
 	</div>
 	<div class="span4">
-		<?php vc_sidebars( 'Primary Sidebar' ); ?>
+		<?php get__widget_area( 'Primary Sidebar' ); ?>
 	</div>
 </div>
 <?php

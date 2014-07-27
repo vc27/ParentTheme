@@ -10,7 +10,7 @@ get_template_part( 'header' );
 ?>
 <div class="row-fluid">
 	<div class="span8">
-		<div id="loop-default" class="loop">
+		<div id="section-loop-default" class="clearfix loop">
 			<div class="hentry">
 				<?php
 
@@ -26,15 +26,14 @@ get_template_part( 'header' );
 
 				?>
 			</div>
-			<div class="clear"></div>
 		</div>
 
-		<div id="content-sitemap" class="loop layout-sitemap">
+		<div id="section-sitemap" class="clearfix loop layout-sitemap">
 			<?php 
 
 			// Display Search Form
 			if ( get__option( '_404', 'search_form' ) ) {
-				vc_search();
+				echo get_search_form();
 			}
 
 
@@ -75,11 +74,11 @@ get_template_part( 'header' );
 			// Display list of Posts by category
 			if ( get__option( '_404', 'list_post_by_cat_on_404' ) ) {
 
-				echo "<div class=\"display-list display-list-post_per_cat\">";
+				echo "<div class=\"display-list display-list-post-per-cat\">";
 
 					echo "<h3>" . __( 'Recent Posts', 'parenttheme' ) . "</h3>";
 
-					echo "<ul id=\"404-category-list_posts\" class=\"category-list_posts\">";
+					echo "<ul id=\"404-category-list-posts\" class=\"category-list-posts\">";
 
 						$terms = get_terms( 'category' );
 
@@ -97,11 +96,11 @@ get_template_part( 'header' );
 
 							if ( have_posts() ) {
 
-								echo "<li class=\"list_posts-$term->slug\">";
+								echo "<li class=\"list-posts-$term->slug\">";
 
 									echo "<h4><a href=\"" . get_term_link( $term->slug, 'category' ) . "\">$term->name</a></h4>";
 
-									echo "<ul class=\"category-list_posts\">";
+									echo "<ul class=\"category-list-posts\">";
 
 										while ( have_posts() ) { 
 											the_post(); 
@@ -132,11 +131,10 @@ get_template_part( 'header' );
 			} // end if ( list_post_by_cat_on_404 )
 
 			?>
-			<div class="clear"></div>
-		</div><!-- end #content-sitemap -->
+		</div><!-- end #section-sitemap -->
 	</div>
 	<div class="span4">
-		<?php vc_sidebars( 'Primary Sidebar' ); ?>
+		<?php get__widget_area( 'Primary Sidebar' ); ?>
 	</div>
 </div>
 <?php

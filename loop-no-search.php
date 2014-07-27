@@ -8,7 +8,7 @@
 global $s;
 
 ?>
-<div id="loop-default" class="loop loop-page">
+<div id="section-loop-default" class="clearfix loop loop-page">
 	<div class="hentry">
 		<?php
 		
@@ -24,15 +24,14 @@ global $s;
 		
 		?>
 	</div>
-	<div class="clear"></div>
 </div>
 
-<div id="content-sitemap" class="loop layout-sitemap">
+<div id="section-sitemap" class="clearfix loop layout-sitemap">
 	<?php
 
 	// Display Search Form
 	if ( get__option( 'search', 'search_form' ) ) {
-		vc_search();
+		echo get_search_form();
 	}
 
 
@@ -85,11 +84,11 @@ global $s;
 	// Display list of Posts by category
 	if ( get__option( 'search', 'list_post_by_cat_on_search' ) ) {
 		
-		echo "<div class=\"display-list display-list-post_per_cat\">";
+		echo "<div class=\"display-list display-list-post-per-cat\">";
 		
 			echo "<div class=\"h3\">" . __( 'Recent Posts', 'parenttheme' ) . "</div>";
 
-			echo "<ul id=\"search-category-list_posts\" class=\"category-list_posts\">";
+			echo "<ul id=\"search-category-list-posts\" class=\"category-list-posts\">";
 
 				$terms = get_terms( 'category' );
 
@@ -107,11 +106,11 @@ global $s;
 
 					if ( have_posts() ) {
 
-						echo "<li class=\"list_posts-$term->slug\">";
+						echo "<li class=\"list-posts-$term->slug\">";
 
 							echo "<div class=\"h4\"><a href=\"" . get_term_link( $term->slug, 'category' ) . "\">$term->name</a></div>";
 
-							echo "<ul class=\"category-list_posts\">";
+							echo "<ul class=\"category-list-posts\">";
 
 								while ( have_posts() ) { 
 									the_post(); 
@@ -142,5 +141,4 @@ global $s;
 	} // check to show item
 	
 	?>
-	<div class="clear"></div>
 </div>

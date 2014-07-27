@@ -1,11 +1,7 @@
 /* 
-File Name default.css
-Version 3.0
-Updated 03.14.14
 Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #################################################################################################### */
-/*Font: https://www.google.com/fonts#UsePlace:use/Collection:Lora|Allura|Open+Sans:400italic,700italic,400,700*/
 /* Padding */
 /* Paragraph */
 /* Title */
@@ -407,7 +403,7 @@ html { height: 100%; }
 
 body { line-height: 26px; font-family: sans-serif; }
 
-#page { position: relative; font-size: 15px; height: 100%; }
+#page { position: relative; font-size: 15px; }
 
 .outer-wrap { position: relative; }
 
@@ -454,24 +450,15 @@ select, input, textarea { -webkit-appearance: none; }*/
 
 .wp-pagenavi a, .wp-pagenavi span { padding: 3px 4px; margin: 3px; }
 
-#navigation-breadcrumb { font-weight: bold; padding-bottom: 3px; display: block; clear: both; }
-
-.navigation-posts { font-weight: bold; padding-bottom: 3px; display: block; clear: both; text-align: center; }
+.navigation-posts { padding: 2.5px 5px; display: block; text-align: left; }
 
 /* Post, Page & General Loops
 #################################################################################################### */
 .hentry { position: relative; }
 
-#loop-default .hentry { padding: 30px 0 20px 0; }
-#loop-default .hentry:first-child { padding: 0 0 20px 0; }
-
 /* Meta Data */
 .meta-data { color: #adadad; font-family: serif; font-style: italic; display: block; padding: 10px; }
 .meta-data .post-date, .meta-data .post-category, .meta-data .post-comments { padding: 0 10px 0 0; }
-
-/* Entry - Excerpt */
-#loop-default .entry { clear: both; }
-#loop-default .excerpt { clear: none; padding: 0; }
 
 .entry .aligncenter { display: block; margin: 0 auto 10px; }
 .entry .alignnone { clear: both; float: none; }
@@ -489,7 +476,6 @@ select, input, textarea { -webkit-appearance: none; }*/
 .entry table { line-height: 18px; }
 .entry table td { padding-right: 7px; vertical-align: top; }
 
-/*end .entry */
 .excerpt p { padding-bottom: 20px; }
 
 /* Gallery Shortcode */
@@ -506,10 +492,14 @@ select, input, textarea { -webkit-appearance: none; }*/
 .layout-sitemap .display-list ul ul.children { padding: 0; margin-left: 15px; list-style: disc; }
 .layout-sitemap .display-list .site-search { display: block; padding-bottom: 10px; }
 
+#section-loop-default .hentry { padding: 30px 0 20px 0; }
+#section-loop-default .hentry:first-child { padding: 0 0 20px 0; }
+#section-loop-default .entry { clear: both; }
+#section-loop-default .excerpt { clear: none; padding: 0; }
+
 /* Widget Areas
 #################################################################################################### */
-.sidebar li { margin-bottom: 10px; }
-.sidebar li li { margin: 0; }
+.sidebar .widget-box { margin-bottom: 10px; }
 
 /* Blocks
 #################################################################################################### */
@@ -529,21 +519,21 @@ Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #################################################################################################### */
 #comments { margin-top: 45px; /*end .commentlist*/ }
-#comments .comments-title { margin: 0 0 7px; }
+#comments .post-title { margin: 0 0 7px; }
 #comments .navigation { display: block; clear: both; text-align: left; padding: 3px 7px; }
 #comments .prev-page { padding-left: 7px; }
 #comments .next-page { padding-right: 7px; }
-#comments .commentlist { list-style: none; margin: 0 0 1em; padding: 0; text-indent: 0; }
-#comments .commentlist li { padding-bottom: 22px; margin-bottom: 10px; }
-#comments .commentlist li .vcard { font-style: normal; padding: 0 0 3px; font-weight: 200; font-size: 16px; letter-spacing: 1px; }
-#comments .commentlist li .avatar { float: right; margin: 0 0 1em 1em; }
-#comments .commentlist li .comment-meta { padding-bottom: 2px; }
-#comments .commentlist li .comment-meta a { font-size: 12px; }
-#comments .commentlist li ul { list-style: square; margin: 0 0 1em 2em; }
-#comments .commentlist li .reply { text-align: right; }
-#comments .commentlist li .reply a { text-decoration: underline; font-style: italic; padding-left: 10px; }
-#comments .commentlist li ul.children { list-style: none; margin: 10px 0 0 0; text-indent: 0; }
-#comments .commentlist li ul.children li { padding-bottom: 0; }
+#comments .list-comments { list-style: none; margin: 0 0 1em; padding: 0; text-indent: 0; }
+#comments .list-comments li { padding-bottom: 22px; margin-bottom: 10px; }
+#comments .list-comments li .vcard { font-style: normal; padding: 0 0 3px; font-weight: 200; font-size: 16px; letter-spacing: 1px; }
+#comments .list-comments li .avatar { float: right; margin: 0 0 1em 1em; }
+#comments .list-comments li .comment-meta { padding-bottom: 2px; }
+#comments .list-comments li .comment-meta a { font-size: 12px; }
+#comments .list-comments li ul { list-style: square; margin: 0 0 1em 2em; }
+#comments .list-comments li .reply { text-align: right; }
+#comments .list-comments li .reply a { text-decoration: underline; font-style: italic; padding-left: 10px; }
+#comments .list-comments li ul.children { list-style: none; margin: 10px 0 0 0; text-indent: 0; }
+#comments .list-comments li ul.children li { padding-bottom: 0; }
 
 /*end #comments*/
 #respond { /*end form*/ }
@@ -557,17 +547,3 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #respond form .button-submit { margin-top: 7px; }
 
 /*end #respond*/
-/*Responsive*/
-/* 
-File Name: responsive.css
-Version: 1.2
-Updated: 08.16.13
-Package: ParentTheme_VC
-License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-#################################################################################################### */
-/*end @media (max-width: 1024px)*/
-/*end @media (max-width: 940px)*/
-@media (max-width: 767px) { body { padding-left: 0; padding-right: 0; } }
-/*end @media (max-width: 767px)*/
-/*end @media (max-width: 568px)*/
-/*end @media (max-width: 320px)*/

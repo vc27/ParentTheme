@@ -453,3 +453,28 @@ function featured_image__form_select( $args = array() ) {
 	
 } // end function featured_image__form_select
 }
+
+
+
+
+
+
+/**
+ * get__widget_area --> Wrapper Function
+ *
+ * @since 6.9.0
+ **/
+if ( ! function_exists( 'get__widget_area' ) ) {
+function get__widget_area( $name, $args = array() ) {
+	
+	$output = false;
+	if ( ! class_exists( 'WidgetAreaVCWP' ) ) {
+		require_once( 'WidgetAreaVCWP.php' );
+	}
+	
+	if ( class_exists( 'WidgetAreaVCWP' ) ) {
+		WidgetAreaVCWP::get_widget_area( $name, $args );
+	}
+	
+} // end function get__option
+}

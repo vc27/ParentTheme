@@ -16,7 +16,7 @@ if ( have_posts() ) {
 	echo "<ul class=\"loop widget-loop-post\">";
 	while ( have_posts() ) { 
 		the_post();
-		echo "<li "; post_class(); echo ">";
+		echo "<li "; post_class('clearfix'); echo ">";
 			if ( $LatestPostWidgetVCWP->show__featured_image() ) {
 				featured__image( $post, array( 
 					'post_thumbnail_size' => $LatestPostWidgetVCWP->featured_image_size 
@@ -49,7 +49,6 @@ if ( have_posts() ) {
 					) );
 				} // end if ( $full_post )
 			} // end if ( !$hide_entry )
-			echo "<div class=\"clear\"></div>";
 		echo "</li>";
 	} // endwhile
 	wp_reset_postdata();

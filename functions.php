@@ -104,8 +104,8 @@ class ParentTheme_VC {
 	 * @var array
 	 **/
 	var $sidebar_args = array(
-		'before_widget' => '<li id="%1$s" class="widget-box %2$s sub_class">',
-		'after_widget' => '<span class="clear"></span></li>',
+		'before_widget' => '<div id="%1$s" class="widget-box %2$s">',
+		'after_widget' => '<span class="clear"></span></div>',
 		'before_title' => '<div class="h3 widget-title"><span class="widget-title-wrap">',
 		'after_title' => '</span></div>',
 	);
@@ -675,10 +675,10 @@ class ParentTheme_VC {
 	function pt__layout_options() {
 		
 		// Archive Post Navigation
-		add_action( 'vc_below_loop', 'vc_navigation_posts' );
+		add_action( 'after_loop', 'vc_navigation_posts' );
 		
 		// Single Post Navigation
-		add_action( 'vc_below_loop', 'vc_navigation_post' );
+		add_action( 'after_loop', 'vc_navigation_post' );
 		
 		// Add Page Title
 		add_action( 'inner_wrap_top', 'vc_page_title' );
