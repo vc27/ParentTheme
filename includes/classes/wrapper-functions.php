@@ -511,3 +511,60 @@ function comments__callback( $comment, $args, $depth ) {
 	
 } // end function comments__callback
 }
+
+
+
+
+
+
+/**
+ * previous_next___post_link --> Wrapper Function
+ *
+ * @since 6.9.0
+ **/
+if ( ! function_exists( 'previous_next___post_link' ) ) {
+function previous_next___post_link( $args = array() ) {
+	
+	$output = false;
+	if ( ! class_exists( 'NavigationVCWP' ) ) {		
+		require_once( 'NavigationVCWP.php' );			
+	}
+	
+	if ( class_exists( 'NavigationVCWP' ) ) {		
+		$NavigationVCWP = new NavigationVCWP();
+		$output = $NavigationVCWP->previous_next___post_link( $args );
+	}
+	
+	return $output;
+	
+} // end function previous_next___post_link
+}
+
+
+
+
+
+
+/**
+ * previous_next___posts_link --> Wrapper Function
+ *
+ * @since 6.9.0
+ **/
+if ( ! function_exists( 'previous_next___posts_link' ) ) {
+function previous_next___posts_link( $args = array() ) {
+	
+	$output = false;
+	if ( ! class_exists( 'NavigationVCWP' ) ) {		
+		require_once( 'NavigationVCWP.php' );			
+	}
+	
+	if ( class_exists( 'NavigationVCWP' ) ) {		
+		$NavigationVCWP = new NavigationVCWP();
+		$NavigationVCWP->previous_next___posts_link( $args );
+		$output = true;
+	}
+	
+	return $output;
+	
+} // end function previous_next___posts_link
+}

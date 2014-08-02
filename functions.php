@@ -681,10 +681,10 @@ class ParentTheme_VC {
 	function pt__layout_options() {
 		
 		// Archive Post Navigation
-		add_action( 'after_loop', 'vc_navigation_posts' );
+		add_action( 'after_loop', 'previous_next___posts_link' );
 		
 		// Single Post Navigation
-		add_action( 'after_loop', 'vc_navigation_post' );
+		add_action( 'after_loop', 'previous_next___post_link' );
 		
 		// Add Page Title
 		add_action( 'inner_wrap_top', 'vc_page_title' );

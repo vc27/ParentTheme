@@ -9,6 +9,7 @@ ChangeLog
 ### 08.02.14 - 3.9.1.3
 - remove featured image post type and add default featured images to functions.php
 - convert comments callback into class
+- convert navigation functions to a class with wrapper functions
 
 ### 07.19.14 - 3.9.1.2
 - functions.php cleanup

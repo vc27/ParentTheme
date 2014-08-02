@@ -11,4 +11,3 @@ All reated files with in /lib are slated to be converted to class and depreciate
 
 
 require_once('page-titles.php');
-require_once('navigation.php');
