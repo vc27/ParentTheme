@@ -1,11 +1,14 @@
 ToDo
 ====================
-- Create theme compatibility class to account for version control and backwards compatibility.
-- review /includes/lib to determine what can be done to abstract function names
-- review /includes/lib to determine what files can be converted to classes
+- Evaluate "lib" and convert functions to classes with wrapper-functions
+- convert theme options to advanced custom fields, but leave old options in place if ACF is not installed.
 
 ChangeLog
 ====================
+
+### 08.02.14 - 3.9.1.3
+- remove featured image post type and add default featured images to functions.php
+- convert comments callback into class
 
 ### 07.19.14 - 3.9.1.2
 - functions.php cleanup

@@ -439,14 +439,21 @@ function get__option( $option, $setting ) {
 
 /**
  * featured_image__form_select --> Wrapper Function
+ *
+ * @since 6.9.0
  **/
 if ( ! function_exists( 'featured_image__form_select' ) ) {
 function featured_image__form_select( $args = array() ) {
-	global $FeaturedImagePostType;
 	
 	$output = false;
-	if ( $FeaturedImagePostType ) {
-		$output = $FeaturedImagePostType->featured_image__form_select( $args );
+	if ( ! class_exists( 'FeaturedImageFormSelectVCWP' ) ) {
+		require_once( 'FeaturedImageFormSelectVCWP.php' );
+	}
+	
+	if ( class_exists( 'FeaturedImageFormSelectVCWP' ) ) {
+		
+		$output = new FeaturedImageFormSelectVCWP( $args );
+		
 	}
 	
 	return $output;
@@ -477,4 +484,30 @@ function get__widget_area( $name, $args = array() ) {
 	}
 	
 } // end function get__option
+}
+
+
+
+
+
+
+/**
+ * featured_image__form_select --> Wrapper Function
+ *
+ * @since 6.9.1
+ **/
+if ( ! function_exists( 'comments__callback' ) ) {
+function comments__callback( $comment, $args, $depth ) {
+	
+	if ( ! class_exists( 'CommentsCallbackVCWP' ) ) {
+		require_once( 'CommentsCallbackVCWP.php' );
+	}
+	
+	if ( class_exists( 'CommentsCallbackVCWP' ) ) {
+		
+		new CommentsCallbackVCWP( $comment, $args, $depth );
+		
+	}
+	
+} // end function comments__callback
 }

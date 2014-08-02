@@ -195,7 +195,13 @@ class ParentTheme_VC {
             get_option( 'thumbnail_size_w' ),
             get_option( 'thumbnail_size_h' ),
             get_option( 'thumbnail_crop' )
-        );
+		);
+		add_image_size( 'standard-cropped', 300, 300, true );
+		add_image_size( 'standard', 300, 300, true );
+		add_image_size( 'medium', 600, 1000, false );
+		add_image_size( 'medium-cropped', 600, 600, true );
+		add_image_size( 'large', 1000, 2000, false );
+		add_image_size( 'large-ex', 2000, 4000, false );
 
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'nav-menus' );

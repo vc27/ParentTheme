@@ -1,11 +1,9 @@
 <?php
 /**
- * File Name includes.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 1.6
- * @updated 06.18.13
+ * @since 3.9.0
  **/
 #################################################################################################### */
 
@@ -23,38 +21,18 @@ require_once( "HavePostsVCWP/wrapper-functions.php" );
 
 
 /**
- * None Wrapper Classes
- *
- * Note:
- * The following classes will initialize on load.
+ * Required Admin Classes
  **/
 
 if ( is_admin() ) {
 	
 	// Parent Theme Options
 	require_once( "ParentThemeOptionsVCWP.php" );
-
-	// Page Attributes
-	// require_once( "PageAttrPostMetaVCWP.php" );
 	
 	// OEmbed MetaBox
 	require_once( "OEmbedPostMetaVCWP.php" );
 	
 	// Admin Custom Columns
 	require_once( "AdminCustomColumnsVCWP.php" );
-	
-	// Admin Ajax
-	// require_once( "AdminAjaxVCWP.php" );
 
 } // end if ( is_admin() )
-
-
-// Featured Image Size Post Type
-require_once( "FeaturedImagePostType.php" );
-
-
-
-// Depreciated require
-if ( is_child_theme() AND ( ! isset( $ThemeCompatibility ) OR $ThemeCompatibility < 4.9 ) ) {
-	require_once( "Breadcrumb_Navigation_VC.php" );
-}

@@ -12,5 +12,3 @@ All reated files with in /lib are slated to be converted to class and depreciate
 
 require_once('page-titles.php');
 require_once('navigation.php');
-require_once('comments-callback.php');
-require_once('pass-wp-themecheck.php');
