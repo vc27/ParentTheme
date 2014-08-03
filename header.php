@@ -34,3 +34,4 @@ get_template_part( 'header-head' );
 		<!-- Start Main Content -->
 		<div id="section-main" class="outer-wrap">
 			<div class="clearfix inner-wrap">
+				<?php do_action('section-main-top'); ?>
