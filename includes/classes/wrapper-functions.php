@@ -568,3 +568,31 @@ function previous_next___posts_link( $args = array() ) {
 	
 } // end function previous_next___posts_link
 }
+
+
+
+
+
+
+/**
+ * archive__title --> Wrapper Function
+ *
+ * @since 6.9.0
+ **/
+if ( ! function_exists( 'archive__title' ) ) {
+function archive__title( $args = array() ) {
+	
+	$output = false;
+	if ( ! class_exists( 'ArchiveTitlesVCWP' ) ) {		
+		require_once( 'ArchiveTitlesVCWP.php' );			
+	}
+	
+	if ( class_exists( 'ArchiveTitlesVCWP' ) ) {		
+		$ArchiveTitlesVCWP = new ArchiveTitlesVCWP();
+		$output = $ArchiveTitlesVCWP->get_title( $args );
+	}
+	
+	return $output;
+	
+} // end function archive__title
+}

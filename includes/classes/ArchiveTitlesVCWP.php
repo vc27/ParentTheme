@@ -187,6 +187,10 @@ class ArchiveTitlesVCWP {
 	function get_title( $args = array() ) {
 		
 		$this->set_type();
+		if ( ! $this->have_type() ) {
+			return false;
+		}
+		
 		$this->set_option_group();
 		if ( ! get__option( $this->option_group['name'], $this->option_group['show'] ) ) {
 			return false;
@@ -292,13 +296,15 @@ class ArchiveTitlesVCWP {
 	 * @since 0.0.0
 	 **/
 	function set_description() {
+		global $wp_query; 
 		
-		if ( get__option( $this->option_group['name'], $this->option_group['show_desc'] ) ) {
-			switch ( $this->type ) {
-				case "category" :
-					$this->set( 'description', $wp_query->queried_object->category_description );
-					break;
-			}
+		if ( 
+			isset( $wp_query->queried_object->taxonomy ) 
+			AND get__option( $this->option_group['name'], $this->option_group['show_desc'] ) 
+			AND isset( $wp_query->queried_object->description ) 
+			AND ! empty( $wp_query->queried_object->description ) 
+		) {
+			$this->set( 'description', $wp_query->queried_object->description );
 		}
 		
 	} // end function set_description
@@ -346,7 +352,7 @@ class ArchiveTitlesVCWP {
 	 **/
 	function have_description() {
 		
-		if ( isset( $this->description ) AND ! empty( $this->description ) AND get__option( 'category_title', 'cat_desc' ) ) {
+		if ( isset( $this->description ) AND ! empty( $this->description ) ) {
 			$this->set( 'have_description', 1 );
 		} else {
 			$this->set( 'have_description', 0 );
@@ -355,6 +361,27 @@ class ArchiveTitlesVCWP {
 		return $this->have_description;
 		
 	} // end function have_description
+	
+	
+	
+	
+	
+	
+	/**
+	 * have_type
+	 * @since 0.0.0
+	 **/
+	function have_type() {
+		
+		if ( isset( $this->type ) AND ! empty( $this->type ) ) {
+			$this->set( 'have_type', 1 );
+		} else {
+			$this->set( 'have_type', 0 );
+		}
+		
+		return $this->have_type;
+		
+	} // end function have_type
 	
 	
 	

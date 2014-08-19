@@ -687,7 +687,7 @@ class ParentTheme_VC {
 		add_action( 'after_loop', 'previous_next___post_link' );
 		
 		// Add Page Title
-		add_action( 'section-main-top', 'vc_page_title' );
+		add_action( 'section-main-top', 'archive__title' );
 
 
 	} // end function pt__layout_options

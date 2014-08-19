@@ -15,9 +15,6 @@ if ( ! defined('THEME_LIB_INIT') ) {
 	// Load Classes
 	require_once( "classes/includes.php" );
 	
-	// Slated for depriciation -- Various Theme supporting functional functions
-	require_once( "lib/includes.php" );
-	
 	// Widget Classes
 	require_once( "widgets/includes.php" );
 	
