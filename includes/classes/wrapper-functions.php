@@ -1,47 +1,10 @@
 <?php
 /**
- * File Name wrapper-functions.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 1.0
- * @updated 03.22.13
  **/
 #################################################################################################### */
-
-
-
-
-
-
-/**
- * AppendPostData --> Wrapper Function
- *
- * @version 1.0
- * @updated	03.16.13
- **/
-if ( ! function_exists( 'append__post_data' ) ) {
-function append__post_data( $options ) {
-	
-	$output = false;
-	
-	if ( ! class_exists( 'AppendPostData' ) ) {
-		require_once( 'AppendPostData.php' );
-		
-		if ( class_exists( 'AppendPostData' ) ) {
-			
-			$AppendPostData = new AppendPostData();
-			$AppendPostData->init( $options );
-			$output = true;
-			
-		}
-			
-	}
-	
-	return $output;
-	
-} // end function append__post_data
-}
 
 
 
@@ -304,38 +267,6 @@ function fetch__data( $type, $url, $args = array(), $transient_name = false, $re
 	return $output;
 	
 } // end function fetch__data 
-}
-
-
-
-
-
-
-/**
- * add__featured_image --> Wrapper Function
- *
- * @version 1.0
- * @updated	05.05.13
- **/
-if ( ! function_exists( 'add__featured_image' ) ) {
-function add__featured_image( $array = array() ) {
-	
-	$output = false;
-	if ( ! class_exists( 'MultiPostThumbnailsVCWP' ) ) {
-		require_once( 'MultiPostThumbnailsVCWP.php' );
-	}
-	
-	if ( class_exists( 'MultiPostThumbnailsVCWP' ) ) {
-		
-		$add__featured_image = new MultiPostThumbnailsVCWP();
-		$add__featured_image->add_thumbnail( $array );
-		$output = $add__featured_image;
-		
-	}
-	
-	return $output;
-	
-} // end function add__featured_image 
 }
 
 

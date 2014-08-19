@@ -1,10 +1,15 @@
 ToDo
 ====================
-- Evaluate "lib" and convert functions to classes with wrapper-functions
 - convert theme options to advanced custom fields, but leave old options in place if ACF is not installed.
+- remove Breadcrumb_Navigation_VC
 
 ChangeLog
 ====================
+
+### 08.19.14 - 3.9.2.0
+- finish archive titles
+- moved admin custom columns to child theme admin customization class
+- removed all classes that were not being used
 
 ### 08.02.14 - 3.9.1.3
 - remove featured image post type and add default featured images to functions.php

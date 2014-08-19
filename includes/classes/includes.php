@@ -31,8 +31,5 @@ if ( is_admin() ) {
 	
 	// OEmbed MetaBox
 	require_once( "OEmbedPostMetaVCWP.php" );
-	
-	// Admin Custom Columns
-	require_once( "AdminCustomColumnsVCWP.php" );
 
 } // end if ( is_admin() )
