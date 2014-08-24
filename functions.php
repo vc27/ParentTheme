@@ -6,11 +6,6 @@
  **/
 #################################################################################################### */
 
-/**
-Items soon to be removed or updated 
-**/
-// breadcrumb_navigation
-
 
 
 
@@ -209,7 +204,29 @@ class ParentTheme_VC {
 		// Translations can be added to the /languages/ directory.
 		// load_theme_textdomain( 'parenttheme', "$this->template_directory/languages" );
 		
+		
+		if ( ! is_child_theme() AND is_admin() ) {
+			add_theme_support('parent-theme-options');
+			add_theme_support('video-oembed-post-meta');
+		} // end if ( is_admin() )
+		
+		$this->load_theme_supports();
+		
 	} // end function after_setup_theme
+	
+	
+	
+	
+	
+	
+	/**
+	 * load_theme_supports
+	 **/
+	function load_theme_supports() {
+		
+		require_once( "includes/theme-supports/initiate.php" );
+		
+	} // end function load_theme_supports
 	
 	
 	
@@ -255,30 +272,41 @@ class ParentTheme_VC {
 		
 		
 		
+		// Load parent theme as primary theme
 		if ( ! is_child_theme() ) {
-			
-			$this->pt__register_style_and_scripts();
-			add_action( 'wp_enqueue_scripts', array( &$this, 'pt__wp_enqueue_scripts' ), 1 );
-			add_action( 'template_redirect', array( &$this, 'pt__layout_options' ) );
-			add_action( 'wp_loaded', array( &$this, 'breadcrumb_navigation' ) );
-			
-			
-			
-			$this->register_sidebars( array(
-				'Primary Sidebar' => array(
-					'desc' => __( 'This is the primary widgetized area.', 'parenttheme' ),
-				)
-			) );
-			register_nav_menus( array(
-				'primary-navigation' => __( 'Primary Navigation', 'parenttheme' ),
-				'footer-navigation' => __( 'Footer Navigation', 'parenttheme' )
-			) );
-			
-		} // end if ( ! is_child_theme() )
+			// add_theme_support('oembed-post-meta-vcwp');
+			$this->load_parent_theme();
+		}
 		
 		
 		
 	} // end function init
+	
+	
+	
+	
+	
+	
+	/**
+	 * load_parent_theme
+	 **/
+	function load_parent_theme() {
+		
+		$this->pt__register_style_and_scripts();
+		add_action( 'wp_enqueue_scripts', array( &$this, 'pt__wp_enqueue_scripts' ), 1 );
+		add_action( 'template_redirect', array( &$this, 'pt__layout_options' ) );
+		
+		$this->register_sidebars( array(
+			'Primary Sidebar' => array(
+				'desc' => __( 'This is the primary widgetized area.', 'parenttheme' ),
+			)
+		) );
+		register_nav_menus( array(
+			'primary-navigation' => __( 'Primary Navigation', 'parenttheme' ),
+			'footer-navigation' => __( 'Footer Navigation', 'parenttheme' )
+		) );
+		
+	} // end function load_parent_theme
 	
 	
 	
@@ -555,31 +583,6 @@ class ParentTheme_VC {
 		} // endforeach; register sidebars
 
 	} // end function register_sidebars
-	
-	
-	
-	
-	
-	
-	/** 
-	 * breadcrumb_navigation
-	 *
-	 * Note: this is slated for removal
-	 **/
-	function breadcrumb_navigation() {
-		
-		if ( ! get__option( 'post_display', 'childpage_breadcrumb' ) ) {
-			return;
-		} else {
-			
-			require_once( "Breadcrumb_Navigation_VC.php" );
-			
-			$this->Breadcrumb_Navigation_VC = new Breadcrumb_Navigation_VC();
-			add_action( 'inner_wrap_top', array( &$this->Breadcrumb_Navigation_VC, 'breadcrumb_navigation' ) );
-			
-		}
-		
-	} // end function breadcrumb_navigation
 	
 	
 	

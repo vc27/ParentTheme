@@ -18,18 +18,3 @@
  **/
 require_once( "wrapper-functions.php" );
 require_once( "HavePostsVCWP/wrapper-functions.php" );
-
-
-/**
- * Required Admin Classes
- **/
-
-if ( is_admin() ) {
-	
-	// Parent Theme Options
-	require_once( "ParentThemeOptionsVCWP.php" );
-	
-	// OEmbed MetaBox
-	require_once( "OEmbedPostMetaVCWP.php" );
-
-} // end if ( is_admin() )

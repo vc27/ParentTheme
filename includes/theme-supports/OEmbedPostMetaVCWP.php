@@ -54,7 +54,7 @@ class OEmbedPostMetaVCWP {
 	 * @updated 00.00.13
 	 **/
 	function __construct() {
-
+		
 		add_action( 'add_meta_boxes', array( &$this, 'add_custom_meta_boxes' ) );
 		
 		// Save Post
@@ -62,8 +62,9 @@ class OEmbedPostMetaVCWP {
 		
 		
 		// Convert v1 to v2
-		if ( is_admin() AND ! get_option('converted-OEmbed_Post_Meta_VC') )
+		/*if ( is_admin() AND ! get_option('converted-OEmbed_Post_Meta_VC') ) {
 			$this->convert_OEmbed_Post_Meta_VC();
+		}*/
 
 	} // end function __construct
 	
@@ -138,11 +139,12 @@ class OEmbedPostMetaVCWP {
 		
 		foreach ( $this->included_post_types as $post_type ) {
 			if ( $post_type == 'video' ) {
-				$priority = 'normal';
-			} else {
 				$priority = 'high';
+			} else {
+				$priority = 'default';
 			}
-			add_meta_box( 'oembed_meta_box', 'Video Embed', array( &$this, 'oembed_meta_box' ), $post_type, $priority, 'core' );
+			
+			add_meta_box( 'video-meta-box', 'Video Embed', array( $this, 'meta_box' ), $post_type, 'normal', $priority );
 		}
 		
 		
@@ -159,7 +161,7 @@ class OEmbedPostMetaVCWP {
 	 * @version 1.0
 	 * @updated 00.00.13
 	 **/
-	function oembed_meta_box( $post, $metabox ) {
+	function meta_box( $post, $metabox ) {
 		
 		$oembed_video_url = get_post_meta( $post->ID, '_video_url_oembed', true );
 		$oembed_video_thumbnail = get_post_meta( $post->ID, '_video_thumbnail_oembed', true );

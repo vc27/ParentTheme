@@ -42,8 +42,8 @@ class ParentThemeOptionsVCWP {
 
 			$this->initial_installation();
 			$this->update();
-
-			add_action( 'after_setup_theme', array( &$this, 'init_options' ) );
+			$this->init_options();
+			
 		}
 
 	} // end function __construct
@@ -1011,9 +1011,10 @@ class ParentThemeOptionsVCWP {
 
 			) ); // end var $default_options = array()
 		
+		
 		create__options_page( $this->default_options );
 		
-	} // end function default_options
+	} // end function init_options
 	
 	
 	
