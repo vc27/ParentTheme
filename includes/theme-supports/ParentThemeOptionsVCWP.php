@@ -951,7 +951,7 @@ class ParentThemeOptionsVCWP {
 							'val' 			=> '',
 							'desc'			=> false,
 							),
-						'list_pages_on_404'	=> array(
+						/*'list_pages_on_404'	=> array(
 							'type'			=> 'checkbox',
 							'validation'	=> 'checkbox',
 							'title' 		=> __( 'Display a list of pages', 'childtheme' ),
@@ -971,7 +971,7 @@ class ParentThemeOptionsVCWP {
 							'title' 		=> __( 'Display a list of posts by category', 'childtheme' ),
 							'val' 			=> '',
 							'desc'			=> __( 'Will display a list of posts by category on the 404 page.', 'childtheme' ),
-							),
+							),*/
 						),
 					), // end 404
 				

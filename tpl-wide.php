@@ -11,12 +11,6 @@
 
 get_template_part( 'header' );
 
-?>
-<div class="row-fluid">
-	<div class="span12">
-		<?php get_template_part( 'loop-page-default' ); ?>
-	</div>
-</div>
-<?php
+get_template_part( 'loop-page-default' );
 
 get_template_part( 'footer' );

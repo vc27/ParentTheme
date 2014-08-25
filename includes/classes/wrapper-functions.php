@@ -340,24 +340,23 @@ function get__meta_tags( $post_id = false ) {
 /**
  * get__option --> Wrapper Function
  *
- * @version 1.0
- * @updated	01.20.14
+ * @since 3.9.0
  **/
 if ( ! function_exists( 'get__option' ) ) {
-function get__option( $option, $setting ) {
+function get__option( $option, $setting = 'option', $system = 'acf-theme-options' ) {
 	
 	$output = false;
-	if ( ! class_exists( 'ThemeOptions' ) ) {
-		require_once( 'ThemeOptions.php' );
+	if ( $system == 'acf-theme-options' AND current_theme_supports('acf-theme-options') AND function_exists('get_field') ) {
+		$output = get_field( $option, $setting );
+	} else if ( $system == 'parent-theme-options' AND current_theme_supports('parent-theme-options') ) {
+		if ( ! class_exists( 'ThemeOptions' ) ) {
+			require_once( 'ThemeOptions.php' );
+		}
+		if ( class_exists( 'ThemeOptions' ) ) {
+			$ThemeOptions = new ThemeOptions();
+			$output = $ThemeOptions->get_option( $option, $setting );
+		}
 	}
-	
-	if ( class_exists( 'ThemeOptions' ) ) {
-		
-		$ThemeOptions = new ThemeOptions();
-		$output = $ThemeOptions->get_option( $option, $setting );
-		
-	}
-	
 	return $output;
 	
 } // end function get__option

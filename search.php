@@ -19,8 +19,8 @@ get_template_part( 'header' );
 		} else {
 
 			echo "<div class=\"page-title-wrapper\">";
-				echo '<h1 class="h1">' . get__option( 'search', 'results_title' ) . '</h1>';
-			echo '</div>';
+				echo "<h1 class=\"h1\">" . get__option( '_search_title' ) . " " . $s . "</h1>";
+			echo "</div>";
 
 			get_template_part( 'loop-default' );
 

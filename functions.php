@@ -23,11 +23,11 @@ require_once( 'includes/initiate-lib.php' );
 
 
 /**
- * ParentTheme_VC Class
+ * ParentTheme Class
  **/
-$ParentTheme_VC = new ParentTheme_VC();
-$ParentTheme_VC->init_parent_theme();
-class ParentTheme_VC {
+$ParentTheme = new ParentTheme();
+$ParentTheme->init_parent_theme();
+class ParentTheme {
 	
 	
 	
@@ -697,4 +697,4 @@ class ParentTheme_VC {
 	
 	
 	
-} // end class ParentTheme_VC
+} // end class ParentTheme
