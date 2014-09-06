@@ -6,10 +6,10 @@ ToDo
 ChangeLog
 ====================
 
-### 08.19.14 - 3.9.3.0
+### 09.06.14 - 3.9.3.0
 - update theme options from parent theme to ACF
-
-Left off adding comment options
+- add do__comments() to theme-supports
+- replace all comment checking with do__comments()
 
 ### 08.19.14 - 3.9.2.0
 - finish archive titles

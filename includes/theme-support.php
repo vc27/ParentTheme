@@ -24,3 +24,25 @@ function is__user( $user_login = false ) {
 		return false;
 
 } // end function is__user
+
+
+
+
+
+
+/**
+ * do__comments
+ *
+ **/
+function do__comments() {
+	global $post;
+	if ( 
+		( is_page() AND get__option( '_comments_page_deactivated' ) ) 
+		OR get__option( '_comment_system_deactivated' ) 
+		OR 'closed' == $post->comment_status 
+	) {
+		return false;
+	} else {
+		return true;
+	}
+} // end function do__comments

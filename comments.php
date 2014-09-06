@@ -10,7 +10,7 @@
 #################################################################################################### */
 global $wp_query;
 
-if ( get__option( '_comment_system_deactivated' ) ) {
+if ( ! do__comments() ) {
 	return;
 }
 
