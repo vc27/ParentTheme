@@ -466,13 +466,15 @@ class ParentTheme {
 	function wp_head() {
 
 		// Favicon
-		if ( $image = get__option( 'header_footer', 'favicon' ) ) {
-			echo "\n<link rel=\"icon\" href=\"$image\" />\n";
+		$favicon_url = "/favicon.ico";
+		if ( get__option( '_use_custom_favicon' ) ) {
+			$favicon_url = get__option( '_favicon_image_url' );
 		}
+		echo "\n<link rel=\"icon\" href=\"$favicon_url\" type=\"image/x-icon\" />\n";
 
 		// General Options Header textarea
-		if ( $wp_head = get__option( 'header_footer', 'wp_head' ) ) {
-			echo "\n<!-- " . __( 'Start Theme Header', 'parenttheme' ) . " -->\n" . html_entity_decode( str_replace( '&#039;', "'", $wp_head ) ) . "\n<!-- " . __( 'End Theme Header', 'parenttheme' ) . " -->\n";
+		if ( get__option( '_head_html' ) ) {
+			echo "\n<!-- " . __( 'Start Theme Header', 'parenttheme' ) . " -->\n" . get__option( '_head_html' ) . "\n<!-- " . __( 'End Theme Header', 'parenttheme' ) . " -->\n";
 		}
 
 	} // end function wp_head

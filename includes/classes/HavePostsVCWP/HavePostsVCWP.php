@@ -430,11 +430,7 @@ class HavePostsVCWP {
 	static function the_comments( $post, $args = array() ) {
 		
 		// if comments are off or if this is an attachment post
-		if ( 
-			get__option( '_comment_system_deactivated' ) 
-			OR ( $post->post_type == 'attachment' AND $post->post_mime_type == 'application/pdf' ) 
-			OR $post->comment_status != 'open'
-		) {
+		if ( ! do__comments() ) {
 			return false;
 		}
 

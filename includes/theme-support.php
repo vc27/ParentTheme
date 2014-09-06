@@ -40,6 +40,7 @@ function do__comments() {
 		( is_page() AND get__option( '_comments_page_deactivated' ) ) 
 		OR get__option( '_comment_system_deactivated' ) 
 		OR 'closed' == $post->comment_status 
+		OR ( $post->post_type == 'attachment' AND $post->post_mime_type == 'application/pdf' ) 
 	) {
 		return false;
 	} else {
