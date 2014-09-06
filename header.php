@@ -15,7 +15,7 @@ get_template_part( 'header-head' );
 	<div id="page">
 			
 		<!-- Start Header -->
-		<div id="header" class="outer-wrap">
+		<div id="section-header" class="outer-wrap">
 			<div class="clearfix inner-wrap">
 				<?php 
 				

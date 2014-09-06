@@ -10,7 +10,7 @@
 #################################################################################################### */
 global $wp_query;
 
-if ( get__option( 'comments', 'remove_comments' ) ) {
+if ( get__option( '_comment_system_deactivated' ) ) {
 	return;
 }
 
@@ -81,9 +81,7 @@ echo "<div id=\"comments\">\n";
 	// Comments are closed or not available
 	} elseif ( !comments_open() AND !is_page() AND post_type_supports( get_post_type(), 'comments' ) ) {
 		
-		echo "<p class=\"nocomments\">";
-			echo get__option( 'comments', 'comments_closed' );
-		echo "</p>";
+		echo "<p class=\"nocomments\">Comments are closed</p>";
 	
 	} // end if ( have_comments() )
 	

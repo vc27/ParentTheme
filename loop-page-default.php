@@ -21,7 +21,7 @@ if ( have_posts() ) {
 				the__comments( $post );
 				the__content( $post );
 			echo "</article>";
-			if( ! get__option( 'comments', 'remove_comments' ) AND 'open' == $post->comment_status ) {
+			if( ! get__option( '_comment_system_deactivated' ) AND 'open' == $post->comment_status ) {
 				comments_template( '', true );
 			}
 		} // End while(have_post())

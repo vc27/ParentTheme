@@ -13,7 +13,7 @@
 	</div><!-- End section-main -->
 	
 	<!-- Start Footer -->
-	<div id="footer" class="outer-wrap">
+	<div id="section-footer" class="outer-wrap">
 		<div class="clearfix inner-wrap">
 			<?php 
 			

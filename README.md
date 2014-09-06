@@ -6,6 +6,11 @@ ToDo
 ChangeLog
 ====================
 
+### 08.19.14 - 3.9.3.0
+- update theme options from parent theme to ACF
+
+Left off adding comment options
+
 ### 08.19.14 - 3.9.2.0
 - finish archive titles
 - moved admin custom columns to child theme admin customization class

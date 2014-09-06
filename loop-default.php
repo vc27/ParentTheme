@@ -14,11 +14,9 @@ if ( have_posts() ) {
 		while ( have_posts() ) { 
 			the_post(); 
 			echo "<article "; post_class('clearfix'); echo ">";
-				if ( show__loop_featured_image() ) { 
-					featured__image( $post, array( 
-						'post_thumbnail_size' => get__option( 'post_display', 'featured_image_size' ) 
-					) );
-				}
+				featured__image( $post, array( 
+					'post_thumbnail_size' => 'standard'
+				) );
 				the__title( $post, array( 
 					'element' => 'h3'
 					,'class' => 'h3'
@@ -28,18 +26,14 @@ if ( have_posts() ) {
 					the__date( $post );
 					the__comments( $post );
 				echo "</div>";
-				if ( show__loop_excerpt() ) {
-					the__excerpt( $post, array( 
-						'count' => get__option( 'post_display', 'word_count' )
-						,'read_more' => get__option( 'post_display', 'read_more' )
-						,'strip_tags' => get__option( 'post_display', 'strip_tags' )
-					) );
-				} else {
-					the__content( $post );
-				}
+				the__excerpt( $post, array( 
+					'count' => 55
+					,'read_more' => 'Read More'
+					,'strip_tags' => '<p>'
+				) );
 			echo "</article>";
 			// Insert Comments if turned on
-			if ( ! get__option( 'comments', 'remove_comments' ) AND 'open' == $post->comment_status ) {
+			if ( ! get__option( '_comment_system_deactivated' ) AND 'open' == $post->comment_status ) {
 				comments_template( '', true );
 			}
 		} // End while(have_post())
