@@ -28,7 +28,6 @@
 			?>
 		</div>
 	</div><!-- End Footer -->
-
 </div><!-- End Page -->
 
 <!-- Start wp_footer -->

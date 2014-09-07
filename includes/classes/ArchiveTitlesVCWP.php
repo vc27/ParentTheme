@@ -20,55 +20,6 @@ class ArchiveTitlesVCWP {
 	
 	
 	/**
-	 * options
-	 * 
-	 * @access public
-	 * @var string
-	 * @since 0.0.0
-	 * Description: available options based on type
-	 **/
-	var $options = array(
-		'category' => array(
-			'name' => 'category_title'
-			,'show' => 'cat_show'
-			,'title' => 'cat_title'
-			,'show_desc' => 'cat_desc'
-		)
-		,'tag' => array(
-			'name' => 'tag_title'
-			,'show' => 'tag_show'
-			,'title' => 'tag_title'
-			,'show_desc' => 'tag_desc'
-		)
-		,'author' => array(
-			'name' => 'author_title'
-			,'show' => 'author_show'
-			,'title' => 'author_title'
-			,'show_desc' => 'author_bio'
-		)
-		,'date' => array(
-			'name' => 'date_archive_title'
-			,'show' => 'date_archive_show'
-			,'title' => 'date_archive_title'
-			,'show_desc' => false
-		)
-	);
-	
-	
-	
-	/**
-	 * option_group
-	 * 
-	 * @access public
-	 * @var string
-	 * @since 0.0.0
-	 * Description: current option being displayed
-	 **/
-	var $option_group = false;
-	
-	
-	
-	/**
 	 * description
 	 * 
 	 * @access public
@@ -191,11 +142,6 @@ class ArchiveTitlesVCWP {
 			return false;
 		}
 		
-		$this->set_option_group();
-		if ( ! get__option( $this->option_group['name'], $this->option_group['show'] ) ) {
-			return false;
-		}
-		
 		global $wp_query;
 		$defaults = array(
 			'class' => '',
@@ -210,7 +156,7 @@ class ArchiveTitlesVCWP {
 
 		$output = "<div class=\"archive-title $class\">";
 		
-			$output .= "<h1>$this->the_title</h1>";
+			$output .= "<h1>" . apply_filters( 'ArchiveTitlesVCWP-title', $this->the_title, $this ) . "</h1>";
 			
 			if ( $this->have_description() ) {
 				$output .= "<div class=\"entry\">";
@@ -262,27 +208,33 @@ class ArchiveTitlesVCWP {
 	
 	
 	/**
-	 * set_option_group
-	 * @since 0.0.0
-	 **/
-	function set_option_group() {
-
-		$this->set( 'option_group', $this->options[$this->type] );
-
-	} // end function set_option_group
-	
-	
-	
-	
-	
-	
-	/**
 	 * set_the_title
 	 * @since 0.0.0
 	 **/
 	function set_the_title() {
+		global $wp_query; 
 		
-		$this->set( 'the_title', get__option( $this->option_group['name'], $this->option_group['title'] ) );
+		if ( 
+			isset( $wp_query->queried_object->taxonomy ) 
+			AND isset( $wp_query->queried_object->name ) 
+			AND ! empty( $wp_query->queried_object->name ) 
+		) {
+			$this->set( 'the_title', $wp_query->queried_object->name );
+		} else if ( $this->type == 'date' ) {
+			$the_title = '';
+			if ( isset( $wp_query->query['year'] ) ) {
+				$the_title .= $wp_query->query['year'];
+			}
+			if ( isset( $wp_query->query['monthnum'] ) ) {
+				$the_title .= " " . $wp_query->query['monthnum'];
+			}
+			if ( isset( $wp_query->query['day'] ) ) {
+				$the_title .= " " . $wp_query->query['day'];
+			}
+			$this->set( 'the_title', $the_title );
+		} else if ( $this->type == 'author' ) {
+			$this->set( 'the_title', "Author " . $wp_query->queried_object->data->display_name );
+		}
 		
 	} // end function set_the_title
 	
@@ -300,11 +252,12 @@ class ArchiveTitlesVCWP {
 		
 		if ( 
 			isset( $wp_query->queried_object->taxonomy ) 
-			AND get__option( $this->option_group['name'], $this->option_group['show_desc'] ) 
 			AND isset( $wp_query->queried_object->description ) 
 			AND ! empty( $wp_query->queried_object->description ) 
 		) {
 			$this->set( 'description', $wp_query->queried_object->description );
+		} else if ( $this->type == 'author' ) {
+			$this->set( 'description', get_the_author_meta( 'description', $wp_query->queried_object->data->ID ) );
 		}
 		
 	} // end function set_description

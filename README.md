@@ -1,27 +1,30 @@
 ToDo
 ====================
-- convert theme options to advanced custom fields, but leave old options in place if ACF is not installed.
-- remove Breadcrumb_Navigation_VC
 
 ChangeLog
 ====================
 
-### 09.06.14 - 3.9.3.0
+### 09.07.14 - 6.9.4
+- minor cleaning to functions.php
+- finish ArchiveTitlesVCWP()
+- finish options for ACF
+
+### 09.06.14 - 6.9.3.0
 - update theme options from parent theme to ACF
 - add do__comments() to theme-supports
 - replace all comment checking with do__comments()
 
-### 08.19.14 - 3.9.2.0
+### 08.19.14 - 6.9.2.0
 - finish archive titles
 - moved admin custom columns to child theme admin customization class
 - removed all classes that were not being used
 
-### 08.02.14 - 3.9.1.3
+### 08.02.14 - 6.9.1.3
 - remove featured image post type and add default featured images to functions.php
 - convert comments callback into class
 - convert navigation functions to a class with wrapper functions
 
-### 07.19.14 - 3.9.1.2
+### 07.19.14 - 6.9.1.2
 - functions.php cleanup
 - loop depreciate
 - additional class HavePostsVCWP to handle new loop functions 

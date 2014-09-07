@@ -57,7 +57,7 @@ class ParentTheme {
      * @access public
      * @var string
      **/
-    var $filter_name__register_sidebars = 'register_sidebars_vc';
+    var $filter_name__register_sidebars = 'parenttheme-register_sidebars';
 	
 	
 	
@@ -191,14 +191,16 @@ class ParentTheme {
             get_option( 'thumbnail_size_h' ),
             get_option( 'thumbnail_crop' )
 		);
-		add_image_size( 'standard', 300, 300, false );
+		
+		if ( ! is_child_theme() ) {
+			add_image_size( 'standard', 300, 300, false );
+		}
 
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'nav-menus' );
 		
 		// Translations can be added to the /languages/ directory.
 		// load_theme_textdomain( 'parenttheme', "$this->template_directory/languages" );
-		
 		
 		if ( ! is_child_theme() AND is_admin() ) {
 			add_theme_support('parent-theme-options');
@@ -254,6 +256,7 @@ class ParentTheme {
 		
 		add_action( 'wp_head', array( &$this, 'wp_head' ) );
 		add_action( 'wp_footer', array( &$this, 'wp_footer' ) );
+		add_action( 'after_body_tag', array( &$this, 'after_body_tag' ) );
 		
 		
 		
@@ -269,7 +272,6 @@ class ParentTheme {
 		
 		// Load parent theme as primary theme
 		if ( ! is_child_theme() ) {
-			// add_theme_support('oembed-post-meta-vcwp');
 			$this->load_parent_theme();
 		}
 		
@@ -328,8 +330,12 @@ class ParentTheme {
 	 **/
 	function widgets_init() {
 		
-		register_widget( 'LatestPostWidgetVCWP' );
-		register_widget( 'PageWidgetVCWP' );
+		if ( class_exists( 'LatestPostWidgetVCWP' ) ) {
+			register_widget( 'LatestPostWidgetVCWP' );
+		}
+		if ( class_exists( 'PageWidgetVCWP' ) ) {
+			register_widget( 'PageWidgetVCWP' );
+		}
 		
 	} // end function widgets_init
 	
@@ -489,11 +495,27 @@ class ParentTheme {
 	 **/
 	function wp_footer() {
 		
-		if ( $wp_footer = get__option( 'header_footer', 'wp_footer' ) ) {
-			echo "\n<!-- " . __( 'Start Theme Footer', 'parenttheme' ) . " -->\n" . html_entity_decode( str_replace( '&#039;', "'", $wp_footer ) ) . "\n<!-- " . __( 'End Theme Footer', 'parenttheme' ) . " -->\n";
+		if ( get__option( '_footer_html' ) ) {
+			echo "\n<!-- " . __( 'Start Theme Footer', 'parenttheme' ) . " -->\n" . get__option( '_footer_html' ) . "\n<!-- " . __( 'End Theme Footer', 'parenttheme' ) . " -->\n";
 		}
 		
-	} // end function wp_footer
+	} // end function wp_footer 
+	
+	
+	
+	
+	
+	
+	/** 
+	 * after_body_tag
+	 **/
+	function after_body_tag() {
+		
+		if ( get__option( '_after_opening_body_tag' ) ) {
+			echo get__option( '_after_opening_body_tag' );
+		}
+		
+	} // end function after_body_tag
 	
 	
 	
