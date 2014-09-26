@@ -4,6 +4,9 @@ ToDo
 ChangeLog
 ====================
 
+### 09.25.14 - 6.9.5
+- update GetRemoteDataVCWP::_parse_xml
+
 ### 09.07.14 - 6.9.4
 - minor cleaning to functions.php
 - finish ArchiveTitlesVCWP()

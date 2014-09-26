@@ -690,7 +690,7 @@ class GetRemoteDataVCWP {
 		if ( function_exists('simplexml_load_string') ) {
 			
 			$errors = libxml_use_internal_errors( 'true' );
-			$this->data = simplexml_load_string( $this->body );
+			$this->data = simplexml_load_string( utf8_encode($this->body), 'SimpleXMLElement', LIBXML_NOCDATA );
 			libxml_use_internal_errors( $errors );
 			
 			if ( is_object( $this->data ) ) {
