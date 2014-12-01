@@ -420,7 +420,7 @@ class ParentTheme {
 	function body_class( $classes ) {
 		global $wp_query;
 		
-		if ( isset( $wp_query->post->post_type ) AND ! empty( $wp_query->post->post_type ) ) {
+		if ( isset( $wp_query->post ) AND isset( $wp_query->post->post_type ) AND ! empty( $wp_query->post->post_type ) ) {
 			$classes[] = "content-post-type-" . $wp_query->post->post_type;
 		}
 		

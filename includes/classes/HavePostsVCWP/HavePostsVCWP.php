@@ -243,7 +243,7 @@ class HavePostsVCWP {
 		if ( isset( $post->post_excerpt ) AND !empty( $post->post_excerpt ) ) {
 			$post_content = $post->post_excerpt;
 		} else {
-			$post_content = wp_trim_words( $post_content, $count, apply_filters( 'excerpt_more', ' ' . '[&hellip;]' ) );
+			$post_content = wp_trim_words( $post_content, $count, apply_filters( 'excerpt_more', ' ' ) );
 		}
 		
 		

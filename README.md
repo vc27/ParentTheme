@@ -4,6 +4,10 @@ ToDo
 ChangeLog
 ====================
 
+### 12.01.14 - 6.9.6
+- update body_class if statement
+- update have posts class with no [&hellip;]
+
 ### 09.25.14 - 6.9.5
 - update GetRemoteDataVCWP::_parse_xml
 
