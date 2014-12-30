@@ -140,11 +140,7 @@ class PageWidgetVCWP extends WP_Widget {
 			// Set Title
 			$this->set( 'text_title', $this->instance['text_title'] );
 			
-			if ( __( 'Image', 'parenttheme' ) == $this->instance['title_display'] AND isset( $this->instance['image_title'] ) AND ! empty( $this->instance['image_title'] ) ) {
-				
-				$this->set( 'title', "<img src=\"" . $this->instance['image_title'] . "\" title=\"$this->text_title\" alt=\"" . esc_attr( strip_tags( $this->text_title ) ) . "\" />" );
-			
-			} else if ( __( 'Off', 'parenttheme' ) == $this->instance['title_display'] ) {
+			if ( __( 'Off', 'parenttheme' ) == $this->instance['title_display'] ) {
 				
 				$this->set( 'title', false );
 				
@@ -205,23 +201,6 @@ class PageWidgetVCWP extends WP_Widget {
 			$this->set( 'before_widget', $this->args['before_widget'] );
 		} else {
 			$this->set( 'before_widget', '' );
-		}
-		
-		// Add CSS
-		if ( ! empty( $this->before_widget ) AND isset( $this->instance['css_class'] ) AND ! empty( $this->instance['css_class'] ) ) {
-			$this->set( 'css_class', $this->instance['css_class'] );
-			$this->set( 'css_array', explode( ',', $this->css_class ) );
-			
-			if ( is_array( $this->css_array ) AND ! empty( $this->css_array ) ) {
-				foreach( $this->css_array as $class ) {
-					$classes[] = sanitize_title_with_dashes( $class );
-				}
-				
-				$this->set( 'css_array', $classes );
-				$this->set( 'css_class', implode( ' ', $classes ) );
-				$this->set( 'before_widget', str_replace( 'sub_class', $this->css_class, $this->args['before_widget'] ) );
-				
-			}
 		}
 		
 	} // end function set__before_widget
@@ -480,7 +459,6 @@ class PageWidgetVCWP extends WP_Widget {
 		
 		$instance['title_display'] = $new_instance['title_display'];
 		$instance['text_title'] = $new_instance['text_title'];
-		$instance['image_title'] = $new_instance['image_title'];
 		$instance['link'] = $new_instance['link'];
 		$instance['_page_id'] = $new_instance['_page_id'];
 		$instance['full_post'] = $new_instance['full_post'];
@@ -491,7 +469,6 @@ class PageWidgetVCWP extends WP_Widget {
 		$instance['show_thumbnail'] = $new_instance['show_thumbnail'];
 		$instance['featured_image_size'] = $new_instance['featured_image_size'];
 		$instance['strip_tags'] = $new_instance['strip_tags'];
-		$instance['css_class'] = $new_instance['css_class'];
 		$instance['alt_thumb_link'] = $new_instance['alt_thumb_link'];
 		$instance['thumb_caption'] = $new_instance['thumb_caption'];
 		$instance['no_link'] = $new_instance['no_link'];
@@ -517,7 +494,6 @@ class PageWidgetVCWP extends WP_Widget {
 		$defaults = array(
 			'title_display' => __( 'Text', 'parenttheme' ),
 			'text_title' => '',
-			'image_title' => '',
 			'link' => '',
 			'_page_id' => false,
 			'full_post' => '',
@@ -527,7 +503,6 @@ class PageWidgetVCWP extends WP_Widget {
 			'strip_tags' => '<p>',
 			'show_thumbnail' => '',
 			'featured_image_size' => '',
-			'css_class' => '',
 			);
 		
 		$r = wp_parse_args( $instance, $defaults );
@@ -565,19 +540,6 @@ class PageWidgetVCWP extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Text Title:', 'parenttheme' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('text_title'); ?>" type="text" value="<?php echo $text_title; ?>" />
-		</p>
-		
-		
-		<!-- Image Title -->
-		<p>
-			<label for="<?php echo $this->get_field_id('image_title'); ?>"><?php _e( 'Image Title:', 'parenttheme' ); ?></label> <?php if ( function_exists( 'vc_media_link' ) ) vc_media_link(); ?>
-			<input class="widefat" id="<?php echo $this->get_field_id('image_title'); ?>" name="<?php echo $this->get_field_name('image_title'); ?>" type="text" value="<?php echo $image_title; ?>" />
-			<?php 
-			
-			if ( !empty( $image_title ) )
-				echo "<br /><img src=\"$image_title\" alt=\"\" style=\"max-width:250px;\" />";
-			
-			?>
 		</p>
 		
 		
@@ -673,13 +635,6 @@ class PageWidgetVCWP extends WP_Widget {
 		</p>
 				
 		<?php } // End Featured_Image_VC ?>
-		
-		<!-- CSS Class -->
-		<p>
-			<label for="<?php echo $this->get_field_id('css_class'); ?>"><?php _e( 'CSS Class:', 'parenttheme' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id('css_class'); ?>" name="<?php echo $this->get_field_name('css_class'); ?>" type="text" value="<?php echo $css_class; ?>" />
-			<small><em><?php echo __( 'Use comma separated classes', 'parenttheme' ); ?></em></small>
-		</p>
 		
 		<?php
 	

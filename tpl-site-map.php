@@ -1,11 +1,8 @@
 <?php
 /**
- * File Name tpl-site-map.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 1.7
- * @updated 01.20.14
  **/
 #################################################################################################### */
 
@@ -19,7 +16,7 @@ get_template_part( 'header' );
 		?>
 	</div>
 	<div class="span4">
-		<?php vc_sidebars( 'Primary Sidebar' ); ?>
+		<?php get__widget_area( 'Primary Sidebar' ); ?>
 	</div>
 </div>
 <?php

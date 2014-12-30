@@ -484,7 +484,9 @@ class CreatePostsVCWP {
 			$this->set( 'post_author', $this->post_author );
 		} else {
 			global $userdata;
-			$this->set( 'post_author', $userdata->ID );
+			if ( isset( $userdata ) AND ! empty( $userdata ) ) {
+				$this->set( 'post_author', $userdata->ID );
+			}
 		}
 		
 		do_action( 'import--add-update-delete-post', $this->current_post_id, $this->post_author, 'import' );

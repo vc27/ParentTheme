@@ -144,8 +144,11 @@ class CreatePostsMetaVCWP {
 					} else {
 						$this->_add_post_meta();
 					}
+				} else if ( $this->has_key() ) {
+					delete_post_meta( $this->post_id, $this->meta_data['key'] );
 				}
 			}
+			
 		}
 		
 	} // end function add_post_meta

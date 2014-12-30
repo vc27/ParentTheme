@@ -1,11 +1,8 @@
 <?php
 /**
- * File Name comments.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 2.0
- * @updated 01.20.14
  *
  * Description
  * Comments file based on twentyeleven
@@ -13,7 +10,7 @@
 #################################################################################################### */
 global $wp_query;
 
-if ( get__option( 'comments', 'remove_comments' ) ) {
+if ( ! do__comments() ) {
 	return;
 }
 
@@ -40,7 +37,7 @@ echo "<div id=\"comments\">\n";
 	
 	if ( have_comments() ) {
 		
-		echo "<h4 id=\"title comments-title\">";
+		echo "<h4 class=\"post-title\">";
 			comments_number( 
 				__( 'No Responses', 'parenttheme' ), 
 				__( 'One Response', 'parenttheme' ), 
@@ -63,7 +60,7 @@ echo "<div id=\"comments\">\n";
  		} // end if ( get_comment_pages_count() > 1 AND get_option( 'page_comments' ) )
 		
 		
-		echo "<ol class=\"commentlist\">";
+		echo "<ol class=\"list-comments\">";
 				wp_list_comments( array( 'callback' => 'comments__callback' ) );
 		echo "</ol>";
 		
@@ -84,9 +81,7 @@ echo "<div id=\"comments\">\n";
 	// Comments are closed or not available
 	} elseif ( !comments_open() AND !is_page() AND post_type_supports( get_post_type(), 'comments' ) ) {
 		
-		echo "<p class=\"nocomments\">";
-			echo get_vc_option( 'comments', 'comments_closed' );
-		echo "</p>";
+		echo "<p class=\"nocomments\">Comments are closed</p>";
 	
 	} // end if ( have_comments() )
 	

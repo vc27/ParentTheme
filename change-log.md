@@ -10,7 +10,7 @@ ChangeLog
 
 ### 07.19.14 - 6.8.1
 - update oembed script
-- update is__user
+- update is__user s
 
 ### 05.08.14 - 6.8.0
 - update post object

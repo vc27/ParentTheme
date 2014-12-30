@@ -1,47 +1,10 @@
 <?php
 /**
- * File Name wrapper-functions.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 1.0
- * @updated 03.22.13
  **/
 #################################################################################################### */
-
-
-
-
-
-
-/**
- * AppendPostData --> Wrapper Function
- *
- * @version 1.0
- * @updated	03.16.13
- **/
-if ( ! function_exists( 'append__post_data' ) ) {
-function append__post_data( $options ) {
-	
-	$output = false;
-	
-	if ( ! class_exists( 'AppendPostData' ) ) {
-		require_once( 'AppendPostData.php' );
-		
-		if ( class_exists( 'AppendPostData' ) ) {
-			
-			$AppendPostData = new AppendPostData();
-			$AppendPostData->init( $options );
-			$output = true;
-			
-		}
-			
-	}
-	
-	return $output;
-	
-} // end function append__post_data
-}
 
 
 
@@ -312,38 +275,6 @@ function fetch__data( $type, $url, $args = array(), $transient_name = false, $re
 
 
 /**
- * add__featured_image --> Wrapper Function
- *
- * @version 1.0
- * @updated	05.05.13
- **/
-if ( ! function_exists( 'add__featured_image' ) ) {
-function add__featured_image( $array = array() ) {
-	
-	$output = false;
-	if ( ! class_exists( 'MultiPostThumbnailsVCWP' ) ) {
-		require_once( 'MultiPostThumbnailsVCWP.php' );
-	}
-	
-	if ( class_exists( 'MultiPostThumbnailsVCWP' ) ) {
-		
-		$add__featured_image = new MultiPostThumbnailsVCWP();
-		$add__featured_image->add_thumbnail( $array );
-		$output = $add__featured_image;
-		
-	}
-	
-	return $output;
-	
-} // end function add__featured_image 
-}
-
-
-
-
-
-
-/**
  * upload__image --> Wrapper Function
  *
  * @version 1.0
@@ -409,25 +340,189 @@ function get__meta_tags( $post_id = false ) {
 /**
  * get__option --> Wrapper Function
  *
- * @version 1.0
- * @updated	01.20.14
+ * @since 3.9.0
  **/
 if ( ! function_exists( 'get__option' ) ) {
-function get__option( $option, $setting ) {
+function get__option( $option, $setting = 'option', $system = 'acf-theme-options' ) {
 	
 	$output = false;
-	if ( ! class_exists( 'ThemeOptions' ) ) {
-		require_once( 'ThemeOptions.php' );
+	if ( $system == 'acf-theme-options' AND current_theme_supports('acf-theme-options') AND function_exists('get_field') ) {
+		$output = get_field( $option, $setting );
+	} else if ( $system == 'parent-theme-options' AND current_theme_supports('parent-theme-options') ) {
+		if ( ! class_exists( 'ThemeOptions' ) ) {
+			require_once( 'ThemeOptions.php' );
+		}
+		if ( class_exists( 'ThemeOptions' ) ) {
+			$ThemeOptions = new ThemeOptions();
+			$output = $ThemeOptions->get_option( $option, $setting );
+		}
+	}
+	return $output;
+	
+} // end function get__option
+}
+
+
+
+
+
+
+/**
+ * featured_image__form_select --> Wrapper Function
+ *
+ * @since 6.9.0
+ **/
+if ( ! function_exists( 'featured_image__form_select' ) ) {
+function featured_image__form_select( $args = array() ) {
+	
+	$output = false;
+	if ( ! class_exists( 'FeaturedImageFormSelectVCWP' ) ) {
+		require_once( 'FeaturedImageFormSelectVCWP.php' );
 	}
 	
-	if ( class_exists( 'ThemeOptions' ) ) {
+	if ( class_exists( 'FeaturedImageFormSelectVCWP' ) ) {
 		
-		$ThemeOptions = new ThemeOptions();
-		$output = $ThemeOptions->get_option( $option, $setting );
+		$output = new FeaturedImageFormSelectVCWP( $args );
 		
 	}
 	
 	return $output;
 	
+} // end function featured_image__form_select
+}
+
+
+
+
+
+
+/**
+ * get__widget_area --> Wrapper Function
+ *
+ * @since 6.9.0
+ **/
+if ( ! function_exists( 'get__widget_area' ) ) {
+function get__widget_area( $name, $args = array() ) {
+	
+	$output = false;
+	if ( ! class_exists( 'WidgetAreaVCWP' ) ) {
+		require_once( 'WidgetAreaVCWP.php' );
+	}
+	
+	if ( class_exists( 'WidgetAreaVCWP' ) ) {
+		WidgetAreaVCWP::get_widget_area( $name, $args );
+	}
+	
 } // end function get__option
+}
+
+
+
+
+
+
+/**
+ * featured_image__form_select --> Wrapper Function
+ *
+ * @since 6.9.1
+ **/
+if ( ! function_exists( 'comments__callback' ) ) {
+function comments__callback( $comment, $args, $depth ) {
+	
+	if ( ! class_exists( 'CommentsCallbackVCWP' ) ) {
+		require_once( 'CommentsCallbackVCWP.php' );
+	}
+	
+	if ( class_exists( 'CommentsCallbackVCWP' ) ) {
+		
+		new CommentsCallbackVCWP( $comment, $args, $depth );
+		
+	}
+	
+} // end function comments__callback
+}
+
+
+
+
+
+
+/**
+ * previous_next___post_link --> Wrapper Function
+ *
+ * @since 6.9.0
+ **/
+if ( ! function_exists( 'previous_next___post_link' ) ) {
+function previous_next___post_link( $args = array() ) {
+	
+	$output = false;
+	if ( ! class_exists( 'NavigationVCWP' ) ) {		
+		require_once( 'NavigationVCWP.php' );			
+	}
+	
+	if ( class_exists( 'NavigationVCWP' ) ) {		
+		$NavigationVCWP = new NavigationVCWP();
+		$output = $NavigationVCWP->previous_next___post_link( $args );
+	}
+	
+	return $output;
+	
+} // end function previous_next___post_link
+}
+
+
+
+
+
+
+/**
+ * previous_next___posts_link --> Wrapper Function
+ *
+ * @since 6.9.0
+ **/
+if ( ! function_exists( 'previous_next___posts_link' ) ) {
+function previous_next___posts_link( $args = array() ) {
+	
+	$output = false;
+	if ( ! class_exists( 'NavigationVCWP' ) ) {		
+		require_once( 'NavigationVCWP.php' );			
+	}
+	
+	if ( class_exists( 'NavigationVCWP' ) ) {		
+		$NavigationVCWP = new NavigationVCWP();
+		$NavigationVCWP->previous_next___posts_link( $args );
+		$output = true;
+	}
+	
+	return $output;
+	
+} // end function previous_next___posts_link
+}
+
+
+
+
+
+
+/**
+ * archive__title --> Wrapper Function
+ *
+ * @since 6.9.0
+ **/
+if ( ! function_exists( 'archive__title' ) ) {
+function archive__title( $args = array() ) {
+	
+	$output = false;
+	if ( ! class_exists( 'ArchiveTitlesVCWP' ) ) {		
+		require_once( 'ArchiveTitlesVCWP.php' );			
+	}
+	
+	if ( class_exists( 'ArchiveTitlesVCWP' ) ) {		
+		$ArchiveTitlesVCWP = new ArchiveTitlesVCWP();
+		$output = $ArchiveTitlesVCWP->get_title( $args );
+	}
+	
+	return $output;
+	
+} // end function archive__title
 }

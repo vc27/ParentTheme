@@ -99,7 +99,7 @@ class ThemeOptions {
 	 * @version 1.0
 	 * @updated 00.00.13
 	 **/
-	function have_option( $option, $setting ) {
+	function have_option( $option, $setting = '' ) {
 		
 		if ( ! $this->have_options() ) {
 			$this->set( 'options', get_option( $this->option_name ) );
