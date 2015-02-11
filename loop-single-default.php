@@ -10,7 +10,7 @@
 
 do_action( 'before_loop' );
 if ( have_posts() ) {
-	echo "<div id=\"section-loop-default\" class=\"clearfix loop loop-single\">";
+	echo "<div id=\"section-loop-default\" class=\"loop loop-single\">";
 		while ( have_posts() ) { 
 			the_post(); 
 			echo "<article "; post_class('clearfix'); echo ">";

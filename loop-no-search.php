@@ -8,7 +8,7 @@
 global $s;
 
 ?>
-<div id="section-loop-default" class="clearfix loop loop-page">
+<div id="section-loop-default" class="loop loop-page">
 	<div class="hentry">
 		<?php
 		
@@ -25,7 +25,7 @@ global $s;
 	</div>
 </div>
 
-<div id="section-sitemap" class="clearfix loop layout-sitemap">
+<div id="section-sitemap" class="loop layout-sitemap">
 	<?php
 
 	// Display Search Form
