@@ -1,8 +1,15 @@
 ToDo
 ====================
 
+- update settings classes to utilize wrapper functions
+- remove "VC" from all classes - this will be a pain in the ass, but it needs to be done!
+- update the theme files to utilize "static" construction approach. Building it statically first then adding php where needed.
+
 ChangeLog
 ====================
+
+### 02.11.15 - 6.9.7
+- remove clearfix css class from div's
 
 ### 12.01.14 - 6.9.6
 - update body_class if statement

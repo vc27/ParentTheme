@@ -10,7 +10,7 @@ get_template_part( 'header' );
 ?>
 <div class="row-fluid">
 	<div class="span8">
-		<div id="section-loop-default" class="clearfix loop">
+		<div id="section-loop-default" class="loop">
 			<div class="hentry">
 				<?php
 
@@ -28,7 +28,7 @@ get_template_part( 'header' );
 			</div>
 		</div>
 
-		<div id="section-sitemap" class="clearfix loop layout-sitemap">
+		<div id="section-sitemap" class="loop layout-sitemap">
 			<?php 
 
 			// Display Search Form

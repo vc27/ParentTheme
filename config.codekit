@@ -11,6 +11,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/change-log.md": {
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
@@ -23,6 +24,8 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+=======
+>>>>>>> 6.9.0
 	"\/comments.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -68,6 +71,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/functions.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -77,6 +81,8 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+=======
+>>>>>>> 6.9.0
 	"\/header-head.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -396,7 +402,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
+<<<<<<< HEAD
 		"syntaxCheckerStyle": 0
+=======
+		"syntaxCheckerStyle": 1
+>>>>>>> 6.9.0
 		},
 	"\/js\/compiled-scripts.js": {
 		"fileType": 64,
@@ -469,6 +479,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
 	"\/loop-page-list-children.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -478,6 +489,8 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+=======
+>>>>>>> 6.9.0
 	"\/loop-single-default.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -651,6 +664,7 @@
 	],
 "lastSavedByUser": "Randall Hicks",
 "manualImportLinks": {
+<<<<<<< HEAD
 	"\/js\/childTheme.js": [
 		{
 			"followForSyntaxChecking": 1,
@@ -671,6 +685,8 @@
 			"type": 0
 			}
 		]
+=======
+>>>>>>> 6.9.0
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
@@ -813,8 +829,13 @@
 	"coffeeMinifyOutput": 1,
 	"coffeeOutputStyle": 0,
 	"coffeeSyntaxCheckerStyle": 1,
+<<<<<<< HEAD
 	"externalServerAddress": "http:\/\/loc.parenttheme",
 	"externalServerPreviewPathAddition": "",
+=======
+	"externalServerAddress": "http:\/\/localhost",
+	"externalServerPreviewPathAddition": "\/dev",
+>>>>>>> 6.9.0
 	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
 	"hamlAutoOutputPathEnabled": 1,
 	"hamlAutoOutputPathFilenamePattern": "*.html",
@@ -924,6 +945,13 @@
 			"active": 0,
 			"flagValue": -1
 			},
+<<<<<<< HEAD
+=======
+		"gcl": {
+			"active": false,
+			"flagValue": -1
+			},
+>>>>>>> 6.9.0
 		"globalstrict": {
 			"active": 0,
 			"flagValue": -1
@@ -1036,6 +1064,13 @@
 			"active": 0,
 			"flagValue": -1
 			},
+<<<<<<< HEAD
+=======
+		"onevar": {
+			"active": false,
+			"flagValue": -1
+			},
+>>>>>>> 6.9.0
 		"phantom": {
 			"active": 0,
 			"flagValue": -1
@@ -1072,8 +1107,13 @@
 			"active": 0,
 			"flagValue": -1
 			},
+<<<<<<< HEAD
 		"singleGroups": {
 			"active": 0,
+=======
+		"smarttabs": {
+			"active": false,
+>>>>>>> 6.9.0
 			"flagValue": -1
 			},
 		"strict": {
@@ -1088,6 +1128,13 @@
 			"active": 0,
 			"flagValue": -1
 			},
+<<<<<<< HEAD
+=======
+		"trailing": {
+			"active": true,
+			"flagValue": -1
+			},
+>>>>>>> 6.9.0
 		"typed": {
 			"active": 0,
 			"flagValue": -1
@@ -1100,6 +1147,13 @@
 			"active": 1,
 			"flagValue": -1
 			},
+<<<<<<< HEAD
+=======
+		"white": {
+			"active": false,
+			"flagValue": -1
+			},
+>>>>>>> 6.9.0
 		"withstmt": {
 			"active": 0,
 			"flagValue": -1

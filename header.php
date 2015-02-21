@@ -16,7 +16,7 @@ get_template_part( 'header-head' );
 			
 		<!-- Start Header -->
 		<div id="section-header" class="outer-wrap">
-			<div class="clearfix inner-wrap">
+			<div class="inner-wrap">
 				<?php 
 				
 				wp_nav_menu( array( 
@@ -24,7 +24,7 @@ get_template_part( 'header-head' );
 					'theme_location' => 'primary-navigation', 
 					'container' => 'div', 
 					'container_id' => 'primary-navigation', 
-					'menu_class' => 'clearfix sf-menu' 
+					'menu_class' => 'sf-menu' 
 				) );
 				
 				?>
@@ -33,5 +33,5 @@ get_template_part( 'header-head' );
 		
 		<!-- Start Main Content -->
 		<div id="section-main" class="outer-wrap">
-			<div class="clearfix inner-wrap">
+			<div class="inner-wrap">
 				<?php do_action('section-main-top'); ?>
