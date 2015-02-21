@@ -204,7 +204,7 @@ class ParentTheme {
 		
 		if ( ! is_child_theme() AND is_admin() ) {
 			add_theme_support('parent-theme-options');
-			add_theme_support('video-oembed-post-meta');
+			// add_theme_support('video-oembed-post-meta');
 		} // end if ( is_admin() )
 		
 		$this->load_theme_supports();
@@ -703,10 +703,10 @@ class ParentTheme {
 	function pt__layout_options() {
 		
 		// Archive Post Navigation
-		add_action( 'after_loop', 'previous_next___posts_link' );
+		add_action( 'after-loop', 'previous_next___posts_link' );
 		
 		// Single Post Navigation
-		add_action( 'after_loop', 'previous_next___post_link' );
+		add_action( 'after-loop', 'previous_next___post_link' );
 		
 		// Add Page Title
 		add_action( 'section-main-top', 'archive__title' );

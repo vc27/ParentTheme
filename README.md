@@ -3,10 +3,23 @@ ToDo
 
 - update settings classes to utilize wrapper functions
 - remove "VC" from all classes - this will be a pain in the ass, but it needs to be done!
+
+Update to static page layout
+====================
 - update the theme files to utilize "static" construction approach. Building it statically first then adding php where needed.
+-- left off on index.php 
+-- note: index.php is the current archive.php
 
 ChangeLog
 ====================
+
+### 02.21.15 - 7.0.0
+- update template files to static html template approach
+- remove tpl-site-map.php
+- remove tpl-wide.php
+- update HavePostsVCWP css classes
+- update page.php
+- update single.php
 
 ### 02.11.15 - 6.9.7
 - remove clearfix css class from div's

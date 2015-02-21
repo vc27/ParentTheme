@@ -1,20 +1,21 @@
 /* 
+File Name default.css
 Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #################################################################################################### */
-/* Padding */
-/* Paragraph */
-/* Title */
+/* 
+File Name mixins.css
+Package ParentTheme
+License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+#################################################################################################### */
 /* Block */
-/*Colors*/
 /*Gray*/
 /*Red*/
-/*mixin*/
+/* custom mixins
+#################################################################################################### */
 /* Reset */
 /* 
 File Name: reset.css
-Version: 3.0
-Updated: 03.14.14
 Package: ParentTheme
 License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #################################################################################################### */
@@ -22,7 +23,7 @@ html { width: 100% !important; height: 100%; -webkit-tap-highlight-color: transp
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
-body { font-size: 62.5%; height: 100%; }
+body { font-size: 62.5%; height: 100%; line-height: 1; text-align: center; min-height: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 
@@ -35,8 +36,6 @@ audio:not([controls]) { display: none; }
 img { -ms-interpolation-mode: bicubic; }
 
 img#wpstats { width: 0px; height: 0px; padding: 0px; border: none; overflow: hidden; }
-
-body { line-height: 1; text-align: center; min-height: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
 ol, ul { list-style: none; }
 
@@ -66,8 +65,6 @@ input[type="submit"], input[type="button"], button, .trigger { cursor: pointer; 
 
 .clear { display: block; clear: both; float: none; }
 
-.no_border { border: none !important; }
-
 .none, .ui-tabs .ui-tabs-hide, .ui-tabs-hide { display: none; }
 
 br { height: 0; }
@@ -78,37 +75,25 @@ legend { display: none; }
 
 svg:not(:root) { overflow: hidden; }
 
-/* clearfix */
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
+.clearfix, #page, .inner-wrap { *zoom: 1; }
 
-.clearfix:after { clear: both; }
+.clearfix:before, #page:before, .inner-wrap:before, .clearfix:after, #page:after, .inner-wrap:after { display: table; line-height: 0; content: ""; }
 
-.clearfix { zoom: 1; }
+.clearfix:after, #page:after, .inner-wrap:after { clear: both; }
 
-/*** superfish ***/
 .sf-menu, .sf-menu * { margin: 0; padding: 0; list-style: none; }
 
 .sf-menu { line-height: 1.0; }
-
 .sf-menu ul { position: absolute; top: -999em; width: 10em; }
-
 .sf-menu ul li { width: 100%; }
-
 .sf-menu li:hover { visibility: inherit; }
-
 .sf-menu li { float: left; position: relative; }
-
 .sf-menu a { display: block; position: relative; }
-
-.sf-menu li:hover ul, .sf-menu li.sfHover ul { left: 0; top: 1.8em; z-index: 99; }
-
-ul.sf-menu li:hover li ul, ul.sf-menu li.sfHover li ul { top: -999em; }
-
-ul.sf-menu li li:hover ul, ul.sf-menu li li.sfHover ul { left: 10em; top: 0; }
-
-ul.sf-menu li li:hover li ul, ul.sf-menu li li.sfHover li ul { top: -999em; }
-
-ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul { left: 10em; top: 0; }
+.sf-menu li:hover ul, .sf-menu .sf-menu li.sfHover ul { left: 0; top: 1.8em; z-index: 99; }
+.sf-menu li:hover li ul, .sf-menu li.sfHover li ul { top: -999em; }
+.sf-menu li li:hover ul, .sf-menu li li.sfHover ul { left: 10em; top: 0; }
+.sf-menu li li:hover li ul, .sf-menu li li.sfHover li ul { top: -999em; }
+.sf-menu li li li:hover ul, .sf-menu li li li.sfHover ul { left: 10em; top: 0; }
 
 .hentry { position: relative; }
 
@@ -116,11 +101,44 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul { left: 10em; top: 
 
 * :focus { outline: 0; }
 
-.fade { opacity: 0; -webkit-transition: opacity 0.15s linear; -moz-transition: opacity 0.15s linear; -o-transition: opacity 0.15s linear; transition: opacity 0.15s linear; }
+.fade { opacity: 0; -webkit-transition: all 0.1s ease-in; -moz-transition: all 0.1s ease-in; -o-transition: all 0.1s ease-in; transition: all 0.1s ease-in; }
 
-.fade.in { opacity: 1; }
+.fade.in { opacity: 1 !important; pointer-events: auto !important; }
 
-.fade.out { opacity: 0; }
+.fade.out { opacity: 0; pointer-events: none; }
+
+/* Entry
+#################################################################################################### */
+.entry { /* Gallery Shortcode */ }
+.entry .aligncenter { display: block; margin: 0 auto 10px; }
+.entry .alignnone { clear: both; float: none; }
+.entry .alignleft { margin-right: 10px; margin-bottom: 3px; }
+.entry .alignright { margin-left: 10px; margin-bottom: 3px; }
+.entry img { max-width: 100% !important; height: auto !important; }
+.entry img.wp-smiley { border: none; margin: 0; padding: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
+.entry p { padding-bottom: 20px; }
+.entry blockquote p { padding: 0; margin: 10px 30px 15px 15px; }
+.entry ol, .entry ul { margin: 10px 0 20px 20px; }
+.entry ul { list-style: disc; }
+.entry ol { list-style: decimal; }
+.entry li { padding-bottom: 7px; }
+.entry small { font-size: 11px; }
+.entry table { line-height: 18px; }
+.entry table td { padding-right: 7px; vertical-align: top; }
+.entry .gallery dl.gallery-item { display: block; float: left; }
+.entry .wp-caption { max-width: 96%; display: block; text-align: center !important; padding: 5px; background: #eee; }
+.entry .wp-caption p { font-size: 11px; line-height: 14px; padding: 5px 0 7px; }
+.entry .wp-caption img { display: inline; }
+
+/*end .entry */
+/* Navigation */
+.navigation-post { display: block; clear: both; text-align: left; padding: 5px; }
+.navigation-post .prev-post { padding-left: 5px; }
+.navigation-post .next-post { padding-right: 5px; }
+
+.wp-pagenavi a, .wp-pagenavi span { padding: 3px 4px; margin: 3px; }
+
+.navigation-posts { display: block; clear: both; text-align: center; }
 
 /*!
  * Bootstrap Responsive v2.3.1
@@ -131,12 +149,6 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul { left: 10em; top: 
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
-.clearfix { *zoom: 1; }
-
-.clearfix:before, .clearfix:after { display: table; line-height: 0; content: ""; }
-
-.clearfix:after { clear: both; }
-
 .hide-text { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
 
 .input-block-level { display: block; width: 100%; min-height: 30px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -381,7 +393,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul { left: 10em; top: 
   .nav-collapse .nav > .divider-vertical { display: none; }
   .nav-collapse .nav .nav-header { color: #777777; text-shadow: none; }
   .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a { padding: 9px 15px; font-weight: bold; color: #777777; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
-  .nav-collapse .btn { padding: 4px 10px 4px; font-weight: normal; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+  .nav-collapse .btn, .nav-collapse input[type="submit"], .nav-collapse input[type="button"], .nav-collapse button { padding: 4px 10px 4px; font-weight: normal; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
   .nav-collapse .dropdown-menu li + li a { margin-bottom: 2px; }
   .nav-collapse .nav > li > a:hover, .nav-collapse .nav > li > a:focus, .nav-collapse .dropdown-menu a:hover, .nav-collapse .dropdown-menu a:focus { background-color: #f2f2f2; }
   .navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a { color: #999999; }
@@ -409,9 +421,15 @@ body { line-height: 26px; font-family: sans-serif; }
 
 .inner-wrap { max-width: 940px; padding-left: 10px; padding-right: 10px; position: relative; margin: 0 auto; text-align: left; }
 
-a, a:visited { text-decoration: none; }
+.a, a, a:visited { cursor: pointer; text-decoration: none; }
 
-.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 { font-family: serif; font-weight: 400; display: block; line-height: 1.1em; padding-bottom: 10px; padding-top: 5px; }
+.em { font-style: italic; }
+
+.ic .text { display: none; }
+
+.featured-image { display: block; min-height: 100px; background-position: center center; background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
+
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 { display: block; font-family: serif; line-height: 1.1em; font-weight: 400; }
 
 .h1, h1 { font-size: 46px; }
 
@@ -425,90 +443,36 @@ a, a:visited { text-decoration: none; }
 
 .h6, h6 { font-size: 20px; }
 
+.h1.slim, .h2.slim, .h3.slim, .h4.slim, .h5.slim, .h6.slim { font-weight: 300; }
+
+/* Buttons
+#################################################################################################### */
+.btn, input[type="submit"], input[type="button"], button { cursor: pointer; display: inline-block; padding: 6px 20px; background: #fafafa; border: none; font-family: sans-serif; font-size: 15px; line-height: 26px; }
+
 /* Forms
 #################################################################################################### */
-textarea, input[type="text"], input[type="password"], input[type="email"] { font-size: 15px; font-family: sans-serif; width: 95%; padding: 6px 2%; color: #adadad; border: none; background: #fafafa; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; }
+textarea, input[type="text"], input[type="password"], input[type="email"] { font-family: sans-serif; font-size: 15px; line-height: 26px; width: 95%; padding: 6px 2%; border: none; background: #fafafa; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; }
 
 textarea { height: 100px; }
 
-label.error { color: red; }
+label.error { color: #f5cdca; }
 
 label { cursor: pointer; }
 
 /* remove webkit css
-select, input, textarea { -webkit-appearance: none; }*/
-/* Buttons
+select, input, textarea { 
+	-webkit-appearance: none; 
+	-moz-appearance:window;
+}
+select::-ms-expand { display: none;
+}
+*/
+/* Blocks
 #################################################################################################### */
-.btn, input[type="submit"], input[type="button"], button { cursor: pointer; display: inline-block; padding: 6px 20px; background: #fafafa; border: none; line-height: 26px; font-family: sans-serif; font-size: 15px; }
-
-/* General Links
-#################################################################################################### */
-/* Navigation */
-.navigation-post { display: block; clear: both; text-align: left; padding: 2.5px 5px; }
-.navigation-post .prev-post { padding-left: 5px; }
-.navigation-post .next-post { padding-right: 5px; }
-
-.wp-pagenavi a, .wp-pagenavi span { padding: 3px 4px; margin: 3px; }
-
-.navigation-posts { padding: 2.5px 5px; display: block; text-align: left; }
-
-/* Post, Page & General Loops
-#################################################################################################### */
-.hentry { position: relative; }
-
-/* Meta Data */
-.meta-data { color: #adadad; font-family: serif; font-style: italic; display: block; padding: 10px; }
-.meta-data .post-date, .meta-data .post-category, .meta-data .post-comments { padding: 0 10px 0 0; }
-
-.entry .aligncenter { display: block; margin: 0 auto 10px; }
-.entry .alignnone { clear: both; float: none; }
-.entry .alignleft { margin-right: 10px; margin-bottom: 3px; }
-.entry .alignright { margin-left: 10px; margin-bottom: 3px; }
-.entry img { max-width: 100% !important; height: auto !important; }
-.entry img.wp-smiley { border: none; margin: 0; padding: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
-.entry p { padding-bottom: 20px; }
-.entry blockquote p { padding: 0; margin: 10px 30px 15px 15px; }
-.entry ol, .entry ul { margin: 10px 0 20px 20px; }
-.entry ul { list-style: disc; }
-.entry ol { list-style: decimal; }
-.entry li { padding-bottom: 7px; }
-.entry small { font-size: 11px; }
-.entry table { line-height: 18px; }
-.entry table td { padding-right: 7px; vertical-align: top; }
-
-.excerpt p { padding-bottom: 20px; }
-
-/* Gallery Shortcode */
-.gallery dl.gallery-item { display: block; float: left; }
-
-.wp-caption { max-width: 96%; display: block; text-align: center !important; padding: 5px; background: #eee; }
-.wp-caption p { font-size: 11px; line-height: 14px; padding: 5px 0 7px; }
-.wp-caption img { display: inline; }
-
-/* All sitemap style layouts - search, 404, sitemap */
-.layout-sitemap .display-list { margin: 0 2% 20px 0; width: 48%; float: left; }
-.layout-sitemap .display-list ul { margin: 10px 0 0 0; }
-.layout-sitemap .display-list ul ul { margin: 0 0 7px 15px; list-style: disc; }
-.layout-sitemap .display-list ul ul.children { padding: 0; margin-left: 15px; list-style: disc; }
-.layout-sitemap .display-list .site-search { display: block; padding-bottom: 10px; }
-
 #section-loop-default .hentry { padding: 30px 0 20px 0; }
 #section-loop-default .hentry:first-child { padding: 0 0 20px 0; }
 #section-loop-default .entry { clear: both; }
 #section-loop-default .excerpt { clear: none; padding: 0; }
-
-/* Widget Areas
-#################################################################################################### */
-.sidebar .widget-box { margin-bottom: 10px; }
-
-/* Blocks
-#################################################################################################### */
-#header #primary-navigation li { display: inline-block; }
-#header #primary-navigation a { display: inline-block; padding: 0 20px; margin: 0; -webkit-transition: all 0.1s ease-in; -moz-transition: all 0.1s ease-in; -o-transition: all 0.1s ease-in; transition: all 0.1s ease-in; }
-
-#footer .inner-wrap { text-align: center; padding: 10px; }
-#footer #footer-navigation li { display: inline-block; }
-#footer #footer-navigation a { display: inline-block; padding: 0 10px; margin: 0; }
 
 /* Comments */
 /* 
@@ -519,21 +483,21 @@ Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #################################################################################################### */
 #comments { margin-top: 45px; /*end .commentlist*/ }
-#comments .post-title { margin: 0 0 7px; }
+#comments .comments-title { margin: 0 0 7px; }
 #comments .navigation { display: block; clear: both; text-align: left; padding: 3px 7px; }
 #comments .prev-page { padding-left: 7px; }
 #comments .next-page { padding-right: 7px; }
-#comments .list-comments { list-style: none; margin: 0 0 1em; padding: 0; text-indent: 0; }
-#comments .list-comments li { padding-bottom: 22px; margin-bottom: 10px; }
-#comments .list-comments li .vcard { font-style: normal; padding: 0 0 3px; font-weight: 200; font-size: 16px; letter-spacing: 1px; }
-#comments .list-comments li .avatar { float: right; margin: 0 0 1em 1em; }
-#comments .list-comments li .comment-meta { padding-bottom: 2px; }
-#comments .list-comments li .comment-meta a { font-size: 12px; }
-#comments .list-comments li ul { list-style: square; margin: 0 0 1em 2em; }
-#comments .list-comments li .reply { text-align: right; }
-#comments .list-comments li .reply a { text-decoration: underline; font-style: italic; padding-left: 10px; }
-#comments .list-comments li ul.children { list-style: none; margin: 10px 0 0 0; text-indent: 0; }
-#comments .list-comments li ul.children li { padding-bottom: 0; }
+#comments .commentlist { list-style: none; margin: 0 0 1em; padding: 0; text-indent: 0; }
+#comments .commentlist li { padding-bottom: 22px; margin-bottom: 10px; }
+#comments .commentlist li .vcard { font-style: normal; padding: 0 0 3px; font-weight: 200; font-size: 16px; letter-spacing: 1px; }
+#comments .commentlist li .avatar { float: right; margin: 0 0 1em 1em; }
+#comments .commentlist li .comment-meta { padding-bottom: 2px; }
+#comments .commentlist li .comment-meta a { font-size: 12px; }
+#comments .commentlist li ul { list-style: square; margin: 0 0 1em 2em; }
+#comments .commentlist li .reply { text-align: right; }
+#comments .commentlist li .reply a { text-decoration: underline; font-style: italic; padding-left: 10px; }
+#comments .commentlist li ul.children { list-style: none; margin: 10px 0 0 0; text-indent: 0; }
+#comments .commentlist li ul.children li { padding-bottom: 0; }
 
 /*end #comments*/
 #respond { /*end form*/ }
@@ -547,3 +511,17 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #respond form .button-submit { margin-top: 7px; }
 
 /*end #respond*/
+/*Responsive*/
+/* 
+File Name: responsive.css
+Version: 1.2
+Updated: 08.16.13
+Package: ParentTheme_VC
+License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+#################################################################################################### */
+/*end @media (max-width: 1024px)*/
+/*end @media (max-width: 940px)*/
+@media (max-width: 767px) { body { padding-left: 0; padding-right: 0; } }
+/*end @media (max-width: 767px)*/
+/*end @media (max-width: 568px)*/
+/*end @media (max-width: 320px)*/

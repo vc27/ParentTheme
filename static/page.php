@@ -1,4 +1,6 @@
 <?php
+/* Template Name: Static Page */
+
 /**
  * @package WordPress
  * @subpackage ParentTheme
@@ -7,27 +9,20 @@
 #################################################################################################### */
 
 get_template_part( 'header' );
-the_post();
-
 ?>
 <div id="section-main" class="outer-wrap">
 	<div class="inner-wrap">
 		<?php do_action('section-main-top'); ?>
 		<div class="row-fluid">
 			<div class="span8">
-				<?php do_action( 'before-loop' );  ?>
 				<div id="section-content-page" class="inside-wrapper">
 					<div class="hentry">
-						<?php the__title( $post, array(
-							'element' => 'h1'
-							,'class' => 'h1'
-						) ); ?>
-						<?php the__comments( $post ); ?>
+						<h1 class="h1">Page Title</h1>
+						<div class="entry"><p>Pellentesque aliquam, risus vitae rhoncus fermentum, urna dui suscipit nulla, in bibendum nisl lectus quis augue. Nulla non sem vitae sapien pharetra posuere a sed tellus. Nam rutrum condimentum felis eget pellentesque. Sed id aliquet metus. Nam vulputate rhoncus gravida. Nunc a faucibus enim. Quisque varius convallis justo at pulvinar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut cursus elementum libero eu blandit. Phasellus et gravida tellus, id aliquam urna. Etiam efficitur mattis nisl a ornare.</p></div>
 					</div>
 				</div>
 				<?php if ( do__comments() ) { comments_template( '', true ); } ?>
 			</div>
-			<?php do_action( 'after-loop' ); ?>
 			<div class="span4">
 				<?php get__widget_area( 'Primary Sidebar' ); ?>
 			</div>

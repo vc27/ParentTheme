@@ -7,27 +7,7 @@
 #################################################################################################### */
 
 ?>
-			<?php do_action('section-main-bottom'); ?>
-			<div class="clear"></div>
-		</div>
-	</div><!-- End section-main -->
-	
-	<!-- Start Footer -->
-	<div id="section-footer" class="outer-wrap">
-		<div class="inner-wrap">
-			<?php 
-			
-			wp_nav_menu( array( 
-				'depth' => 1, 
-				'fallback_cb' => '', 
-				'theme_location' => 'footer-navigation', 
-				'container' => 'div', 
-				'container_id' => 'footer-navigation' 
-			) );
-			
-			?>
-		</div>
-	</div><!-- End Footer -->
+	<?php get_template_part('section-footer'); ?>
 </div><!-- End Page -->
 
 <!-- Start wp_footer -->

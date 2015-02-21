@@ -9,26 +9,27 @@ global $s;
 
 get_template_part( 'header' );
 ?>
-<div class="row-fluid">
-	<div class="span8">
-		<?php
-		if ( ! have_posts() ) {
-
-			get_template_part( 'loop-no-search' ); 
-
-		} else {
-
-			echo "<div class=\"page-title-wrapper\">";
-				echo "<h1 class=\"h1\">" . get__option( '_search_title' ) . " " . $s . "</h1>";
-			echo "</div>";
-
-			get_template_part( 'loop-default' );
-
-		}
-		?>
-	</div>
-	<div class="span4">
-		<?php get__widget_area( 'Primary Sidebar' ); ?>
+<div id="section-main" class="outer-wrap">
+	<div class="inner-wrap">
+		<?php do_action('section-main-top'); ?>
+		<div class="row-fluid">
+			<div class="span8">
+				<?php
+				if ( ! have_posts() ) {
+					get_template_part( 'loop-no-search' ); 
+				} else {
+					echo "<div class=\"page-title-wrapper\">";
+						echo "<h1 class=\"h1\">" . get__option( '_search_title' ) . " " . $s . "</h1>";
+					echo "</div>";
+					get_template_part( 'loop-default' );
+				}
+				?>
+			</div>
+			<div class="span4">
+				<?php get__widget_area( 'Primary Sidebar' ); ?>
+			</div>
+		</div>
+		<?php do_action('section-main-bottom'); ?>
 	</div>
 </div>
 <?php
