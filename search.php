@@ -19,9 +19,7 @@ get_template_part( 'header' );
 					<h1 class="h1"><?php echo get__option( '_search_title' ) . " " . $s; ?></h1>
 					<?php while ( have_posts() ) { the_post(); ?>
 					<div <?php post_class(); ?>>
-						<?php featured__image( $post, array( 
-							'post_thumbnail_size' => 'standard'
-						) ); ?>
+						<div class="featured-image" style="background-image:url('<?php echo featured__image( '_featured_image', $post->ID, 'large' ); ?>');"></div>
 						<div class="post-wrap">
 							<?php the__title( $post, array(
 								'element' => 'h3'

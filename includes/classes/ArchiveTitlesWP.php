@@ -12,10 +12,10 @@
 
 
 /**
- * ArchiveTitlesVCWP
+ * ArchiveTitlesWP
  * @since 0.0.0
  **/
-class ArchiveTitlesVCWP {
+class ArchiveTitlesWP {
 	
 	
 	
@@ -156,7 +156,7 @@ class ArchiveTitlesVCWP {
 
 		$output = "<div class=\"archive-title $class\">";
 		
-			$output .= "<h1>" . apply_filters( 'ArchiveTitlesVCWP-title', $this->the_title, $this ) . "</h1>";
+			$output .= "<h1>" . apply_filters( 'ArchiveTitlesWP-title', $this->the_title, $this ) . "</h1>";
 			
 			if ( $this->have_description() ) {
 				$output .= "<div class=\"entry\">";
@@ -338,4 +338,4 @@ class ArchiveTitlesVCWP {
 	
 	
 	
-} // end class ArchiveTitlesVCWP
+} // end class ArchiveTitlesWP

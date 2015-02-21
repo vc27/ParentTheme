@@ -155,7 +155,7 @@ class ParentTheme {
 		add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
         add_action( 'init', array( &$this, 'init' ) );
         add_action( 'admin_init', array( &$this, 'admin_init' ) );
-        add_action( 'widgets_init', array( &$this, 'widgets_init' ) );
+        // add_action( 'widgets_init', array( &$this, 'widgets_init' ) );
 		
 	} // end function init_parent_theme
 
@@ -205,7 +205,9 @@ class ParentTheme {
 		// Translations can be added to the /languages/ directory.
 		// load_theme_textdomain( 'parenttheme', "$this->template_directory/languages" );
 		
-		add_theme_support( 'acf-theme-options' );
+		if ( ! is_child_theme() ) {
+			add_theme_support( 'acf-theme-options' );
+		}
 		
 		$this->load_theme_supports();
 		

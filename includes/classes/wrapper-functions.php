@@ -144,22 +144,14 @@ function form__field( $type, $name, $val, $id = false, $class = false, $desc = f
  * @updated	06.28.14
  **/
 if ( ! function_exists( 'featured__image' ) ) {
-function featured__image( $post, $args = array() ) {
-	
+function featured__image( $meta_key, $post_id, $size = 'large' ) {
 	$output = false;
-	if ( ! class_exists( 'FeaturedImageVCWP' ) ) {
-		require_once( 'FeaturedImageVCWP.php' );
-	}
 	
-	if ( class_exists( 'FeaturedImageVCWP' ) ) {
-		
-		$FeaturedImageVCWP = new FeaturedImageVCWP();
-		if ( isset( $args['get_src'] ) ) {
-			$output = $FeaturedImageVCWP->image_src( $post, $args );
-		} else {
-			$output = $FeaturedImageVCWP->image( $post, $args );
-		}
-		
+	if ( ! class_exists( 'ACFWP' ) ) {
+		require_once( 'ACFWP.php' );
+	}
+	if ( class_exists( 'ACFWP' ) ) {
+		$output = ACFWP::get_image( $meta_key, $post_id, $size );
 	}
 	
 	return $output;
@@ -376,13 +368,13 @@ if ( ! function_exists( 'featured_image__form_select' ) ) {
 function featured_image__form_select( $args = array() ) {
 	
 	$output = false;
-	if ( ! class_exists( 'FeaturedImageFormSelectVCWP' ) ) {
-		require_once( 'FeaturedImageFormSelectVCWP.php' );
+	if ( ! class_exists( 'FeaturedImageFormSelectWP' ) ) {
+		require_once( 'FeaturedImageFormSelectWP.php' );
 	}
 	
-	if ( class_exists( 'FeaturedImageFormSelectVCWP' ) ) {
+	if ( class_exists( 'FeaturedImageFormSelectWP' ) ) {
 		
-		$output = new FeaturedImageFormSelectVCWP( $args );
+		$output = new FeaturedImageFormSelectWP( $args );
 		
 	}
 	
@@ -429,13 +421,13 @@ function get__widget_area( $name, $args = array() ) {
 if ( ! function_exists( 'comments__callback' ) ) {
 function comments__callback( $comment, $args, $depth ) {
 	
-	if ( ! class_exists( 'CommentsCallbackVCWP' ) ) {
-		require_once( 'CommentsCallbackVCWP.php' );
+	if ( ! class_exists( 'CommentsCallbackWP' ) ) {
+		require_once( 'CommentsCallbackWP.php' );
 	}
 	
-	if ( class_exists( 'CommentsCallbackVCWP' ) ) {
+	if ( class_exists( 'CommentsCallbackWP' ) ) {
 		
-		new CommentsCallbackVCWP( $comment, $args, $depth );
+		new CommentsCallbackWP( $comment, $args, $depth );
 		
 	}
 	
@@ -513,13 +505,13 @@ if ( ! function_exists( 'archive__title' ) ) {
 function archive__title( $args = array() ) {
 	
 	$output = false;
-	if ( ! class_exists( 'ArchiveTitlesVCWP' ) ) {		
-		require_once( 'ArchiveTitlesVCWP.php' );			
+	if ( ! class_exists( 'ArchiveTitlesWP' ) ) {		
+		require_once( 'ArchiveTitlesWP.php' );			
 	}
 	
-	if ( class_exists( 'ArchiveTitlesVCWP' ) ) {		
-		$ArchiveTitlesVCWP = new ArchiveTitlesVCWP();
-		$output = $ArchiveTitlesVCWP->get_title( $args );
+	if ( class_exists( 'ArchiveTitlesWP' ) ) {		
+		$ArchiveTitlesWP = new ArchiveTitlesWP();
+		$output = $ArchiveTitlesWP->get_title( $args );
 	}
 	
 	return $output;

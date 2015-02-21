@@ -11,9 +11,9 @@
 
 
 /**
- * FeaturedImageFormSelectVCWP
+ * FeaturedImageFormSelectWP
  **/
-class FeaturedImageFormSelectVCWP {
+class FeaturedImageFormSelectWP {
 	
 	
 	function __construct( $args = array() ) {
@@ -53,4 +53,4 @@ class FeaturedImageFormSelectVCWP {
 	
 	
 	
-} // end class FeaturedImageFormSelectVCWP
+} // end class FeaturedImageFormSelectWP

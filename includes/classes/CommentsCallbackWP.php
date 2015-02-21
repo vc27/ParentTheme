@@ -10,12 +10,12 @@
 
 
 /**
- * CommentsCallbackVCWP
+ * CommentsCallbackWP
  *
  * @version 1.0
  * @updated 00.00.00
  **/
-class CommentsCallbackVCWP {
+class CommentsCallbackWP {
 	
 	
 	
@@ -188,4 +188,4 @@ class CommentsCallbackVCWP {
 	
 	
 	
-} // end class CommentsCallbackVCWP
+} // end class CommentsCallbackWP
