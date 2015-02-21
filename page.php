@@ -22,12 +22,12 @@ the_post();
 							'element' => 'h1'
 							,'class' => 'h1'
 						) ); ?>
-						<?php the__comments( $post ); ?>
+						<?php the__content( $post ); ?>
 					</div>
 				</div>
 				<?php if ( do__comments() ) { comments_template( '', true ); } ?>
+				<?php do_action( 'after-loop' ); ?>
 			</div>
-			<?php do_action( 'after-loop' ); ?>
 			<div class="span4">
 				<?php get__widget_area( 'Primary Sidebar' ); ?>
 			</div>

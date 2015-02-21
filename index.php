@@ -13,7 +13,36 @@ get_template_part( 'header' );
 		<?php do_action('section-main-top'); ?>
 		<div class="row-fluid">
 			<div class="span8">
-				<?php get_template_part( 'loop-default' ); ?>
+				<?php do_action( 'before-loop' ); ?>
+				<?php if ( have_posts() ) { ?>
+				<div id="section-content-archive" class="layout-archive">
+					<?php while ( have_posts() ) { the_post(); ?>
+					<div <?php post_class(); ?>>
+						<?php featured__image( $post, array( 
+							'post_thumbnail_size' => 'standard'
+						) ); ?>
+						<div class="post-wrap">
+							<?php the__title( $post, array(
+								'element' => 'h3'
+								,'class' => 'h3'
+								,'permalink' => true
+							) ); ?>
+							<div class="meta-data">
+								<?php the__date( $post ); ?>
+								<?php the__comments( $post ); ?>
+								<?php the__category( $post ); ?>
+							</div>
+							<?php the__excerpt( $post, array( 
+								'count' => 55
+								,'read_more' => 'Read More'
+								,'strip_tags' => '<p>'
+							) ); ?>
+						</div>
+					</div>
+					<?php } ?>
+				</div>
+				<?php } ?>
+				<?php do_action( 'after-loop' ); ?>
 			</div>
 			<div class="span4">
 				<?php get__widget_area( 'Primary Sidebar' ); ?>

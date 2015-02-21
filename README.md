@@ -13,6 +13,9 @@ Update to static page layout
 ChangeLog
 ====================
 
+### 02.21.15 - 7.1.0
+- update page html, 404, search, comments
+
 ### 02.21.15 - 7.0.0
 - update template files to static html template approach
 - remove tpl-site-map.php

@@ -10,6 +10,8 @@
 if ( ! defined('THEME_SUPPORTS_INIT') ) {
 	if ( current_theme_supports('parent-theme-options') ) {
 		require_once('ParentThemeOptionsVCWP.php');
+	} else if ( ! is_child_theme() ) {
+		require_once('ACFThemeOptionsWP.php');
 	}
 	if ( current_theme_supports('video-oembed-post-meta') ) {
 		require_once('OEmbedPostMetaVCWP.php');

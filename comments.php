@@ -13,10 +13,10 @@ global $wp_query;
 if ( ! do__comments() ) {
 	return;
 }
-
-echo "\n<!-- #comments -->\n";
-echo "<div id=\"comments\">\n";
+?>
+<div id="section-comments">
 	
+	<?php
 	/**
 	 * Stop the rest of comments.php from being processed,
 	 * but don't kill the script entirely -- we still have
@@ -28,7 +28,7 @@ echo "<div id=\"comments\">\n";
 			 	_e( 'This post is password protected. Enter the password to view any comments.', 'parenttheme' );
 			echo "</p>";
 		
-		echo "</div><!-- #comments -->";
+		echo "</div><!-- #section-comments -->";
 			
 		return;
 		
@@ -37,7 +37,7 @@ echo "<div id=\"comments\">\n";
 	
 	if ( have_comments() ) {
 		
-		echo "<h4 class=\"post-title\">";
+		echo "<h4 class=\"h4\">";
 			comments_number( 
 				__( 'No Responses', 'parenttheme' ), 
 				__( 'One Response', 'parenttheme' ), 
@@ -70,7 +70,7 @@ echo "<div id=\"comments\">\n";
 			?>
 			
 			<div id="comment-nav-above">
-				<h1 class="assistive-text"><?php _e( 'Comment navigation', 'parenttheme' ); ?></h1>
+				<div class="assistive-text"><?php _e( 'Comment navigation', 'parenttheme' ); ?></div>
 				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'parenttheme' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'parenttheme' ) ); ?></div>
 			</div>
@@ -93,4 +93,5 @@ echo "<div id=\"comments\">\n";
 		'comment_notes_after' => false,
 	) );
 
-echo "\n</div>\n<!-- #comments -->\n";
+?>
+</div><!-- #section-comments -->

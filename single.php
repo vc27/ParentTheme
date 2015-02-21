@@ -26,7 +26,7 @@ the_post();
 							<?php the__date( $post ); ?>
 							<?php the__comments( $post ); ?>
 						</div>
-						<?php the__comments( $post ); ?>
+						<?php the__content( $post ); ?>
 					</div>
 				</div>
 				<?php if ( do__comments() ) { comments_template( '', true ); } ?>

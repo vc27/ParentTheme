@@ -35,7 +35,7 @@ function is__user( $user_login = false ) {
  *
  **/
 function do__comments() {
-	global $post;
+	global $post; 
 	if ( 
 		( is_page() AND get__option( '_comments_page_deactivated' ) ) 
 		OR get__option( '_comment_system_deactivated' ) 

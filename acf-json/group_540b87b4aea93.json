@@ -1,0 +1,131 @@
+{
+    "key": "group_540b87b4aea93",
+    "title": "Options: Add HTML",
+    "fields": [
+        {
+            "key": "field_540b87f89971b",
+            "label": "Use custom favicon",
+            "name": "_use_custom_favicon",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "Default html will be use for domainname.com\/favicon.ico",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        },
+        {
+            "key": "field_540b87cb9971a",
+            "label": "Favicon",
+            "name": "_favicon_image_url",
+            "prefix": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_540b87f89971b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all"
+        },
+        {
+            "key": "field_540b887a0e5aa",
+            "label": "HTML: With in < head > tag",
+            "name": "_head_html",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "Please use caution. This content will be directly added to the <head> section of your html via wp_head action.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_540c583a7c452",
+            "label": "HTML: After opening < body > tag",
+            "name": "_after_opening_body_tag",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_540c567ac82c7",
+            "label": "HTML: Before closing < \/body > tag",
+            "name": "_footer_html",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "Please use caution. This content will be added just above the closing body tag via wp_footer action.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-options"
+            }
+        ]
+    ],
+    "menu_order": 90,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1424544058
+}

@@ -194,6 +194,9 @@ class ParentTheme {
 		
 		if ( ! is_child_theme() ) {
 			add_image_size( 'standard', 300, 300, false );
+			add_image_size( 'medium', 600, 1000, false );
+			add_image_size( 'large', 1000, 2000, false );
+			add_image_size( 'large-ex', 2000, 4000, false );
 		}
 
 		add_theme_support( 'automatic-feed-links' );
@@ -202,10 +205,7 @@ class ParentTheme {
 		// Translations can be added to the /languages/ directory.
 		// load_theme_textdomain( 'parenttheme', "$this->template_directory/languages" );
 		
-		if ( ! is_child_theme() AND is_admin() ) {
-			add_theme_support('parent-theme-options');
-			// add_theme_support('video-oembed-post-meta');
-		} // end if ( is_admin() )
+		add_theme_support( 'acf-theme-options' );
 		
 		$this->load_theme_supports();
 		
