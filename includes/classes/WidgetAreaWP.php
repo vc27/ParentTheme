@@ -11,15 +11,15 @@
 
 
 /**
- * WidgetAreaVCWP
+ * WidgetAreaWP
  **/
-class WidgetAreaVCWP {
-	
-	
-	
-	
-	
-	
+class WidgetAreaWP {
+
+
+
+
+
+
 	/**
 	 * __construct
 	 *
@@ -29,12 +29,12 @@ class WidgetAreaVCWP {
 	function __construct() {
 
 	} // end function __construct
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * get_widget_area
 	 **/
@@ -44,23 +44,23 @@ class WidgetAreaVCWP {
 			'class' => '',
 			'element' => 'div',
 		);
-		
+
 		$r = wp_parse_args( $args, $defaults );
 		extract( $r, EXTR_SKIP );
-		
-		$name = apply_filters( 'WidgetAreaVCWP-name', $name );
-		
+
+		$name = apply_filters( 'WidgetAreaWP-name', $name );
+
 		if ( ! is_active_sidebar( $name ) ) {
 			return false;
 		}
-		
+
 		echo "<$element id=\"" . sanitize_title_with_dashes( $name ) . "\" class=\"sidebar $class\">";
 			dynamic_sidebar( $name );
 		echo "</$element>";
 
 
 	} // end function get_widget_area
-	
-	
-	
-} // end class WidgetAreaVCWP
+
+
+
+} // end class WidgetAreaWP

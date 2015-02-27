@@ -8,13 +8,15 @@
 
 
 if ( ! defined('THEME_SUPPORTS_INIT') ) {
-	if ( current_theme_supports('parent-theme-options') ) {
-		require_once('ParentThemeOptionsVCWP.php');
-	} else if ( ! is_child_theme() ) {
+
+	if ( ! is_child_theme() AND current_theme_supports('acf-theme-options') ) {
 		require_once('ACFThemeOptionsWP.php');
 	}
+
 	if ( current_theme_supports('video-oembed-post-meta') ) {
 		require_once('OEmbedPostMetaVCWP.php');
 	}
+
 	define( 'THEME_SUPPORTS_INIT', true );
+
 } // end if ( ! defined('THEME_SUPPORTS_INIT') )

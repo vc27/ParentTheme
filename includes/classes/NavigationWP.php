@@ -11,15 +11,15 @@
 
 
 /**
- * NavigationVCWP
+ * NavigationWP
  **/
-class NavigationVCWP {
-	
-	
-	
-	
-	
-	
+class NavigationWP {
+
+
+
+
+
+
 	/**
 	 * __construct
 	 *
@@ -29,22 +29,22 @@ class NavigationVCWP {
 	function __construct() {
 
 	} // end function __construct
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * previous_next___post_link
 	 * @since 3.9.0
 	 **/
 	function previous_next___post_link( $args = array() ) {
-		
+
 		if ( ! is_single() ) {
 			return false;
 		}
-		
+
 		$defaults = array(
 			'before' => ''
 			,'after' => ''
@@ -79,7 +79,7 @@ class NavigationVCWP {
 
 			$output .= $after;
 		$output .= "</$element>";
-		
+
 		if ( $echo ) {
 			echo $output;
 		} else {
@@ -87,12 +87,12 @@ class NavigationVCWP {
 		}
 
 	} // end function previous_next___post_link
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * previous_next___posts_link
 	 * @since 3.9.0
@@ -100,9 +100,9 @@ class NavigationVCWP {
 	function previous_next___posts_link( $args = array() ) {
 		global $wp_query;
 
-		if ( 
-			( is_home() OR is_archive() OR is_search() ) 
-			AND ( $wp_query->found_posts >= $wp_query->query_vars['posts_per_page'] ) 
+		if (
+			( is_home() OR is_archive() OR is_search() )
+			AND ( $wp_query->found_posts >= $wp_query->query_vars['posts_per_page'] )
 		) {
 
 			$defaults = array(
@@ -132,10 +132,10 @@ class NavigationVCWP {
 
 			echo "</$element>";
 
-		} 
+		}
 
 	} // end function previous_next___posts_link
-	
-	
-	
-} // end class NavigationVCWP
+
+
+
+} // end class NavigationWP

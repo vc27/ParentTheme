@@ -10,45 +10,45 @@
 
 
 /**
- * HavePostsVCWP
+ * HavePostsWP
  *
  * @version 1.0
  * @updated 00.00.00
  **/
-class HavePostsVCWP {
-	
-	
-	
+class HavePostsWP {
+
+
+
 	/**
 	 * Option name
 	 **/
 	var $option_name = false;
-	
-	
-	
+
+
+
 	/**
 	 * errors
-	 * 
+	 *
 	 * @access public
 	 * @var array
 	 **/
 	var $errors = array();
-	
-	
-	
+
+
+
 	/**
 	 * have_errors
-	 * 
+	 *
 	 * @access public
 	 * @var bool
 	 **/
 	var $have_errors = 0;
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * __construct
 	 *
@@ -58,12 +58,12 @@ class HavePostsVCWP {
 	function __construct() {
 
 	} // end function __construct
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * set
 	 *
@@ -71,18 +71,18 @@ class HavePostsVCWP {
 	 * @updated 00.00.00
 	 **/
 	function set( $key, $val = false ) {
-		
+
 		if ( isset( $key ) AND ! empty( $key ) ) {
 			$this->$key = $val;
 		}
-		
+
 	} // end function set
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * error
 	 *
@@ -90,27 +90,27 @@ class HavePostsVCWP {
 	 * @updated 00.00.00
 	 **/
 	function error( $error_key ) {
-		
+
 		$this->errors[] = $error_key;
-		
+
 	} // end function error
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	####################################################################################################
 	/**
 	 * Functionality
 	 **/
 	####################################################################################################
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * example_function
 	 *
@@ -118,16 +118,16 @@ class HavePostsVCWP {
 	 * @updated 00.00.00
 	 **/
 	function example_function() {
-		
+
 		// sss
-		
+
 	} // end function example_function
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * get_avatar
 	 **/
@@ -176,16 +176,16 @@ class HavePostsVCWP {
 		}
 
 	} // end static function get_avatar
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * the_excerpt
 	 **/
-	static function the_excerpt( $post, $args = array() ) { 
+	static function the_excerpt( $post, $args = array() ) {
 
 		// Set Defaults
 		$defaults = array(
@@ -205,7 +205,7 @@ class HavePostsVCWP {
 			'before' => '',
 			'after' => '',
 			'echo' => 1,
-			
+
 			// depricated
 			'text' => '',
 			'shortcodes' => '',
@@ -213,8 +213,8 @@ class HavePostsVCWP {
 
 		$r = wp_parse_args( $args, $defaults );
 		extract( $r, EXTR_SKIP );
-		
-		
+
+
 		// Backwards compatible
 		if ( isset( $text ) AND ! empty( $text ) ) {
 			$post_content = $text;
@@ -222,16 +222,16 @@ class HavePostsVCWP {
 		if ( isset( $shortcodes ) AND ! empty( $shortcodes ) ) {
 			$remove_shortcodes = $shortcodes;
 		}
-		
-		
-		
+
+
+
 		// Clean Text
 		if ( isset( $strip_tags ) AND ! empty( $strip_tags ) ) {
 			$post_content = strip_tags( $post_content, $strip_tags );
 		}
-		
-		
-		
+
+
+
 		// if there is a trailing [/caption] get rid of it.
 		if ( isset( $remove_shortcodes ) AND ! empty( $remove_shortcodes ) ) {
 			$post_content = strip_shortcodes( $post_content );
@@ -245,8 +245,8 @@ class HavePostsVCWP {
 		} else {
 			$post_content = wp_trim_words( $post_content, $count, apply_filters( 'excerpt_more', ' ' ) );
 		}
-		
-		
+
+
 		// Read more
 		$read_more = " <span class=\"read-more-dots\">$read_more_dots</span> <a class=\"$read_more_class\" rel=\"nofollow\" href=\"$permalink\">$read_more</a>";
 		if ( isset( $kill_read_more ) AND ! empty( $kill_read_more ) ) {
@@ -267,7 +267,7 @@ class HavePostsVCWP {
 		}
 
 		$post_content = shortcode_unautop( $post_content );
-		
+
 		if ( $clear_fix ) {
 			$clear_fix = "<div class=\"clear\"></div>";
 		}
@@ -286,12 +286,12 @@ class HavePostsVCWP {
 
 
 	} // end static function the_excerpt
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * the_content
 	 **/
@@ -308,21 +308,21 @@ class HavePostsVCWP {
 			'before' => '',
 			'after' => '',
 			'echo' => 1,
-			
+
 			'content' => false,
 		);
 
 		$r = wp_parse_args( $args, $defaults );
 		extract( $r, EXTR_SKIP );
-		
-		
+
+
 		// Backwards compatible
 		if ( isset( $content ) AND ! empty( $content ) ) {
 			$post_content = $content;
 		}
-		
-		
-		
+
+
+
 		if ( $clear_fix ) {
 			$clear_fix = "<div class=\"clear\"></div>";
 		}
@@ -331,27 +331,27 @@ class HavePostsVCWP {
 		} else if ( isset( $post_content ) AND ! empty( $post_content ) ) {
 			$post_content = apply_filters( 'the_content', $post_content );
 		}
-		
-		
-		
+
+
+
 		// build output
 		$output = "<$element class=\"$class\">" . $before . $post_content . $after . $clear_fix . "</$element>";
-		
-		
+
+
 		if ( $echo ) {
 			echo $output;
 		} else {
 			return $output;
 		}
-		
+
 
 	} // end static function the_content
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * the_title
 	 **/
@@ -372,19 +372,19 @@ class HavePostsVCWP {
 			'after_inside_a' => '',
 			'target' => '_parent',
 			'echo' => 1,
-			
+
 			'a_' => false,
 			'_a' => false,
-			
+
 			'permalink' => '',
 			'alt_link' => '',
 		);
 
 		$r = wp_parse_args( $args, $defaults );
 		extract( $r, EXTR_SKIP );
-		
-		
-		
+
+
+
 		// Backwards compatible
 		if ( isset( $alt_link ) AND ! empty( $alt_link ) ) {
 			$the_permalink = $alt_link;
@@ -402,7 +402,7 @@ class HavePostsVCWP {
 
 		// Check to see if we should link the_title
 		if ( $add_permalink ) {
-			
+
 			$a_ = "<a href=\"$the_permalink\" title=\"" . esc_attr( strip_tags( $post_title ) ) . "\" rel=\"bookmark\" target=\"$target\">";
 			$_a = "</a>";
 
@@ -415,20 +415,20 @@ class HavePostsVCWP {
 			echo $output;
 		} else {
 			return $output;
-		}   
+		}
 
 	} // end static function the_title
-	
-	
-	
-	
-	
-	
-	/** 
+
+
+
+
+
+
+	/**
 	 * the_comments
 	 **/
 	static function the_comments( $post, $args = array() ) {
-		
+
 		// if comments are off or if this is an attachment post
 		if ( ! do__comments() ) {
 			return false;
@@ -448,14 +448,14 @@ class HavePostsVCWP {
 			'element' => 'span',
 			'class' => 'item item-comments',
 			'echo' => 1,
-			
+
 			'link' => '',
 		);
 
 		$r = wp_parse_args( $args, $defaults );
 		extract( $r, EXTR_SKIP );
-		
-		
+
+
 		// Backwards compatible
 		if ( isset( $link ) AND ! empty( $link ) ) {
 			$permalink = $link;
@@ -487,12 +487,12 @@ class HavePostsVCWP {
 
 
 	} // end static function the_comments
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * the_category
 	 **/
@@ -520,16 +520,16 @@ class HavePostsVCWP {
 			echo $output;
 		} else {
 			return $output;
-		}   
+		}
 
 	} // end static function the_category
-	
-	
-	
-	
-	
-	
-	/** 
+
+
+
+
+
+
+	/**
 	 * the_time
 	 **/
 	static function the_time( $post, $args = array() ) {
@@ -550,7 +550,7 @@ class HavePostsVCWP {
 
 		// Build Output
 		$output = "<$element class=\"$class\">" . $before . get_the_time( $time, $post->ID ) . $after . "</$element>";
-		
+
 
 		if ( $echo ) {
 			echo $output;
@@ -559,12 +559,12 @@ class HavePostsVCWP {
 		}
 
 	} // end static function the_time
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * the_date
 	 **/
@@ -581,22 +581,22 @@ class HavePostsVCWP {
 			'date' => get_option('date_format'),
 			'permalink' => false,
 			'echo' => 1,
-			
+
 			'a_' => '',
 			'_a' => '',
-			
+
 			'link' => false,
 		);
 
 		$r = wp_parse_args( $args, $defaults );
 		extract( $r, EXTR_SKIP );
-		
+
 		// Backwards compatible
 		if ( isset( $link ) AND ! empty( $link ) ) {
 			$permalink = $link;
 		}
-		
-		
+
+
 		if ( $permalink ) {
 			$a_ = "<a href=\"" . get_permalink() . "\" title=\"" . get_the_title() . "\">";
 			$_a = "</a>";
@@ -611,13 +611,13 @@ class HavePostsVCWP {
 		}
 
 	} // end static function the_date
-	
-	
-	
-	
-	
-	
-	/** 
+
+
+
+
+
+
+	/**
 	 * the_tags
 	 **/
 	static function the_tags( $post, $args = array() ) {
@@ -638,15 +638,15 @@ class HavePostsVCWP {
 
 
 		// Build output
-		$output = get_the_term_list( 
-			$post->ID, 
-			$taxonomy, 
-			"<$element class=\"$class\">$before<dfn>", 
-			"</dfn>$seperate<dfn>", 
-			"</dfn>$after</$element>" 
+		$output = get_the_term_list(
+			$post->ID,
+			$taxonomy,
+			"<$element class=\"$class\">$before<dfn>",
+			"</dfn>$seperate<dfn>",
+			"</dfn>$after</$element>"
 		);
 
-		
+
 		if ( is_wp_error( $output ) ) {
 			return false;
 		}
@@ -658,13 +658,13 @@ class HavePostsVCWP {
 		}
 
 	} // end static function the_tags
-	
-	
-	
-	
-	
-	
-	/** 
+
+
+
+
+
+
+	/**
 	 * the_author
 	 **/
 	static function the_author( $args = array() ) {
@@ -681,14 +681,14 @@ class HavePostsVCWP {
 			'permalink' => get_author_posts_url( $authordata->ID ),
 			'posted_by' => $authordata->display_name,
 			'echo' => 1,
-			
+
 			'link' => '',
 		);
 
 		$r = wp_parse_args( $args, $defaults );
 		extract( $r, EXTR_SKIP );
-		
-		
+
+
 		// Backwards compatible
 		if ( isset( $link ) AND ! empty( $link ) ) {
 			$permalink = $link;
@@ -706,23 +706,23 @@ class HavePostsVCWP {
 		}
 
 	} // end static function the_author
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	####################################################################################################
 	/**
 	 * Conditionals
 	 **/
 	####################################################################################################
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/**
 	 * have_errors
 	 *
@@ -730,31 +730,31 @@ class HavePostsVCWP {
 	 * @updated 00.00.00
 	 **/
 	function have_errors() {
-		
+
 		if ( isset( $this->errors ) AND ! empty( $this->errors ) AND is_array( $this->errors ) ) {
 			$this->set( 'have_errors', 1 );
 		} else {
 			$this->set( 'have_errors', 0 );
 		}
-		
+
 		return $this->have_errors;
-		
+
 	} // end function have_errors
-	
-	
-	
-	
-	
-	
-	/** 
+
+
+
+
+
+
+	/**
 	 * show_loop_excerpt
 	 **/
 	static function show_loop_excerpt() {
-		
+
 		if ( ! function_exists('get__option') ) {
 			wp_die("! function_exists('get__option') in show__loop_excerpt()");
 		}
-		
+
 		global $wp_query;
 
 		if ( is_home() ) {
@@ -767,11 +767,11 @@ class HavePostsVCWP {
 		} else if ( is_category() AND get__option( 'post_display', 'category_content' ) ) {
 			return true;
 
-		} else if ( 
-			isset( $wp_query->queried_object ) 
-			AND ( 
-				isset( $wp_query->queried_object->ID ) 
-				AND $wp_query->queried_object->ID == get_option('page_for_posts') 
+		} else if (
+			isset( $wp_query->queried_object )
+			AND (
+				isset( $wp_query->queried_object->ID )
+				AND $wp_query->queried_object->ID == get_option('page_for_posts')
 			)
 			AND get__option( 'post_display', 'home_page_posts' ) ) {
 			return true;
@@ -796,17 +796,17 @@ class HavePostsVCWP {
 		}
 
 	} // end function show_loop_excerpt
-	
-	
-	
-	
-	
-	
-	/** 
+
+
+
+
+
+
+	/**
 	 * show_loop_featured_image
 	 **/
 	static function show_loop_featured_image() {
-		
+
 		if ( ! function_exists('get__option') ) {
 			wp_die("! function_exists('get__option') in show_loop_featured_image()");
 		}
@@ -818,7 +818,7 @@ class HavePostsVCWP {
 		}
 
 	} // end function show_loop_featured_image
-	
-	
-	
-} // end class HavePostsVCWP
+
+
+
+} // end class HavePostsWP

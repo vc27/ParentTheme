@@ -1,11 +1,10 @@
-ToDo
-====================
-
-- update settings classes to utilize wrapper functions
-- remove "VC" from all classes - this will be a pain in the ass, but it needs to be done!
-
 ChangeLog
 ====================
+
+### 02.27.15 - 7.2.0
+- remove all traces of VC
+- remove all unused classes
+- update a few naming conventions
 
 ### 02.21.15 - 7.1.1
 - update featured image to use ACFWP
@@ -56,7 +55,7 @@ ChangeLog
 ### 07.19.14 - 6.9.1.2
 - functions.php cleanup
 - loop depreciate
-- additional class HavePostsVCWP to handle new loop functions 
+- additional class HavePostsVCWP to handle new loop functions
 
 ### 07.19.14 - 6.8.1
 - update oembed script
@@ -71,7 +70,7 @@ ChangeLog
 - update to OptionPageVCWP to allow for filtering and better conditional checking
 
 ### 04.22.14 - 6.6.0
-- update to OEmbedPostMetaVCWP for quick edit on save post action. 
+- update to OEmbedPostMetaVCWP for quick edit on save post action.
 
 ### 04.21.14 - 6.5.0
 - update to create posts
@@ -151,7 +150,7 @@ Pre Markedown
 
 == 6.0.1 ==
 08.15.13
-- added field__select_terms::FormFieldsVCWP 
+- added field__select_terms::FormFieldsVCWP
 
 == 6.0 ==
 08.13.13
@@ -177,7 +176,7 @@ Pre Markedown
 07.31.13
 - update wp_head and wp_footer to include html_entity_decode
 08.01.13
-- added a str_replace for single quotes, not sure why they were not converting. 
+- added a str_replace for single quotes, not sure why they were not converting.
 - respond.js to registered scripts
 
 == 5.6 ==
@@ -318,13 +317,13 @@ Pre Markedown
 
 == v3.6.1 ==
 11.18.12
-- Removed parent-theme-vc.php 
+- Removed parent-theme-vc.php
 - reworked the main class structure to allow for all items to be called from functions.php
 - unfortunately there are to many items to that have been tweaked in small ways to count. Though all adjustments were moving code to a more appropriate location.
 
 == v3.6.0 ==
 
-11.16.12 
+11.16.12
 - theme-support.php added is_page_for_posts__vc()
 - navigation-breadcrumb.php add $before & $after function breadcrumb_navigation
 - loop-default.php add vc_OddOrEven() to post_class
@@ -333,7 +332,7 @@ Pre Markedown
 - custom.js - removed MBP.scaleFix();
 
 11.09.12
-- header-head.php - remove 
+- header-head.php - remove
 	<meta content="True" name="HandheldFriendly">
 	<meta content="320" name="MobileOptimized">  
 	"target-densitydpi=160dpi"
