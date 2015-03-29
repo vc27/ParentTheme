@@ -1,4 +1,4 @@
-/* 
+/*
 File Name default.css
 Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ $font-paragraph-line-height: 26px;
 
 @mixin paragraph() {
 	font-family:$font-paragraph;
-	font-size:$font-paragraph-size; 
+	font-size:$font-paragraph-size;
 	line-height:$font-paragraph-line-height;
 }
 @mixin title() {
@@ -108,7 +108,7 @@ body { line-height:$font-paragraph-line-height; font-family:$font-paragraph; }
 textarea,
 input[type="text"],
 input[type="password"],
-input[type="email"] { 
+input[type="email"] {
 	@include paragraph();
 	width:95%; padding:6px 2%;
 	border:none; background:$gray-a; @include border-radius();
@@ -122,8 +122,8 @@ input[type="submit"], input[type="button"], button {
 }
 
 /* remove webkit css
-select, input, textarea { 
-	-webkit-appearance: none; 
+select, input, textarea {
+	-webkit-appearance: none;
 	-moz-appearance:window;
 }
 select::-ms-expand {
@@ -140,7 +140,7 @@ textarea:hover, textarea:focus,
 input[type="text"]:hover,input[type="text"]:focus,
 input[type="password"]:hover,input[type="password"]:focus,
 input[type="email"]:hover,input[type="email"]:focus {
-	
+
 }
 
 

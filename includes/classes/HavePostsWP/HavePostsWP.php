@@ -327,7 +327,7 @@ class HavePostsWP {
 			$clear_fix = "<div class=\"clear\"></div>";
 		}
 		if ( $post_content == false OR empty( $post_content ) OR is_attachment() ) {
-			$post_content = get_the_content( $more_link_text, $stripteaser );
+			$post_content = apply_filters( 'the_content', get_the_content( $more_link_text, $stripteaser ) );
 		} else if ( isset( $post_content ) AND ! empty( $post_content ) ) {
 			$post_content = apply_filters( 'the_content', $post_content );
 		}

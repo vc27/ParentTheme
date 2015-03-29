@@ -1,6 +1,9 @@
 ChangeLog
 ====================
 
+### 03.29.15 - 7.3.0
+- update HavePostsWP::the_content with proper filter
+
 ### 02.27.15 - 7.2.0
 - remove all traces of VC
 - remove all unused classes

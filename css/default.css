@@ -1,4 +1,4 @@
-/* 
+/*
 File Name default.css
 Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -460,8 +460,8 @@ label.error { color: #f5cdca; }
 label { cursor: pointer; }
 
 /* remove webkit css
-select, input, textarea { 
-	-webkit-appearance: none; 
+select, input, textarea {
+	-webkit-appearance: none;
 	-moz-appearance:window;
 }
 select::-ms-expand { display: none;
