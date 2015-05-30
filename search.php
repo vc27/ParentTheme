@@ -19,7 +19,6 @@ get_template_part( 'header' );
 					<h1 class="h1"><?php echo get__option( '_search_title' ) . " " . $s; ?></h1>
 					<?php while ( have_posts() ) { the_post(); ?>
 					<div <?php post_class(); ?>>
-						<div class="featured-image" style="background-image:url('<?php echo featured__image( '_featured_image', $post->ID, 'large' ); ?>');"></div>
 						<div class="post-wrap">
 							<?php the__title( $post, array(
 								'element' => 'h3'
@@ -31,7 +30,7 @@ get_template_part( 'header' );
 								<?php the__comments( $post ); ?>
 								<?php the__category( $post ); ?>
 							</div>
-							<?php the__excerpt( $post, array( 
+							<?php the__excerpt( $post, array(
 								'count' => 55
 								,'read_more' => 'Read More'
 								,'strip_tags' => '<p>'

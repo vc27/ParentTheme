@@ -51,46 +51,6 @@ class ParentTheme {
 
 
 
-    /**
-     * filter_name__register_sidebars
-     *
-     * @access public
-     * @var string
-     **/
-    var $filter_name__register_sidebars = 'parenttheme-register_sidebars';
-
-
-
-	/**
-	 * filter_name__parenttheme_localize_script
-	 *
-	 * @access public
-	 * @var string
-	 **/
-	var $filter_name__parenttheme_localize_script = 'parenttheme-localize_script';
-
-
-
-	/**
-	 * filter_name__parenttheme_localize_script__handle
-	 *
-	 * @access public
-	 * @var string
-	 **/
-	var $filter_name__parenttheme_localize_script__handle = 'parenttheme-localize_script-handle';
-
-
-
-	/**
-	 * filter_name__sidebar_args
-	 *
-	 * @access public
-	 * @var string
-	 **/
-	var $filter_name__sidebar_args = 'parenttheme-sidebar_args';
-
-
-
 
 	/**
 	 * Sidebar Args
@@ -99,31 +59,11 @@ class ParentTheme {
 	 * @var array
 	 **/
 	var $sidebar_args = array(
-		'before_widget' => '<div id="%1$s" class="widget-box %2$s">',
-		'after_widget' => '<span class="clear"></span></div>',
-		'before_title' => '<div class="h3 widget-title"><span class="widget-title-wrap">',
-		'after_title' => '</span></div>',
+		'before_widget' => '<div id="%1$s" class="widget-box %2$s">'
+		,'after_widget' => '<span class="clear"></span></div>'
+		,'before_title' => '<div class="h3 widget-title"><span class="widget-title-wrap">'
+		,'after_title' => '</span></div>'
 	);
-
-
-
-	/**
-	 * admin_object_name
-	 *
-	 * @access public
-	 * @var string
-	 **/
-	var $admin_object_name = 'vcAdminAjax';
-
-
-
-	/**
-	 * admin_object_action
-	 *
-	 * @access public
-	 * @var string
-	 **/
-	var $admin_object_action = 'vc-admin-ajax';
 
 
 
@@ -154,7 +94,6 @@ class ParentTheme {
 
 			add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
 			add_action( 'init', array( &$this, 'init' ) );
-			add_action( 'admin_init', array( &$this, 'admin_init' ) );
 
 	} // end function initParentTheme
 
@@ -311,21 +250,6 @@ class ParentTheme {
 
 
 
-	/**
-	 * admin_init
-	 **/
-	function admin_init() {
-
-		$this->admin_register_scripts_and_css();
-		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_enqueue_scripts' ) );
-
-	} // end function admin_init
-
-
-
-
-
-
 	####################################################################################################
 	/**
 	 * init
@@ -384,9 +308,9 @@ class ParentTheme {
 		);
 
 		wp_localize_script(
-			apply_filters( $this->filter_name__parenttheme_localize_script__handle, 'jquery' ),
+			apply_filters( 'parenttheme-localize_script-handle', 'jquery' ),
 			'siteObject',
-			apply_filters( $this->filter_name__parenttheme_localize_script, $array )
+			apply_filters( 'parenttheme-localize_script', $array )
 		);
 
 	} // end function wp_localize_script
@@ -569,7 +493,7 @@ class ParentTheme {
 
 			$id = sanitize_title_with_dashes( $name );
 
-			$args = apply_filters( $this->filter_name__register_sidebars, array(
+			$args = apply_filters( 'parenttheme-register_sidebars', array(
 				'name' => $name,
 				'id' => $id,
 				'description' => $info['desc'],
@@ -584,54 +508,6 @@ class ParentTheme {
 		} // endforeach; register sidebars
 
 	} // end function register_sidebars
-
-
-
-
-
-
-	####################################################################################################
-	/**
-	 * admin_init
-	 **/
-	####################################################################################################
-
-
-
-
-
-
-	/**
-	 * Admin Register Scripts and CSS
-	 **/
-	function admin_register_scripts_and_css() {
-
-		wp_register_script( 'parenttheme-admin-custom', "$this->template_directory_uri/includes/js/min/adminCustom-min.js", array( 'jquery', 'media-upload', 'thickbox', 'jquery-ui-sortable' ), '', true );
-
-	} // end function admin_register_scripts_and_css
-
-
-
-
-
-
-	/**
-	 * admin_enqueue_scripts
-	 **/
-	function admin_enqueue_scripts() {
-
-		wp_localize_script(
-			'parenttheme-admin-custom',
-			$this->admin_object_name,
-      apply_filters( 'parenttheme-admin-localize-script', array(
-				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				'action' => $this->admin_object_action,
-			) )
-		);
-
-		wp_enqueue_script( 'parenttheme-admin-custom' );
-
-	} // end function admin_enqueue_scripts
 
 
 

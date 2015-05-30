@@ -1,6 +1,12 @@
 ChangeLog
 ====================
 
+### 05.30.15 - 7.4.0
+- remove CreatePosts, GetRemoteDataWP from include/classes - if needed they can be added as addons
+- remove loader and modal scss files
+- remove admin js and admin enqueue scripts
+- remove editor-style.css
+
 ### 03.29.15 - 7.3.0
 - update HavePostsWP::the_content with proper filter
 
