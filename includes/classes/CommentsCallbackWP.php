@@ -16,32 +16,10 @@
  * @updated 00.00.00
  **/
 class CommentsCallbackWP {
-	
-	
-	
-	/**
-	 * errors
-	 * 
-	 * @access public
-	 * @var array
-	 **/
-	var $errors = array();
-	
-	
-	
-	/**
-	 * have_errors
-	 * 
-	 * @access public
-	 * @var bool
-	 **/
-	var $have_errors = 0;
-	
-	
-	
-	
-	
-	
+
+
+
+
 	/**
 	 * __construct
 	 *
@@ -49,7 +27,7 @@ class CommentsCallbackWP {
 	 * @updated 00.00.00
 	 **/
 	function __construct( $comment, $args, $depth ) {
-		
+
 		$GLOBALS['comment'] = $comment;
 
 		echo "<li id=\"comment-" . get_comment_ID() . "\" "; comment_class(); echo ">";
@@ -72,10 +50,10 @@ class CommentsCallbackWP {
 						comment_text();
 
 						echo "<div class=\"reply\">";
-							comment_reply_link( array_merge( $args, array( 
+							comment_reply_link( array_merge( $args, array(
 								'reply_text' => 'Reply &raquo;',
-								'depth' => $depth, 
-								'max_depth' => $args['max_depth'] ) 
+								'depth' => $depth,
+								'max_depth' => $args['max_depth'] )
 								) );
 						echo "</div>";
 
@@ -85,107 +63,9 @@ class CommentsCallbackWP {
 
 				echo "<div class=\"clear\"></div>";
 			echo "</div>"; // end row-fluid
-		
+
 	} // end function __construct
-	
-	
-	
-	
-	
-	
-	/**
-	 * set
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 **/
-	function set( $key, $val = false ) {
-		
-		if ( isset( $key ) AND ! empty( $key ) ) {
-			$this->$key = $val;
-		}
-		
-	} // end function set
-	
-	
-	
-	
-	
-	
-	/**
-	 * error
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 **/
-	function error( $error_key ) {
-		
-		$this->errors[] = $error_key;
-		
-	} // end function error
-	
-	
-	
-	
-	
-	
-	####################################################################################################
-	/**
-	 * Functionality
-	 **/
-	####################################################################################################
-	
-	
-	
-	
-	
-	
-	/**
-	 * example_function
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 **/
-	function example_function() {
-		
-		// sss
-		
-	} // end function example_function
-	
-	
-	
-	
-	
-	
-	####################################################################################################
-	/**
-	 * Conditionals
-	 **/
-	####################################################################################################
-	
-	
-	
-	
-	
-	
-	/**
-	 * have_errors
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 **/
-	function have_errors() {
-		
-		if ( isset( $this->errors ) AND ! empty( $this->errors ) AND is_array( $this->errors ) ) {
-			$this->set( 'have_errors', 1 );
-		} else {
-			$this->set( 'have_errors', 0 );
-		}
-		
-		return $this->have_errors;
-		
-	} // end function have_errors
-	
-	
-	
+
+
+
 } // end class CommentsCallbackWP

@@ -6,72 +6,48 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 
 @import 'mixins';
-
-
-$transition: all 0.1s ease-in;
-$radius: 4px;
-$font-paragraph: sans-serif;
-$font-paragraph-size: 15px;
-$font-paragraph-line-height: 26px;
-
-@mixin paragraph() {
-	font-family:$font-paragraph;
-	font-size:$font-paragraph-size;
-	line-height:$font-paragraph-line-height;
-}
-@mixin title() {
-	font-family:serif;
-	line-height:1.1em;
-	font-weight:400;
-}
-@mixin med-text() { font-size:18px; }
-@mixin sml-text() { font-size:14px; line-height:18px; }
-@mixin sml-text-ex() { @include sml-text(); font-size:13px; }
-
-/* Block */
-$max-width-a: 940px;
-$max-width-b: 768px;
-$max-width-c: 568px;
-$max-width-d: 480px;
-
-/*Gray*/
-$gray-a: #fafafa;
-$gray-b: #adadad;
-$gray-c: #a3a3a3;
-
-/*Red*/
-$red-a: #f5cdca;
-$red-b: #dd5951;
-
-
-
-/* custom mixins
-#################################################################################################### */
-@mixin remove-section-main-inner-wrap() {
-	.inner-wrap.section-main-inner-wrap { max-width:100000px; padding:0; }
-	#section-main { padding-top:0; }
-}
-
-
-
-
-/* Reset */
 @import 'reset';
 @import 'bootstrap-responsive';
 
-html { height:100%; }
-body { line-height:$font-paragraph-line-height; font-family:$font-paragraph; }
-#page { position:relative; font-size:$font-paragraph-size; @extend .clearfix; }
-.outer-wrap { position:relative; }
-.inner-wrap { @extend .clearfix; max-width:$max-width-a; padding-left:10px; padding-right:10px; position:relative; margin:0 auto; text-align:left; }
+body {
+	color:#000;
+}
+#page {
+	@extend .clearfix;
+	position:relative;
+	@include paragraph();
+}
+.outer-wrap {
+	position:relative;
+}
+.inner-wrap {
+	@extend .clearfix;
+	max-width:$max-width-a;
+	padding-left:10px;
+	padding-right:10px;
+	position:relative;
+	margin:0 auto;
+	text-align:left;
+}
 
-.a, a, a:visited { cursor:pointer; text-decoration:none; }
-.em { font-style:italic; }
-.ic .text { display:none; }
-.featured-image { @include featured-image(); }
-
+.a, a, a:visited {
+	cursor:pointer;
+	text-decoration:none;
+}
+.em {
+	font-style:italic;
+}
+.ic {
+	.text {
+		display:none;
+	}
+}
+.featured-image {
+	@include featured-image();
+}
 .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
-	display:block; @include title();
+	display:block;
+	@include title();
 }
 
 .h1, h1 { font-size:46px; }
@@ -148,24 +124,9 @@ input[type="email"]:hover,input[type="email"]:focus {
 
 
 
-/* Blocks
+/* Includes
 #################################################################################################### */
-
-
-
-#section-loop-default {
-	.hentry { padding:30px 0 20px 0; }
-	.hentry:first-child { padding:0 0 20px 0; }
-	.entry { clear:both; }
-	.excerpt { clear:none; padding:0; }
-}
-
-
-
-
-
-
-/* Comments */
+@import 'layouts';
+@import 'sections';
 @import 'comments';
-/*Responsive*/
 @import 'responsive';

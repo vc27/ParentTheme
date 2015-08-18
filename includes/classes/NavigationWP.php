@@ -22,9 +22,6 @@ class NavigationWP {
 
 	/**
 	 * __construct
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
 	function __construct() {
 

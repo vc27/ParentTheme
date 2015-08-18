@@ -17,20 +17,16 @@
  * @since 3.9.0
  **/
 if ( ! function_exists( 'get__option' ) ) {
-function get__option( $option, $setting = 'option', $system = 'acf-theme-options' ) {
+function get__option( $option ) {
 
 	$output = false;
-	if ( $system == 'acf-theme-options' AND current_theme_supports('acf-theme-options') AND function_exists('get_field') ) {
-		$output = get_field( $option, $setting );
-	} else if ( $system == 'parent-theme-options' AND current_theme_supports('parent-theme-options') ) {
-		if ( ! class_exists( 'ThemeOptions' ) ) {
-			require_once( 'ThemeOptions.php' );
-		}
-		if ( class_exists( 'ThemeOptions' ) ) {
-			$ThemeOptions = new ThemeOptions();
-			$output = $ThemeOptions->get_option( $option, $setting );
-		}
+	if (
+		current_theme_supports('acf-theme-options')
+		AND function_exists('get_field')
+	) {
+		$output = get_field( $option, 'option' );
 	}
+
 	return $output;
 
 } // end function get__option

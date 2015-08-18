@@ -1,5 +1,18 @@
+ToDo
+====================
+
+
 ChangeLog
 ====================
+
+### 08.18.15 - 7.6.0
+- remove theme support oembed video
+- minor class cleaning
+- update .gitignor to remove .DS_Store
+
+### 08.17.15 - 7.5.0
+- remove ThemeOptions from includes / classes
+- update get__option in theme-support.php
 
 ### 05.30.15 - 7.4.0
 - remove CreatePosts, GetRemoteDataWP from include/classes - if needed they can be added as addons

@@ -1,22 +1,163 @@
-/* 
+/*
 File Name mixins.css
 Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #################################################################################################### */
 
-@mixin border-radius($radius:4px) { -webkit-border-radius: $radius; -moz-border-radius: $radius; -ms-border-radius: $radius; border-radius: $radius; }
-@mixin border-radius-top-left($radius:4px) { border-top-left-radius:$radius; -moz-border-radius-topleft:$radius; -webkit-border-top-left-radius:$radius; -o-border-top-left-radius:$radius; }
-@mixin border-radius-top-right($radius:4px) { border-top-right-radius:$radius; -moz-border-radius-topright:$radius; -webkit-border-top-right-radius:$radius; -o-border-top-right-radius:$radius; }
-@mixin border-radius-bottom-right($radius:4px) { border-bottom-right-radius:$radius; -moz-border-radius-bottomright:$radius; -webkit-border-bottom-right-radius:$radius; -o-border-bottom-right-radius:$radius; }
-@mixin border-radius-bottom-left($radius:4px) { border-bottom-left-radius:$radius; -moz-border-radius-bottomleft:$radius; -webkit-border-bottom-left-radius:$radius; -o-border-bottom-left-radius:$radius; }
-@mixin box-shadow($shadow:0 0 1px rgba(0,0,0,0.3)) { box-shadow:$shadow; -moz-box-shadow:$shadow; -webkit-box-shadow:$shadow; -o-box-shadow:$shadow; }
-@mixin filter-blur($filter) { filter:blur($filter); -webkit-filter:blur($filter); -moz-filter:blur($filter);-o-filter: blur($filter);-ms-filter:blur($filter); }
-@mixin transition($transition:all 0.1s ease-in) { -webkit-transition:$transition; -moz-transition:$transition; -o-transition:$transition; transition:$transition; }
-@mixin transitionAll($time:0.1s) { -webkit-transition:all $time ease-in; -moz-transition:all $time ease-in; -o-transition:all $time ease-in; transition:all $time ease-in; }
-@mixin translateY($translateY) { -webkit-transform: translateY($translateY); -moz-transform: translateY($translateY); -o-transform: translateY($translateY); -ms-transform: translateY($translateY); transform: translateY($translateY); }
-@mixin translateX($translateX) { -webkit-transform: translateX($translateX); -moz-transform: translateX($translateX); -o-transform: translateX($translateX); -ms-transform: translateX($translateX); transform: translateX($translateX); }
-@mixin background-cover() { background-position:center center; background-repeat:no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
-@mixin featured-image() { display:block; min-height:100px; @include background-cover(); }
-@mixin box-sizing() { box-sizing:content-box; -ms-box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; }
-@mixin inline-block($align:middle) { display:inline-block; vertical-align:$align; }
-@mixin image-auto-width() { max-width:100%; height:auto; }
+@mixin border-radius($radius:4px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin border-radius-top-left($radius:4px) {
+    border-top-left-radius:$radius;
+    -moz-border-radius-topleft:$radius;
+    -webkit-border-top-left-radius:$radius;
+    -o-border-top-left-radius:$radius;
+}
+@mixin border-radius-top-right($radius:4px) { border-top-right-radius:$radius;
+    -moz-border-radius-topright:$radius;
+    -webkit-border-top-right-radius:$radius;
+    -o-border-top-right-radius:$radius;
+}
+@mixin border-radius-bottom-right($radius:4px) {
+    border-bottom-right-radius:$radius;
+    -moz-border-radius-bottomright:$radius;
+    -webkit-border-bottom-right-radius:$radius;
+    -o-border-bottom-right-radius:$radius;
+}
+@mixin border-radius-bottom-left($radius:4px) {
+    border-bottom-left-radius:$radius;
+    -moz-border-radius-bottomleft:$radius;
+    -webkit-border-bottom-left-radius:$radius;
+    -o-border-bottom-left-radius:$radius;
+}
+@mixin box-shadow($shadow:0 0 1px rgba(0,0,0,0.3)) {
+    box-shadow:$shadow;
+    -moz-box-shadow:$shadow;
+    -webkit-box-shadow:$shadow;
+    -o-box-shadow:$shadow;
+}
+@mixin filter-blur($filter) {
+    filter:blur($filter);
+    -webkit-filter:blur($filter);
+    -moz-filter:blur($filter);
+    -o-filter: blur($filter);
+    -ms-filter:blur($filter);
+}
+@mixin transition($transition:all 0.1s ease-in) {
+    -webkit-transition:$transition;
+    -moz-transition:$transition;
+    -o-transition:$transition;
+    transition:$transition;
+}
+@mixin transitionAll($time:0.1s) {
+    -webkit-transition:all $time ease-in;
+    -moz-transition:all $time ease-in;
+    -o-transition:all $time ease-in;
+    transition:all $time ease-in;
+}
+@mixin translateY($translateY) {
+    -webkit-transform: translateY($translateY);
+    -moz-transform: translateY($translateY);
+    -o-transform: translateY($translateY);
+    -ms-transform: translateY($translateY);
+    transform: translateY($translateY);
+}
+@mixin translateX($translateX) {
+    -webkit-transform: translateX($translateX);
+    -moz-transform: translateX($translateX);
+    -o-transform: translateX($translateX);
+    -ms-transform: translateX($translateX);
+    transform: translateX($translateX);
+}
+@mixin background-cover($align:center) {
+    background-position:center $align;
+    background-repeat:no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+@mixin featured-image($align:center) {
+    display:block;
+    min-height:100px;
+    @include background-cover($align);
+}
+@mixin box-sizing() {
+    box-sizing:content-box;
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+}
+@mixin inline-block($align:middle) {
+    display:inline-block;
+    vertical-align:$align;
+}
+@mixin image-auto-width() {
+    max-width:100%;
+    height:auto;
+}
+@mixin drop-cap($fontSize:75px,$lineHeight:60px) {
+    float:left;
+    font-size:$fontSize;
+    line-height:$lineHeight;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+}
+@mixin drop-cap-p() {
+    p:first-child:first-letter {
+        @include drop-cap();
+    }
+}
+
+$transition: all 0.1s ease-in;
+$radius: 4px;
+$font-paragraph-size: 15px;
+$font-paragraph-line-height: 26px;
+
+@mixin font-one() { // reading font
+    font-family:sans-serif;
+}
+@mixin font-two() { // title font
+    font-family:serif;
+}
+@mixin paragraph() {
+	@include font-one();
+	font-size:$font-paragraph-size;
+	line-height:$font-paragraph-line-height;
+}
+@mixin title() {
+	@include font-two();
+	line-height:1.1em;
+	font-weight:400;
+}
+@mixin med-text() { font-size:18px; }
+@mixin sml-text() { font-size:14px; line-height:18px; }
+@mixin sml-text-ex() { @include sml-text(); font-size:13px; }
+
+/* Block */
+$max-width-a: 940px;
+$max-width-b: 768px;
+$max-width-c: 568px;
+$max-width-d: 480px;
+
+/*Gray*/
+$gray-a: #fafafa;
+$gray-b: #adadad;
+$gray-c: #a3a3a3;
+
+/*Red*/
+$red-a: #f5cdca;
+$red-b: #dd5951;
+
+
+
+/* custom mixins
+#################################################################################################### */
+@mixin remove-section-main-inner-wrap() {
+	.inner-wrap.section-main-inner-wrap { max-width:100000px; padding:0; }
+	#section-main { padding-top:0; }
+}

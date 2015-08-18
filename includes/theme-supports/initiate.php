@@ -13,10 +13,6 @@ if ( ! defined('THEME_SUPPORTS_INIT') ) {
 		require_once('ACFThemeOptionsWP.php');
 	}
 
-	if ( current_theme_supports('video-oembed-post-meta') ) {
-		require_once('OEmbedPostMetaVCWP.php');
-	}
-
 	define( 'THEME_SUPPORTS_INIT', true );
 
 } // end if ( ! defined('THEME_SUPPORTS_INIT') )

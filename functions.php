@@ -188,7 +188,6 @@ class ParentTheme {
 
 
 
-		add_filter( 'body_class', array( &$this, 'body_class' ) );
 		add_filter( 'post_class', array( &$this, 'post_class' ) );
 		add_filter( 'gallery_style', array( &$this, 'remove_gallery_css' ) );
 
@@ -314,25 +313,6 @@ class ParentTheme {
 		);
 
 	} // end function wp_localize_script
-
-
-
-
-
-
-	/**
-	 * body_class
-	 **/
-	function body_class( $classes ) {
-		global $wp_query;
-
-		if ( isset( $wp_query->post ) AND isset( $wp_query->post->post_type ) AND ! empty( $wp_query->post->post_type ) ) {
-			$classes[] = "content-post-type-" . $wp_query->post->post_type;
-		}
-
-		return $classes;
-
-	} // end function body_class
 
 
 
@@ -494,14 +474,14 @@ class ParentTheme {
 			$id = sanitize_title_with_dashes( $name );
 
 			$args = apply_filters( 'parenttheme-register_sidebars', array(
-				'name' => $name,
-				'id' => $id,
-				'description' => $info['desc'],
-				'before_widget' => $this->sidebar_args['before_widget'],
-				'after_widget' => $this->sidebar_args['after_widget'],
-				'before_title' => $this->sidebar_args['before_title'],
-				'after_title' => $this->sidebar_args['after_title'],
-				) );
+				'name' => $name
+				,'id' => $id
+				,'description' => $info['desc']
+				,'before_widget' => $this->sidebar_args['before_widget']
+				,'after_widget' => $this->sidebar_args['after_widget']
+				,'before_title' => $this->sidebar_args['before_title']
+				,'after_title' => $this->sidebar_args['after_title']
+			) );
 
 			register_sidebar( $args );
 

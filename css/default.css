@@ -3,7 +3,7 @@ File Name default.css
 Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #################################################################################################### */
-/* 
+/*
 File Name mixins.css
 Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -13,7 +13,6 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 /*Red*/
 /* custom mixins
 #################################################################################################### */
-/* Reset */
 /* 
 File Name: reset.css
 Package: ParentTheme
@@ -411,11 +410,9 @@ svg:not(:root) { overflow: hidden; }
   .navbar .btn-navbar { display: block; }
   .navbar-static .navbar-inner { padding-right: 10px; padding-left: 10px; } }
 @media (min-width: 980px) { .nav-collapse.collapse { height: auto !important; overflow: visible !important; } }
-html { height: 100%; }
+body { color: #000; }
 
-body { line-height: 26px; font-family: sans-serif; }
-
-#page { position: relative; font-size: 15px; }
+#page { position: relative; font-family: sans-serif; font-size: 15px; line-height: 26px; }
 
 .outer-wrap { position: relative; }
 
@@ -467,14 +464,17 @@ select, input, textarea {
 select::-ms-expand { display: none;
 }
 */
-/* Blocks
+/* Includes
+#################################################################################################### */
+/* .layout, .grid / classes
+#################################################################################################### */
+/* ID / Section
 #################################################################################################### */
 #section-loop-default .hentry { padding: 30px 0 20px 0; }
 #section-loop-default .hentry:first-child { padding: 0 0 20px 0; }
 #section-loop-default .entry { clear: both; }
 #section-loop-default .excerpt { clear: none; padding: 0; }
 
-/* Comments */
 /* 
 File Name comments.css
 Version 1.0
@@ -511,7 +511,6 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #respond form .button-submit { margin-top: 7px; }
 
 /*end #respond*/
-/*Responsive*/
 /* 
 File Name: responsive.css
 Version: 1.2
