@@ -10,6 +10,10 @@ Issues, Notes, Current task
 ChangeLog
 ====================
 
+### 10.09.15 - randy-c-7.8.2
+- remove lingering files after merger
+- ignore code kit
+
 ### 10.09.15 - randy-c-7.8.1
 - final settings before merge to master
 
