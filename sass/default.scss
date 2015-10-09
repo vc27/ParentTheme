@@ -6,6 +6,7 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 
 @import 'mixins';
+@import 'mixins-theme';
 @import 'reset';
 @import 'bootstrap-responsive';
 
@@ -57,10 +58,6 @@ body {
 .h5, h5 { font-size:26px; }
 .h6, h6 { font-size:20px; }
 
-.h1.slim, .h2.slim, .h3.slim, .h4.slim, .h5.slim, .h6.slim {
-	font-weight:300;
-}
-
 
 
 
@@ -69,7 +66,11 @@ body {
 /* Buttons
 #################################################################################################### */
 .btn {
-	cursor:pointer; display:inline-block; padding:6px 20px; background:$gray-a; border:none;
+	cursor:pointer;
+	@include inline-block();
+	padding:6px 20px;
+	background:$gray-a;
+	border:none;
 	@include paragraph();
 }
 

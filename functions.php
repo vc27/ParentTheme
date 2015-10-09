@@ -466,8 +466,6 @@ class ParentTheme {
 	 **/
 	function register_sidebars( $sidebars = array(), $sidebar_args = 'depreciated' ) {
 
-		$this->set( 'sidebar_args', apply_filters( $this->filter_name__sidebar_args, $this->sidebar_args ) );
-
 		// Register Sidebars
 		foreach ( $sidebars as $name => $info ) {
 

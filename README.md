@@ -1,9 +1,22 @@
-ToDo
+Issues, Notes, Current task
 ====================
 
+### Current Task
+
+### Issues
+
+### Notes
 
 ChangeLog
 ====================
+
+### 10.09.15 - randy-c-7.8.0
+- ignore codekit
+- tidy functions.php
+- update scss from child theme
+
+### 08.25.15 - 7.7.0
+- update register_sidebars, remove old filter
 
 ### 08.18.15 - 7.6.0
 - remove theme support oembed video

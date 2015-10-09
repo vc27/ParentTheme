@@ -13,6 +13,16 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 /*Red*/
 /* custom mixins
 #################################################################################################### */
+/*
+File Name mixins-theme.css
+Package ParentTheme
+License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+#################################################################################################### */
+/* Block */
+/*Gray*/
+/*Red*/
+/* custom mixins
+#################################################################################################### */
 /* 
 File Name: reset.css
 Package: ParentTheme
@@ -440,11 +450,9 @@ body { color: #000; }
 
 .h6, h6 { font-size: 20px; }
 
-.h1.slim, .h2.slim, .h3.slim, .h4.slim, .h5.slim, .h6.slim { font-weight: 300; }
-
 /* Buttons
 #################################################################################################### */
-.btn, input[type="submit"], input[type="button"], button { cursor: pointer; display: inline-block; padding: 6px 20px; background: #fafafa; border: none; font-family: sans-serif; font-size: 15px; line-height: 26px; }
+.btn, input[type="submit"], input[type="button"], button { cursor: pointer; display: inline-block; vertical-align: middle; padding: 6px 20px; background: #fafafa; border: none; font-family: sans-serif; font-size: 15px; line-height: 26px; }
 
 /* Forms
 #################################################################################################### */
