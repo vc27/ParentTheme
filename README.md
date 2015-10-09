@@ -10,6 +10,9 @@ Issues, Notes, Current task
 ChangeLog
 ====================
 
+### 10.09.15 - randy-c-7.8.1
+- final settings before merge to master
+
 ### 10.09.15 - randy-c-7.8.0
 - ignore codekit
 - tidy functions.php
