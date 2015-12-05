@@ -6,7 +6,6 @@
             "key": "field_53fa6c8bbc2f2",
             "label": "Page Title",
             "name": "_404_page_title",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -28,7 +27,6 @@
             "key": "field_53fa6ca9bc2f3",
             "label": "Content",
             "name": "_404_content",
-            "prefix": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -42,23 +40,6 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1
-        },
-        {
-            "key": "field_53fa6cd9bc2f4",
-            "label": "Display search form under page content block",
-            "name": "_404_display_search_form",
-            "prefix": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0
         }
     ],
     "location": [
@@ -76,5 +57,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1424544079
+    "active": 1,
+    "description": "",
+    "modified": 1449345302
 }
