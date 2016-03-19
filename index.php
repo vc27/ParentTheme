@@ -7,6 +7,7 @@
 #################################################################################################### */
 
 get_template_part( 'header' );
+
 ?>
 <div id="section-main" class="outer-wrap">
 	<div class="inner-wrap">
@@ -49,4 +50,5 @@ get_template_part( 'header' );
 	</div>
 </div>
 <?php
+
 get_template_part( 'footer' );
