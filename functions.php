@@ -80,7 +80,7 @@ class ParentTheme {
 		$this->set( 'stylesheet_directory_uri', get_stylesheet_directory_uri() );
 		$this->set( 'home_url', home_url() );
 
-		add_action( 'admin_menu', array( $this, 'remove_mene_page' ), 99 );
+		add_action( 'admin_menu', array( $this, 'remove_mene_pages' ), 99 );
 
     } // end function __construct
 
