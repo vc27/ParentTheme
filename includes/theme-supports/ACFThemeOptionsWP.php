@@ -17,24 +17,9 @@ class ACFThemeOptionsWP {
 	 **/
 	function __construct() {
 
-		add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
-		add_action( 'init', array( &$this, 'init' ) );
+		add_action( 'init', array( $this, 'init' ) );
 
 	} // end function __construct
-
-
-
-
-
-
-	/**
-	 * after_setup_theme
-	 **/
-	function after_setup_theme() {
-
-		add_theme_support('acf-theme-options');
-
-	} // end function after_setup_theme
 
 
 

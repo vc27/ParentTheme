@@ -154,7 +154,7 @@ class ArchiveTitlesWP {
 		$this->set_description();
 
 
-		$output = "<div class=\"archive-title $class\">";
+		$output = "<div class=\"layout-archive-title $class\">";
 
 			$output .= "<h1>" . apply_filters( 'ArchiveTitlesWP-title', $this->the_title, $this ) . "</h1>";
 
@@ -182,13 +182,18 @@ class ArchiveTitlesWP {
 
 
 	/**
-	 * set_type
-	 * @since 0.0.0
+	 * Set type, this is used in various locations to
+	 * help correlate title and descriptions.
+	 * @since 7.0.0
 	 **/
 	function set_type() {
-
+		
 		if ( is_home() ) {
 			$this->set( 'type', 'home' );
+		} else if ( is_front_page() ) {
+			$this->set( 'type', 'front-page' );
+		} else if ( is_tax() ) {
+			$this->set( 'type', 'custom-taxonomy' );
 		} else if ( is_category() ) {
 			$this->set( 'type', 'category' );
 		} else if ( is_tag() ) {
@@ -197,6 +202,10 @@ class ArchiveTitlesWP {
 			$this->set( 'type', 'author' );
 		} else if ( ( is_day() OR is_month() OR is_year() ) ) {
 			$this->set( 'type', 'date' );
+		} else if ( is_404() ) {
+			$this->set( 'type', '404' );
+		} else if ( is_search() ) {
+			$this->set( 'type', 'search' );
 		} else {
 			return false;
 		}
@@ -216,12 +225,10 @@ class ArchiveTitlesWP {
 	function set_the_title() {
 		global $wp_query;
 
-		if (
-			isset( $wp_query->queried_object->taxonomy )
-			AND isset( $wp_query->queried_object->name )
-			AND ! empty( $wp_query->queried_object->name )
-		) {
+		// taxonomy term
+		if ( in_array( $this->type, array( 'custom-taxonomy', 'category', 'tag' ) ) ) {
 			$this->set( 'the_title', $wp_query->queried_object->name );
+		// date
 		} else if ( $this->type == 'date' ) {
 			$the_title = '';
 			if ( isset( $wp_query->query['year'] ) ) {
@@ -234,10 +241,35 @@ class ArchiveTitlesWP {
 				$the_title .= " " . $wp_query->query['day'];
 			}
 			$this->set( 'the_title', $the_title );
+
+		// author
 		} else if ( $this->type == 'author' ) {
 			$this->set( 'the_title', "Author " . $wp_query->queried_object->data->display_name );
+
+		} else if ( $this->type == 'front-page' ) {
+			$this->set( 'the_title', get_bloginfo( 'name' ) );
+
+		// home
 		} else if ( $this->type == 'home' ) {
-			$this->set( 'the_title', get_the_title( get_option( 'page_for_posts' ) ) );
+			if ( get_option( 'page_for_posts' ) ) {
+				$this->set( 'the_title', get_the_title( get_option( 'page_for_posts' ) ) );
+			} else {
+				$this->set( 'the_title', get_bloginfo( 'name' ) );
+			}
+
+		// search
+		} else if ( $this->type == 'search' ) {
+			global $s;
+			$this->set( 'the_title', get__option( '_search_title' ) . " " . $s );
+
+		// 404
+		} else if ( $this->type == '404' ) {
+			if ( get__option( '_404_page_title' ) ) {
+				$title = get__option( '_404_page_title' );
+			} else {
+				$title = __( '404 Not Founds', 'parenttheme' );
+			}
+			$this->set( 'the_title', $title );
 		}
 
 	} // end function set_the_title

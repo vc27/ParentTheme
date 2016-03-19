@@ -9,31 +9,10 @@ License URI: license.txt
 #################################################################################################### */
 
 
+@import 'foundation-style';
 @import 'mixins';
+@import 'defaults';
 @import 'mixins-theme';
-@import 'reset';
-@import 'bootstrap-responsive';
-
-body {
-	color:#000;
-}
-#page {
-	@extend .clearfix;
-	position:relative;
-	@include paragraph();
-}
-.outer-wrap {
-	position:relative;
-}
-.inner-wrap {
-	@extend .clearfix;
-	max-width:$max-width-a;
-	padding-left:10px;
-	padding-right:10px;
-	position:relative;
-	margin:0 auto;
-	text-align:left;
-}
 
 .a, a, a:visited {
 	cursor:pointer;
@@ -50,17 +29,13 @@ body {
 .featured-image {
 	@include featured-image();
 }
-.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
-	display:block;
-	@include title();
-}
 
-.h1, h1 { font-size:46px; }
-.h2, h2 { font-size:40px; }
-.h3, h3 { font-size:36px; }
-.h4, h4 { font-size:30px; }
-.h5, h5 { font-size:26px; }
-.h6, h6 { font-size:20px; }
+.h1, h1 {}
+.h2, h2 {}
+.h3, h3 {}
+.h4, h4 {}
+.h5, h5 {}
+.h6, h6 {}
 
 
 
@@ -69,14 +44,7 @@ body {
 
 /* Buttons
 #################################################################################################### */
-.btn {
-	cursor:pointer;
-	@include inline-block();
-	padding:6px 20px;
-	background:$gray-a;
-	border:none;
-	@include paragraph();
-}
+
 
 
 
@@ -86,21 +54,6 @@ body {
 
 /* Forms
 #################################################################################################### */
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-	@include paragraph();
-	width:95%; padding:6px 2%;
-	border:none; background:$gray-a; @include border-radius();
-}
-textarea { height:100px; }
-label.error { color:$red-a; }
-label { cursor:pointer; }
-
-input[type="submit"], input[type="button"], button {
-	@extend .btn;
-}
 
 /* remove webkit css
 select, input, textarea {
@@ -110,19 +63,12 @@ select, input, textarea {
 select::-ms-expand {
     display: none;
 }
-*/
 
 ::-webkit-input-placeholder {}
 :-moz-placeholder {}
 ::-moz-placeholder {}
 :-ms-input-placeholder {}
-
-textarea:hover, textarea:focus,
-input[type="text"]:hover,input[type="text"]:focus,
-input[type="password"]:hover,input[type="password"]:focus,
-input[type="email"]:hover,input[type="email"]:focus {
-
-}
+*/
 
 
 

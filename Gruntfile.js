@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		watch: {
 			css: {
-				files: 'sass/style.scss',
+				files: 'sass/*.scss',
 				tasks: ['sass']
 			},
 			scripts: {
@@ -28,5 +28,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	// grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.registerTask('default', ['watch']);
 }

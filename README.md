@@ -19,6 +19,10 @@ Issues, Notes, Current task
 ChangeLog
 ====================
 
+### 03.19.16 - v-8.0.0 randy-c-2.1
+- condense theme to use the index file only in order to streamline the overwright process for child themes
+- update html & css to utilize foundations
+
 ### 03.19.16 - v-8.0.0 randy-c-2.0
 - convert from code kit to grunt
 - update gitignore with new rules

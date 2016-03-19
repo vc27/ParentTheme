@@ -1,0 +1,249 @@
+/*  File Name: reset.scss
+#################################################################################################### */
+img {
+	-ms-interpolation-mode: bicubic;
+}
+img#wpstats {
+	width: 0;
+	height: 0;
+	padding: 0;
+	border: none;
+	overflow: hidden;
+}
+.aligncenter {
+	float: none;
+	margin: 0 auto;
+}
+.alignright {
+	float: right;
+}
+.alignleft {
+	float: left;
+}
+.clear {
+	display: block;
+	clear: both;
+	float: none;
+}
+.none,
+.ui-tabs .ui-tabs-hide,
+.ui-tabs-hide {
+	display: none;
+}
+br {
+	height: 0;
+}
+a img {
+	border: none;
+}
+legend {
+	display: none;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+.clearfix {
+	*zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+.clearfix:after {
+	clear: both;
+}
+.sf-menu,
+.sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sf-menu {
+	line-height: 1.0;
+	ul {
+		position: absolute;
+		top: -999em;
+		width: 10em;
+		li {
+			width: 100%;
+		}
+	}
+	li:hover {
+		visibility: inherit;
+	}
+	li {
+		float: left;
+		position: relative;
+	}
+	a {
+		display: block;
+		position: relative;
+	}
+	li:hover ul,
+	.sf-menu li.sfHover ul {
+		left: 0;
+		top: 1.8em;
+		z-index: 99;
+	}
+	li:hover li ul,
+	li.sfHover li ul {
+		top: -999em;
+	}
+	li li:hover ul,
+	li li.sfHover ul {
+		left: 10em;
+		top: 0;
+	}
+	li li:hover li ul,
+	li li.sfHover li ul {
+		top: -999em;
+	}
+	li li li:hover ul,
+	li li li.sfHover ul {
+		left: 10em;
+		top: 0;
+	}
+}
+.hentry {
+	position: relative;
+}
+.typekit-badge {
+	display: none !important;
+}
+* :focus {
+	outline: 0;
+}
+.fade {
+	opacity: 0;
+	@include transition();
+}
+.fade.in {
+	opacity: 1 !important;
+	pointer-events: auto !important;
+}
+.fade.out {
+	opacity: 0;
+	pointer-events: none;
+}
+.entry {
+	.aligncenter {
+		display: block;
+		margin: 0 auto 10px;
+	}
+	.alignnone {
+		clear: both;
+		float: none;
+	}
+	.alignleft {
+		margin-right: 10px;
+		margin-bottom: 3px;
+	}
+	.alignright {
+		margin-left: 10px;
+		margin-bottom: 3px;
+	}
+	img {
+		max-width: 100% !important;
+		height: auto !important;
+	}
+	img.wp-smiley {
+		border: none;
+		margin: 0;
+		padding: 0;
+		box-shadow: none;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+	}
+	p {
+		padding-bottom: 20px;
+	}
+	blockquote {
+		p {
+			padding: 0;
+			margin: 10px 30px 15px 15px;
+		}
+	}
+	ol,
+	ul {
+		margin: 10px 0 20px 20px;
+	}
+	ul {
+		list-style: disc;
+	}
+	ol {
+		list-style: decimal;
+	}
+	li {
+		padding-bottom: 7px;
+	}
+	strong {}
+	small {
+		font-size: 11px;
+	}
+	table {
+		line-height: 18px;
+		td {
+			padding-right: 7px;
+			vertical-align: top;
+		}
+	}
+	.gallery {
+		dl.gallery-item {
+			display: block;
+			float: left;
+		}
+		dl dt.gallery-icon {}
+		img {}
+		.gallery-caption {}
+	}
+	.wp-caption {
+		max-width: 96%;
+		display: block;
+		text-align: center !important;
+		padding: 5px;
+		background: #eee;
+		p {
+			font-size: 11px;
+			line-height: 14px;
+			padding: 5px 0 7px;
+		}
+		img {
+			display: inline;
+		}
+		.wp-caption-text {}
+	}
+}
+.navigation-post {
+	display: block;
+	clear: both;
+	text-align: left;
+	padding: 5px;
+	.prev-post {
+		padding-left: 5px;
+	}
+	.next-post {
+		padding-right: 5px;
+	}
+}
+.wp-pagenavi {
+	a,
+	span {
+		padding: 3px 4px;
+		margin: 3px;
+	}
+}
+.navigation-posts {
+	display: block;
+	clear: both;
+	text-align: center;
+}
+input[type="submit"] {
+	@extend .button;
+}
+.meta-data {
+	.item {
+		@include inline-block();
+	}
+}
