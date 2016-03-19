@@ -162,7 +162,7 @@ function archive__title( $args = array() ) {
 		$ArchiveTitlesWP = new ArchiveTitlesWP();
 		$output = $ArchiveTitlesWP->get_title( $args );
 	}
-
+	
 	return $output;
 
 } // end function archive__title

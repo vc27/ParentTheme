@@ -6,7 +6,6 @@
             "key": "field_540b6617731fa",
             "label": "De-activate the comment system",
             "name": "_comment_system_deactivated",
-            "prefix": "",
             "type": "true_false",
             "instructions": "By checking this box you are turning off the display of the default wordpress post types.",
             "required": 0,
@@ -23,11 +22,18 @@
             "key": "field_540b78d2eabfb",
             "label": "De-activate comments for pages",
             "name": "_comments_page_deactivated",
-            "prefix": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_540b6617731fa",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -52,5 +58,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1424544073
+    "active": 1,
+    "description": "",
+    "modified": 1449239481
 }

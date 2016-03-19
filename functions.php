@@ -80,6 +80,8 @@ class ParentTheme {
 		$this->set( 'stylesheet_directory_uri', get_stylesheet_directory_uri() );
 		$this->set( 'home_url', home_url() );
 
+		add_action( 'admin_menu', array( $this, 'remove_mene_pages' ), 99 );
+
     } // end function __construct
 
 
@@ -92,8 +94,8 @@ class ParentTheme {
      **/
 	function initParentTheme() {
 
-			add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
-			add_action( 'init', array( &$this, 'init' ) );
+			add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
+			add_action( 'init', array( $this, 'init' ) );
 
 	} // end function initParentTheme
 
@@ -176,6 +178,8 @@ class ParentTheme {
 	function init() {
 
 		$this->remove_comments();
+		add_action( 'admin_menu', array( $this, 'remove_mene_pages' ), 99 );
+
 		add_filter( 'widget_text', 'do_shortcode' );
 		remove_action('wp_head', 'wlwmanifest_link');
 		remove_action('wp_head', 'rsd_link');
@@ -183,29 +187,29 @@ class ParentTheme {
 
 
 
-		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_scripts' ) );
-		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_localize_script' ), 1 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'wp_localize_script' ), 9 );
 
 
 
-		add_filter( 'post_class', array( &$this, 'post_class' ) );
-		add_filter( 'gallery_style', array( &$this, 'remove_gallery_css' ) );
+		add_filter( 'post_class', array( $this, 'post_class' ) );
+		add_filter( 'gallery_style', array( $this, 'remove_gallery_css' ) );
 
 
 
-		add_action( 'wp_head', array( &$this, 'wp_head' ) );
-		add_action( 'wp_footer', array( &$this, 'wp_footer' ) );
-		add_action( 'after_body_tag', array( &$this, 'after_body_tag' ) );
+		add_action( 'wp_head', array( $this, 'wp_head' ) );
+		add_action( 'wp_footer', array( $this, 'wp_footer' ) );
+		add_action( 'after_body_tag', array( $this, 'after_body_tag' ) );
 
 
 
-		add_filter( 'protected_title_format', array( &$this, 'title_format' ) );
-		add_filter( 'private_title_format', array( &$this, 'title_format' ) );
+		add_filter( 'protected_title_format', array( $this, 'title_format' ) );
+		add_filter( 'private_title_format', array( $this, 'title_format' ) );
 
 
 
-		add_filter( 'login_headerurl', array( &$this, 'login_headerurl' ) );
-		add_filter( 'login_headertitle', array( &$this, 'login_headertitle' ) );
+		add_filter( 'login_headerurl', array( $this, 'login_headerurl' ) );
+		add_filter( 'login_headertitle', array( $this, 'login_headertitle' ) );
 
 
 
@@ -229,8 +233,8 @@ class ParentTheme {
 	function loadParentTheme() {
 
 		$this->pt__register_style_and_scripts();
-		add_action( 'wp_enqueue_scripts', array( &$this, 'pt__wp_enqueue_scripts' ), 1 );
-		add_action( 'template_redirect', array( &$this, 'pt__layout_options' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'pt__wp_enqueue_scripts' ), 1 );
+		add_action( 'template_redirect', array( $this, 'pt__layout_options' ) );
 
 		$this->register_sidebars( array(
 			'Primary Sidebar' => array(
@@ -265,6 +269,7 @@ class ParentTheme {
 	 **/
 	function remove_comments() {
 
+		// remove all public post type comments
 		if ( get__option( '_comment_system_deactivated' ) ) {
 			$get_post_types = get_post_types( array( 'public' => true ) );
 			foreach ( $get_post_types as $post_type ) {
@@ -272,7 +277,28 @@ class ParentTheme {
 			}
 		}
 
+		// remove all page post type comments
+		if ( get__option( '_comments_page_deactivated' ) ) {
+			remove_post_type_support( 'page', 'comments' );
+		}
+
 	} // end remove_comments
+
+
+
+
+
+
+	/**
+	 * remove_mene_pages
+	 **/
+	function remove_mene_pages() {
+
+		if ( get__option( '_comment_system_deactivated' ) ) {
+			remove_menu_page( 'edit-comments.php' );
+		}
+
+	} // end remove_mene_pages
 
 
 
