@@ -6,11 +6,9 @@
  **/
 #################################################################################################### */
 
-?>
-	<?php get_template_part('section-footer'); ?>
-</div><!-- End Page -->
 
-<!-- Start wp_footer -->
-<?php wp_footer(); ?>
+get_template_part('section-footer');
+wp_footer();
+?>
 </body>
 </html>

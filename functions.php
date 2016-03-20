@@ -41,13 +41,13 @@ class ParentTheme {
 
 
 
-    /**
-     * $template_directory_uri
-     *
-     * @access public
-     * @var string
-     **/
-    var $template_directory_uri = null;
+	/**
+	 * $template_directory_uri
+	 *
+	 * @access public
+	 * @var string
+	 **/
+	var $template_directory_uri = null;
 
 
 
@@ -60,7 +60,7 @@ class ParentTheme {
 	 **/
 	var $sidebar_args = array(
 		'before_widget' => '<div id="%1$s" class="widget-box %2$s">'
-		,'after_widget' => '<span class="clear"></span></div>'
+		,'after_widget' => '</div>'
 		,'before_title' => '<div class="h3 widget-title"><span class="widget-title-wrap">'
 		,'after_title' => '</span></div>'
 	);
@@ -70,19 +70,19 @@ class ParentTheme {
 
 
 
-    /**
-     * __construct
-     **/
-    function __construct() {
+	/**
+ 	 * __construct
+	 **/
+	function __construct() {
 
 		$this->set( 'template_directory', get_template_directory() );
 		$this->set( 'template_directory_uri', get_template_directory_uri() );
 		$this->set( 'stylesheet_directory_uri', get_stylesheet_directory_uri() );
 		$this->set( 'home_url', home_url() );
 
-		add_action( 'admin_menu', array( $this, 'remove_mene_pages' ), 99 );
+		add_action( 'admin_menu', array( $this, 'remove_menu_pages' ), 99 );
 
-    } // end function __construct
+	} // end function __construct
 
 
 
@@ -90,12 +90,12 @@ class ParentTheme {
 
 
 	/**
-     * initParentTheme
-     **/
+	* initParentTheme
+	**/
 	function initParentTheme() {
 
-			add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
-			add_action( 'init', array( $this, 'init' ) );
+		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
+		add_action( 'init', array( $this, 'init' ) );
 
 	} // end function initParentTheme
 
@@ -104,16 +104,16 @@ class ParentTheme {
 
 
 
-    /**
-     * set
-     **/
-    function set( $key, $val = false ) {
+	/**
+	 * set
+	 **/
+	 function set( $key, $val = false ) {
 
-        if ( isset( $key ) AND ! empty( $key ) ) {
-            $this->$key = $val;
-        }
+		 if ( isset( $key ) AND ! empty( $key ) ) {
+			 $this->$key = $val;
+		 }
 
-    } // end function set
+	 } // end function set
 
 
 
@@ -127,17 +127,10 @@ class ParentTheme {
 
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size(
-            get_option( 'thumbnail_size_w' ),
-            get_option( 'thumbnail_size_h' ),
-            get_option( 'thumbnail_crop' )
+			get_option( 'thumbnail_size_w' ),
+			get_option( 'thumbnail_size_h' ),
+			get_option( 'thumbnail_crop' )
 		);
-
-		if ( ! is_child_theme() ) {
-			add_image_size( 'standard', 300, 300, false );
-			add_image_size( 'medium', 600, 1000, false );
-			add_image_size( 'large', 1000, 2000, false );
-			add_image_size( 'large-ex', 2000, 4000, false );
-		}
 
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'nav-menus' );
@@ -146,6 +139,12 @@ class ParentTheme {
 		// load_theme_textdomain( 'parenttheme', "$this->template_directory/languages" );
 
 		if ( ! is_child_theme() ) {
+
+			add_image_size( 'standard', 300, 300, false );
+			add_image_size( 'medium', 600, 1000, false );
+			add_image_size( 'large', 1000, 2000, false );
+			add_image_size( 'large-ex', 2000, 4000, false );
+
 			add_theme_support( 'acf-theme-options' );
 		}
 
@@ -178,7 +177,7 @@ class ParentTheme {
 	function init() {
 
 		$this->remove_comments();
-		add_action( 'admin_menu', array( $this, 'remove_mene_pages' ), 99 );
+		add_action( 'admin_menu', array( $this, 'remove_menu_pages' ), 99 );
 
 		add_filter( 'widget_text', 'do_shortcode' );
 		remove_action('wp_head', 'wlwmanifest_link');
@@ -233,6 +232,7 @@ class ParentTheme {
 	function loadParentTheme() {
 
 		$this->pt__register_style_and_scripts();
+
 		add_action( 'wp_enqueue_scripts', array( $this, 'pt__wp_enqueue_scripts' ), 1 );
 		add_action( 'template_redirect', array( $this, 'pt__layout_options' ) );
 
@@ -241,9 +241,10 @@ class ParentTheme {
 				'desc' => __( 'This is the primary widgetized area.', 'parenttheme' ),
 			)
 		) );
+
 		register_nav_menus( array(
-			'primary-navigation' => __( 'Primary Navigation', 'parenttheme' ),
-			'footer-navigation' => __( 'Footer Navigation', 'parenttheme' )
+			'primary-menu' => __( 'Primary Menu Navigation', 'parenttheme' ),
+			'footer-menu' => __( 'Footer Menu Navigation', 'parenttheme' )
 		) );
 
 	} // end function loadParentTheme
@@ -290,15 +291,15 @@ class ParentTheme {
 
 
 	/**
-	 * remove_mene_pages
+	 * remove_menu_pages
 	 **/
-	function remove_mene_pages() {
+	function remove_menu_pages() {
 
 		if ( get__option( '_comment_system_deactivated' ) ) {
 			remove_menu_page( 'edit-comments.php' );
 		}
 
-	} // end remove_mene_pages
+	} // end remove_menu_pages
 
 
 
@@ -490,7 +491,7 @@ class ParentTheme {
 	/**
 	 * register_sidebars
 	 **/
-	function register_sidebars( $sidebars = array(), $sidebar_args = 'depreciated' ) {
+	function register_sidebars( $sidebars = array() ) {
 
 		// Register Sidebars
 		foreach ( $sidebars as $name => $info ) {
@@ -534,8 +535,8 @@ class ParentTheme {
 	 **/
 	function pt__register_style_and_scripts() {
 
-		wp_register_style( 'parentThemeDefault', "$this->template_directory_uri/css/default.css" );
-		wp_register_script( 'parentThemeJs', "$this->template_directory_uri/js/min/childTheme-min.js", array( 'jquery' ) );
+		wp_register_style( 'parent-theme-default', "$this->template_directory_uri/style.css" );
+		wp_register_script( 'parent-theme-js', "$this->template_directory_uri/js/siteScripts.js", array( 'jquery' ) );
 
 	} // end function pt__register_style_and_scripts
 
@@ -549,8 +550,8 @@ class ParentTheme {
 	 **/
 	function pt__wp_enqueue_scripts() {
 
-		wp_enqueue_style( 'parentThemeDefault' );
-		wp_enqueue_script( 'parentThemeJs' );
+		wp_enqueue_style( 'parent-theme-default' );
+		wp_enqueue_script( 'parent-theme-js' );
 
 	} // end function pt__wp_enqueue_scripts
 
@@ -571,7 +572,7 @@ class ParentTheme {
 		add_action( 'after-loop', 'previous_next___post_link' );
 
 		// Add Page Title
-		add_action( 'section-main-top', 'archive__title' );
+		add_action( 'before-loop', 'archive__title' );
 
 
 	} // end function pt__layout_options

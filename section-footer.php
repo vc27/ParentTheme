@@ -6,17 +6,14 @@
  **/
 #################################################################################################### */
 
-?>	
-<div id="section-footer" class="outer-wrap">
-	<div class="inner-wrap">
-		<?php 
-		wp_nav_menu( array( 
-			'depth' => 1, 
-			'fallback_cb' => '', 
-			'theme_location' => 'footer-navigation', 
-			'container' => 'div', 
-			'container_id' => 'footer-navigation' 
-		) );
-		?>
-	</div>
+?>
+<div id="section-footer" class="row">
+	<?php
+	wp_nav_menu( array(
+		'depth' => 1,
+		'fallback_cb' => '',
+		'theme_location' => 'footer-menu',
+		'container' => 'ul', 
+	) );
+	?>
 </div>
