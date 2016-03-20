@@ -55,7 +55,17 @@ get_template_part( 'header' );
 			<?php if ( is_404() ) {
 				echo get__option( '_404_content' );
 			} else {
-				get_template_part( 'no-search-results' );
+				global $s;
+
+				if ( get__option( '_search_no_results_title' ) ) {
+					$search = sprintf( __( get__option( '_search_no_results_title' ) . ' %1$s', 'parenttheme' ), $s );
+				} else {
+					$search = sprintf( __( 'Search: %1$s', 'parenttheme' ), $s );
+				}
+				?>
+				<h1 class="h1"><?php echo $search; ?></h1>
+				<div class="entry"><?php echo get__option( '_search_no_results_content' ); ?></div>
+				<?php
 			} ?>
 			</div>
 		<?php } ?>

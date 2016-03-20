@@ -19,6 +19,9 @@ Issues, Notes, Current task
 ChangeLog
 ====================
 
+### 03.20.16 - v-8.0.0 randy-c-3.0
+- update search loop to be in the index.php file
+
 ### 03.19.16 - v-8.0.0 randy-c-2.1
 - condense theme to use the index file only in order to streamline the overwright process for child themes
 - update html & css to utilize foundations
