@@ -6,7 +6,7 @@
 
 
 /**
- * childTheme
+ * childTheme 
  **/
 var childTheme = {
 
@@ -43,4 +43,4 @@ var childTheme = {
 /**
  * jQuery
  **/
-// jQuery(document).ready(function() { childTheme.init(); });
+jQuery(document).ready(function() { childTheme.init(); });

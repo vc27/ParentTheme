@@ -1,0 +1,83 @@
+/*
+Theme Name: ParentTheme
+Author: Randy Hicks
+Author URI: http://visualcoma.com
+Version: 8.0.0
+Package: ParentTheme
+License: GNU General Public License
+License URI: license.txt 
+#################################################################################################### */
+
+
+@import 'foundation-style';
+@import 'mixins';
+@import 'defaults';
+@import 'mixins-theme';
+
+.a, a, a:visited {
+	cursor:pointer;
+	text-decoration:none;
+}
+.em {
+	font-style:italic;
+}
+.ic {
+	.text {
+		display:none;
+	}
+}
+.featured-image {
+	@include featured-image();
+}
+
+.h1, h1 {}
+.h2, h2 {}
+.h3, h3 {}
+.h4, h4 {}
+.h5, h5 {}
+.h6, h6 {}
+
+
+
+
+
+
+/* Buttons
+#################################################################################################### */
+
+
+
+
+
+
+
+
+/* Forms
+#################################################################################################### */
+
+/* remove webkit css
+select, input, textarea {
+	-webkit-appearance: none;
+	-moz-appearance:window;
+}
+select::-ms-expand {
+    display: none;
+}
+
+::-webkit-input-placeholder {}
+:-moz-placeholder {}
+::-moz-placeholder {}
+:-ms-input-placeholder {}
+*/
+
+
+
+
+
+
+/* Includes
+#################################################################################################### */
+@import 'layouts';
+@import 'sections';
+@import 'comments';
+@import 'responsive';

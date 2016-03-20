@@ -13,6 +13,20 @@ Issues, Notes, Current task
 ChangeLog
 ====================
 
+### 03.20.16 - v-8.0.0 randy-c-3.1
+- fine tune grunt setup
+
+### 03.20.16 - v-8.0.0 randy-c-3.0
+- update search loop to be in the index.php file
+
+### 03.19.16 - v-8.0.0 randy-c-2.1
+- condense theme to use the index file only in order to streamline the overwright process for child themes
+- update html & css to utilize foundations
+
+### 03.19.16 - v-8.0.0 randy-c-2.0
+- convert from code kit to grunt
+- update gitignore with new rules
+
 ### 12.05.15 - v-7.9.0 randy-c-1.0
 - update: commit log and version notes
 - update theme options

@@ -7,7 +7,7 @@
             "label": "De-activate the comment system",
             "name": "_comment_system_deactivated",
             "type": "true_false",
-            "instructions": "By checking this box you are turning off the display of the default wordpress post types.",
+            "instructions": "Turn off comments on all default WordPress post-types.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -60,5 +60,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1449239481
+    "modified": 1458428919
 }

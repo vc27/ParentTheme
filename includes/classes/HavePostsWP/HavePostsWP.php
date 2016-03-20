@@ -20,36 +20,6 @@ class HavePostsWP {
 
 
 	/**
-	 * Option name
-	 **/
-	var $option_name = false;
-
-
-
-	/**
-	 * errors
-	 *
-	 * @access public
-	 * @var array
-	 **/
-	var $errors = array();
-
-
-
-	/**
-	 * have_errors
-	 *
-	 * @access public
-	 * @var bool
-	 **/
-	var $have_errors = 0;
-
-
-
-
-
-
-	/**
 	 * __construct
 	 *
 	 * @version 1.0
@@ -401,11 +371,51 @@ class HavePostsWP {
 
 
 		// Check to see if we should link the_title
+		if ( 'inherit' == $add_permalink ) {
+			if (
+				is_home()
+				OR is_front_page()
+				OR is_archive()
+				OR is_search()
+			) {
+				$add_permalink = true;
+			} else {
+				$add_permalink = false;
+			}
+		}
 		if ( $add_permalink ) {
 
 			$a_ = "<a href=\"$the_permalink\" title=\"" . esc_attr( strip_tags( $post_title ) ) . "\" rel=\"bookmark\" target=\"$target\">";
 			$_a = "</a>";
 
+		}
+
+		if ( 'inherit' == $element ) {
+			if (
+				is_archive()
+				OR is_home()
+				OR is_front_page()
+				OR is_search()
+			) {
+				$element = 'h3';
+			} else if (
+				is_single()
+				OR is_page()
+			) {
+				$element = 'h1';
+			}
+		} else {
+			$element = 'div';
+		}
+
+		if ( 'inherit' == $class ) {
+			if ( is_archive() OR is_home() OR is_front_page() ) {
+				$class = 'h3';
+			} else if ( is_single() OR is_page() ) {
+				$class = 'h1';
+			}
+		} else {
+			$class = '';
 		}
 
 		$output = "<$element class=\"$class\">" . $before . $a_ . $before_inside_a . apply_filters( 'the_title', $post_title ) . $after_inside_a . $_a . $after . "</$element>";
@@ -706,118 +716,6 @@ class HavePostsWP {
 		}
 
 	} // end static function the_author
-
-
-
-
-
-
-	####################################################################################################
-	/**
-	 * Conditionals
-	 **/
-	####################################################################################################
-
-
-
-
-
-
-	/**
-	 * have_errors
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 **/
-	function have_errors() {
-
-		if ( isset( $this->errors ) AND ! empty( $this->errors ) AND is_array( $this->errors ) ) {
-			$this->set( 'have_errors', 1 );
-		} else {
-			$this->set( 'have_errors', 0 );
-		}
-
-		return $this->have_errors;
-
-	} // end function have_errors
-
-
-
-
-
-
-	/**
-	 * show_loop_excerpt
-	 **/
-	static function show_loop_excerpt() {
-
-		if ( ! function_exists('get__option') ) {
-			wp_die("! function_exists('get__option') in show__loop_excerpt()");
-		}
-
-		global $wp_query;
-
-		if ( is_home() ) {
-			$show_on_front = get_option('show_on_front');
-		}
-
-		if ( ( is_year() OR is_month() OR is_day() ) AND get__option( 'post_display', 'numeric_archive_content' ) ) {
-			return true;
-
-		} else if ( is_category() AND get__option( 'post_display', 'category_content' ) ) {
-			return true;
-
-		} else if (
-			isset( $wp_query->queried_object )
-			AND (
-				isset( $wp_query->queried_object->ID )
-				AND $wp_query->queried_object->ID == get_option('page_for_posts')
-			)
-			AND get__option( 'post_display', 'home_page_posts' ) ) {
-			return true;
-
-		} else if ( $wp_query->is_posts_page AND get__option( 'post_display', 'home_page_posts' ) ) {
-			return true;
-
-		} else if ( $wp_query->is_home AND $show_on_front == 'posts' AND get__option( 'post_display', 'home_page_posts' ) ) {
-			return true;
-
-		} else if ( is_tag() AND get__option( 'post_display', 'tag_content' ) ) {
-			return true;
-
-		} else if ( is_author() AND get__option( 'post_display', 'author_content' ) ) {
-			return true;
-
-		} else if ( is_search() AND get__option( 'post_display', 'search_content' ) ) {
-			return true;
-
-		} else {
-			return false;
-		}
-
-	} // end function show_loop_excerpt
-
-
-
-
-
-
-	/**
-	 * show_loop_featured_image
-	 **/
-	static function show_loop_featured_image() {
-
-		if ( ! function_exists('get__option') ) {
-			wp_die("! function_exists('get__option') in show_loop_featured_image()");
-		}
-
-		if ( self::show_loop_excerpt() AND get__option( 'post_display', 'show_featured_image' ) ) {
-			return true;
-		} else {
-			return false;
-		}
-
-	} // end function show_loop_featured_image
 
 
 

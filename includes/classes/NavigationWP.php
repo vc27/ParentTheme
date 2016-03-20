@@ -61,7 +61,7 @@ class NavigationWP {
 		$r = wp_parse_args( $args, $defaults );
 		extract( $r, EXTR_SKIP );
 
-		$output = "<$element class=\"clearfix $class\">";
+		$output = "<$element class=\"$class\">";
 			$output .= $before;
 
 			$output .= "<span class=\"prev-post\">";
