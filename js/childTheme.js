@@ -6,7 +6,7 @@
 
 
 /**
- * childTheme
+ * childTheme 
  **/
 var childTheme = {
 

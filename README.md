@@ -3,12 +3,6 @@ Issues, Notes, Current task
 
 ### Current Task
 
-- convert from code kit to grunt
-- update gitignore with new rules
-- update theme to a single index theme, the goal is to put the child theme as the primary theme code.
-- re-assess the functions class for child theme usage
-- confirm acf options
-
 ### Issues
 
 ### Notes
@@ -18,6 +12,9 @@ Issues, Notes, Current task
 
 ChangeLog
 ====================
+
+### 03.20.16 - v-8.0.0 randy-c-3.1
+- fine tune grunt setup
 
 ### 03.20.16 - v-8.0.0 randy-c-3.0
 - update search loop to be in the index.php file
