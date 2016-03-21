@@ -13,6 +13,9 @@ Issues, Notes, Current task
 ChangeLog
 ====================
 
+### 03.21.16 - v-8.0.1 randy-c-4.0
+- update scss mixins
+
 ### 03.20.16 - v-8.0.0 randy-c-3.1
 - fine tune grunt setup
 
