@@ -535,7 +535,7 @@ class ParentTheme {
 	 **/
 	function pt__register_style_and_scripts() {
 
-		wp_register_style( 'parent-theme-default', "$this->template_directory_uri/style.css" );
+		wp_register_style( 'parent-theme-default', "$this->template_directory_uri/css/style.css" );
 		wp_register_script( 'parent-theme-js', "$this->template_directory_uri/js/siteScripts.js", array( 'jquery' ) );
 
 	} // end function pt__register_style_and_scripts

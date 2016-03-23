@@ -13,6 +13,9 @@ Issues, Notes, Current task
 ChangeLog
 ====================
 
+### 03.23.16 - v-8.0.2 randy-c-5.0
+- move style.css to /css and leave style.css in root for theme info
+
 ### 03.21.16 - v-8.0.1 randy-c-4.0
 - update scss mixins
 

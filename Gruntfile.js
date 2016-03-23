@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				src: 'sass/style.scss',
-				dest: 'style.css'
+				dest: 'css/style.css'
 			}
 		},
 		concat: {
