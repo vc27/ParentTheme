@@ -13,6 +13,9 @@ Issues, Notes, Current task
 ChangeLog
 ====================
 
+### 10.06.16 - v-9.0.0 randy-c-6.0
+- final update, this theme is being retired, all things can be found in themewp repo
+
 ### 03.23.16 - v-8.0.2 randy-c-5.0
 - move style.css to /css and leave style.css in root for theme info
 
